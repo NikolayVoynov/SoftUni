@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class AreaOfFigures {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        String typeFigure = scanner.nextLine();
+
+        if (typeFigure.equals("square")) {
+
+            double sideSquare = Double.parseDouble(scanner.nextLine());
+            double areaSquare = sideSquare * sideSquare;
+
+            System.out.printf("%.3f", areaSquare);
+
+        } else if (typeFigure.equals("rectangle")) {
+
+            double sideRectangle1 = Double.parseDouble(scanner.nextLine());
+            double sideRectangle2 = Double.parseDouble(scanner.nextLine());
+            double areaRectangle = sideRectangle1 * sideRectangle2;
+
+            System.out.printf("%.3f", areaRectangle);
+
+        } else if (typeFigure.equals("circle")) {
+
+            double radius = Double.parseDouble(scanner.nextLine());
+            double areaCircle = Math.PI * radius * radius;
+
+            System.out.printf("%.3f", areaCircle);
+
+        } else if (typeFigure.equals("triangle")) {
+
+            double sideTriangle = Double.parseDouble(scanner.nextLine());
+            double heightTriangle = Double.parseDouble(scanner.nextLine());
+            double areaTriangle = sideTriangle * heightTriangle / 2;
+
+            System.out.printf("%.3f", areaTriangle);
+        }
+
+
+    }
+}
