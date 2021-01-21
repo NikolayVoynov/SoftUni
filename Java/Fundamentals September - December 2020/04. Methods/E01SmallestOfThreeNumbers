@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class E01SmallestOfThreeNumbers {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int a = Integer.parseInt(scanner.nextLine());
+        int b = Integer.parseInt(scanner.nextLine());
+        int c = Integer.parseInt(scanner.nextLine());
+
+        int smallerNumber = smallerNumber(a, b);
+        int smallestNumber = smallestNumber(smallerNumber, c);
+
+        System.out.print(smallestNumber);
+    }
+
+
+    private static int smallerNumber(int a, int b) {
+        if (a < b) {
+            return a;
+        }
+        return b;
+    }
+
+    private static int smallestNumber(int smallerNumber, int c) {
+        if (smallerNumber < c) {
+            return smallerNumber;
+        }
+        return c;
+    }
+}
