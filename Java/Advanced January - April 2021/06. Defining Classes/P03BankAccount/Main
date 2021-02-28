@@ -1,0 +1,55 @@
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        HashMap<Integer, BankAccount> bankAccounts = new HashMap<>();
+
+        String input = "";
+
+
+        while (!"End".equals(input = scanner.nextLine())) {
+            String[] command = input.split("\\s+");
+            String commandType = command[0];
+
+            switch (commandType) {
+                case "Create":
+                    BankAccount bankAccount = new BankAccount();
+                    bankAccounts.put(bankAccount.getId(), bankAccount);
+                    System.out.println("Account ID" + bankAccount.getId() + " created");
+                    break;
+
+                case "Deposit":
+                    int id = Integer.parseInt(command[1]);
+                    int amount = Integer.parseInt(command[2]);
+
+                    if (bankAccounts.containsKey(id)) {
+                        bankAccounts.get(id).deposit(amount);
+                        System.out.println("Deposited " + amount + " to " + "ID" + id);
+                    } else {
+                        System.out.println("Account does not exist");
+                    }
+                    break;
+
+                case "SetInterest":
+                    double interestRateNew = Double.parseDouble(command[1]);
+                    BankAccount.setInterestRate(interestRateNew);
+                    break;
+
+                case "GetInterest":
+                    id = Integer.parseInt(command[1]);
+                    int years = Integer.parseInt(command[2]);
+
+                    if (bankAccounts.containsKey(id)) {
+                        double interest = bankAccounts.get(id).getInterestRate(years);
+                        System.out.println(String.format("%.2f", interest));
+                    } else {
+                        System.out.println("Account does not exist");
+                    }
+                    break;
+            }
+        }
+    }
+}
