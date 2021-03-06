@@ -1,0 +1,179 @@
+import java.util.*;
+
+public class P01TheGarden {
+    static Map<Character, Integer> harvest;
+    static Map<Integer, Integer> harvestedLocation;
+    static Map<Integer, Integer> harmedLocation;
+    static int harmedVegetables;
+
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int n = Integer.parseInt(scanner.nextLine());
+
+        char[][] garden = new char[n][];
+
+        for (int row = 0; row < n; row++) {
+            String[] lineArray = scanner.nextLine().split("\\s+");
+            String line = "";
+            for (String s : lineArray) {
+                line += s;
+            }
+            garden[row] = line.toCharArray();
+        }
+
+        harvestedLocation = new HashMap<>();
+        harmedLocation = new HashMap<>();
+
+        harvest = new HashMap<>();
+        harvest.put('C', 0);
+        harvest.put('P', 0);
+        harvest.put('L', 0);
+
+        harmedVegetables = 0;
+
+        String line = scanner.nextLine();
+
+        while (!line.equals("End of Harvest")) {
+            String[] token = line.split("\\s+");
+            String command = token[0];
+            int row = Integer.parseInt(token[1]);
+            int col = Integer.parseInt(token[2]);
+
+            if (command.equals("Harvest")) {
+                if (isInBounds(row, col, garden)) {
+
+                    if (isNotHarvested(harvestedLocation, row, col) && isNotHarmed(harmedLocation, row, col)) {
+                        char vegetable = garden[row][col];
+                        collectVegetable(vegetable, harvest);
+
+                        garden[row][col] = ' ';
+                        harvestedLocation.put(row, col);
+                    }
+                }
+
+
+            } else if (command.equals("Mole")) {
+                String direction = token[3];
+
+                if (isInBounds(row, col, garden)) {
+
+                    if (direction.equals("up")) {
+                        moleMovesUp(row, col, garden);
+
+                    } else if (direction.equals("down")) {
+                        moleMovesDown(row, col, garden);
+
+                    } else if (direction.equals("left")) {
+                        moleMovesLeft(row, col, garden);
+
+                    } else if (direction.equals("right")) {
+                        moleMovesRight(row, col, garden);
+
+                    }
+                }
+            }
+
+            line = scanner.nextLine();
+        }
+
+
+        printGarden(garden);
+
+        System.out.println(String.format("Carrots: %d", harvest.get('C')));
+        System.out.println(String.format("Potatoes: %d", harvest.get('P')));
+        System.out.println(String.format("Lettuce: %d", harvest.get('L')));
+        System.out.println(String.format("Harmed vegetables: %d", harmedVegetables));
+
+    }
+
+    private static void moleMovesRight(int row, int col, char[][] garden) {
+        for (int c = col; c < garden[row].length; c += 2) {
+            if (isNotHarmed(harmedLocation, row, c) && isNotHarvested(harvestedLocation, row, c)) {
+                garden[row][c] = ' ';
+                harmedLocation.put(row, c);
+                harmedVegetables++;
+            }
+
+        }
+    }
+
+    private static void moleMovesLeft(int row, int col, char[][] garden) {
+        for (int c = col; c >= 0; c -= 2) {
+            if (isNotHarmed(harmedLocation, row, c) && isNotHarvested(harvestedLocation, row, c)) {
+                garden[row][c] = ' ';
+                harmedLocation.put(row, c);
+                harmedVegetables++;
+            }
+
+        }
+    }
+
+    private static void moleMovesDown(int row, int col, char[][] garden) {
+        for (int r = row; r < garden.length; r += 2) {
+
+            if (isNotHarmed(harmedLocation, r, col) && isNotHarvested(harvestedLocation, r, col)) {
+                garden[r][col] = ' ';
+                harmedLocation.put(r, col);
+                harmedVegetables++;
+            }
+        }
+    }
+
+    private static void moleMovesUp(int row, int col, char[][] garden) {
+        for (int r = row; r >= 0; r -= 2) {
+
+            if (isNotHarmed(harmedLocation, r, col) && isNotHarvested(harvestedLocation, r, col)) {
+                garden[r][col] = ' ';
+                harmedLocation.put(r, col);
+                harmedVegetables++;
+            }
+        }
+    }
+
+    private static boolean isNotHarmed(Map<Integer, Integer> harmedLocation, int row, int col) {
+        for (Map.Entry<Integer, Integer> entry : harmedLocation.entrySet()) {
+            if (entry.getKey() == row) {
+                if (entry.getValue() == col) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    private static boolean isNotHarvested(Map<Integer, Integer> harvestedLocation, int row, int col) {
+        for (Map.Entry<Integer, Integer> entry : harvestedLocation.entrySet()) {
+            if (entry.getKey() == row) {
+                if (entry.getValue() == col) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    private static void collectVegetable(char vegetable, Map<Character, Integer> harvest) {
+        for (Map.Entry<Character, Integer> type : harvest.entrySet()) {
+            if (type.getKey() == vegetable) {
+                int value = type.getValue();
+                harvest.put(vegetable, value + 1);
+            }
+        }
+    }
+
+    private static boolean isInBounds(int row, int col, char[][] garden) {
+        return row >= 0 && row < garden.length && col >= 0 && col < garden[row].length;
+    }
+
+    private static void printGarden(char[][] garden) {
+        for (int r = 0; r < garden.length; r++) {
+            List<Character> rowMatrix = new ArrayList<>();
+            for (int c = 0; c < garden[r].length; c++) {
+                rowMatrix.add(garden[r][c]);
+            }
+            System.out.println(String.join(" ", rowMatrix.toString().replaceAll("[\\[\\],]", "")));
+        }
+    }
+}
