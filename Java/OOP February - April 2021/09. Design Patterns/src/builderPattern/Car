@@ -1,0 +1,54 @@
+package builderPattern;
+
+public class Car {
+    private String color;
+    private boolean hasGasBottle;
+    private boolean hasDieselEngine;
+    private boolean hasPetrolEngine;
+    private boolean hasXenonLights;
+    private boolean hasHalogenLights;
+    private int tyres;
+
+    public Car withColor(String color) {
+        this.color = color;
+        return this;
+    }
+
+    public Car withGasBottle(boolean hasGasBottle) {
+        this.hasGasBottle = hasGasBottle;
+        return this;
+    }
+
+    public Car withPetrolEngine(boolean hasPetrolEngine) {
+        this.hasPetrolEngine = hasPetrolEngine;
+        return this;
+    }
+
+    public Car withDieselEngine(boolean hasDieselEngine) {
+        this.hasDieselEngine = hasDieselEngine;
+        return this;
+    }
+
+    public Car withXenonLights(boolean hasXenonLights) {
+        this.hasXenonLights = hasXenonLights;
+        return this;
+    }
+
+    public Car withHalogenLights(boolean hasHalogenLights) {
+        this.hasHalogenLights = hasHalogenLights;
+        return this;
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "color='" + color + '\'' +
+                ", hasGasBottle=" + hasGasBottle +
+                ", hasDieselEngine=" + hasDieselEngine +
+                ", hasPetrolEngine=" + hasPetrolEngine +
+                ", hasXenonLights=" + hasXenonLights +
+                ", hasHalogenLights=" + hasHalogenLights +
+                ", tyres=" + tyres +
+                '}';
+    }
+}
