@@ -5,8 +5,13 @@ public class Pistol extends GunImpl {
         super(name, bulletsCount);
     }
 
+
     @Override
     public int fire() {
-        return super.fire();
+        if (this.getBulletsCount() >= 1) {
+            this.setBulletsCount(this.getBulletsCount() - 1);
+            return 1;
+        }
+        return 0;
     }
 }

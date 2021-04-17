@@ -1,8 +1,9 @@
 package CounterStriker.models.players;
 
+import CounterStriker.common.ExceptionMessages;
 import CounterStriker.models.guns.Gun;
 
-public abstract class PlayerImpl implements Player{
+public abstract class PlayerImpl implements Player {
     private String username;
     private int health;
     private int armor;
@@ -14,17 +15,27 @@ public abstract class PlayerImpl implements Player{
         this.setHealth(health);
         this.setArmor(armor);
         this.setGun(gun);
+        this.isAlive = true;
     }
 
-    public void setUsername(String username) {
+    private void setUsername(String username) {
+        if (username == null || username.trim().isEmpty()) {
+            throw new NullPointerException(ExceptionMessages.INVALID_PLAYER_NAME);
+        }
         this.username = username;
     }
 
-    public void setHealth(int health) {
+    private void setHealth(int health) {
+        if (health < 0) {
+            throw new IllegalArgumentException(ExceptionMessages.INVALID_PLAYER_HEALTH);
+        }
         this.health = health;
     }
 
-    public void setArmor(int armor) {
+    private void setArmor(int armor) {
+        if (armor < 0) {
+            throw new IllegalArgumentException(ExceptionMessages.INVALID_PLAYER_ARMOR);
+        }
         this.armor = armor;
     }
 
@@ -33,36 +44,52 @@ public abstract class PlayerImpl implements Player{
     }
 
     public void setGun(Gun gun) {
+        if (gun == null) {
+            throw new NullPointerException(ExceptionMessages.INVALID_GUN);
+        }
         this.gun = gun;
     }
 
     @Override
     public String getUsername() {
-        return null;
+        return this.username;
     }
 
     @Override
     public int getHealth() {
-        return 0;
+        return this.health;
     }
 
     @Override
     public int getArmor() {
-        return 0;
+        return this.armor;
     }
 
     @Override
     public Gun getGun() {
-        return null;
+        return this.gun;
     }
 
     @Override
     public boolean isAlive() {
-        return false;
+        return this.isAlive;
     }
 
     @Override
     public void takeDamage(int points) {
+        if (this.armor > 0) {
+            this.armor -= points;
+            if (this.armor < 0) {
+                this.armor = 0;
+            }
+        } else {
+            this.health -= points;
+            if (this.health <= 0) {
+                this.health = 0;
+                this.setAlive(false);
+            }
+
+        }
 
     }
 }

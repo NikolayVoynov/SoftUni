@@ -3,7 +3,7 @@ package CounterStriker.repositories;
 import java.util.Collection;
 
 public interface Repository<T> {
-    Collection<T> getModels();
+    Collection<T> getGuns();
 
     void add(T model);
 
