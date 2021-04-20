@@ -1,6 +1,7 @@
 package aquarium;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -8,6 +9,14 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class AquariumTests {
+    private Aquarium aquarium;
+
+    @Before
+    public void setUp() {
+        aquarium = new Aquarium("Varna", 2);
+        aquarium.add(new Fish("fish1"));
+        aquarium.add(new Fish("fish2"));
+    }
 
 
     @Test(expected = NullPointerException.class)
@@ -23,27 +32,16 @@ public class AquariumTests {
 
     @Test(expected = IllegalArgumentException.class)
     public void testAddFish_then_throwException() {
-        Aquarium aquarium = new Aquarium("Varna", 2);
-        aquarium.add(new Fish("fish1"));
-        aquarium.add(new Fish("fish2"));
         aquarium.add(new Fish("fish3"));
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void testSellFish_then_throwException() {
-        Aquarium aquarium = new Aquarium("Varna", 2);
-        aquarium.add(new Fish("fish1"));
-        aquarium.add(new Fish("fish2"));
-
         aquarium.sellFish("riba");
     }
 
     @Test
     public void testSellFish_then_returnCorrect() {
-        Aquarium aquarium = new Aquarium("Varna", 2);
-        aquarium.add(new Fish("fish1"));
-        aquarium.add(new Fish("fish2"));
-
         Fish actual = aquarium.sellFish("fish2");
         Fish expected = new Fish("fish2");
 
@@ -52,38 +50,22 @@ public class AquariumTests {
 
     @Test(expected = IllegalArgumentException.class)
     public void testRemoveFish_then_throwException() {
-        Aquarium aquarium = new Aquarium("Varna", 2);
-        aquarium.add(new Fish("fish1"));
-        aquarium.add(new Fish("fish2"));
-
         aquarium.remove("riba");
     }
 
     @Test
     public void getCapacity_correct() {
-        Aquarium aquarium = new Aquarium("Varna", 2);
-
         Assert.assertEquals(2, aquarium.getCapacity());
     }
 
     @Test
     public void getCount_correct() {
-        Aquarium aquarium = new Aquarium("Varna", 2);
-        aquarium.add(new Fish("fish1"));
-        aquarium.add(new Fish("fish2"));
-
-
         Assert.assertEquals(2, aquarium.getCount());
     }
 
     @Test
     public void testReport_returnCorrect() {
-        Aquarium aquarium = new Aquarium("Varna", 2);
-        aquarium.add(new Fish("fish1"));
-        aquarium.add(new Fish("fish2"));
-
         String actual = aquarium.report();
-
 
         String names = "fish1, fish2";
         String expected = String.format("Fish available at %s: %s", "Varna", names);
@@ -93,8 +75,6 @@ public class AquariumTests {
 
     @Test
     public void testGetName() {
-        Aquarium aquarium = new Aquarium("Varna", 2);
-
         Assert.assertEquals("Varna", aquarium.getName());
     }
 
