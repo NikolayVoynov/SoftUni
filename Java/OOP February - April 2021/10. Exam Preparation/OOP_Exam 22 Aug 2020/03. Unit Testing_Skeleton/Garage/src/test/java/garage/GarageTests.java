@@ -1,78 +1,49 @@
 package garage;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class GarageTests {
+    private Garage garage;
+
+    @Before
+    public void setUp() {
+        this.garage = new Garage();
+        this.garage.addCar(new Car("Audi4", 100, 10000.0));
+        this.garage.addCar(new Car("Audi5", 150, 11000.0));
+        this.garage.addCar(new Car("Audi6", 200, 12000.0));
+    }
 
     @Test
     public void testConstructorIfArraySizeIsCorrect() {
-        Garage garage = new Garage();
-        garage.addCar(new Car("Audi", 100, 10000));
-        garage.addCar(new Car("Audi", 150, 11000));
-
-        List<Car> expected = new ArrayList<>();
-        expected.add(new Car("Audi", 100, 10000));
-        expected.add(new Car("Audi", 150, 11000));
-
-        Assert.assertEquals(expected.size(), garage.getCars().size());
+        Assert.assertEquals(3, garage.getCars().size());
     }
-
 
     @Test
     public void testFindAllCarsWithMaxSpeedAbove() {
-        Garage garage = new Garage();
-        garage.addCar(new Car("Audi", 100, 10000));
-        garage.addCar(new Car("Audi", 150, 11000));
-        garage.addCar(new Car("Audi", 200, 12000));
-
-        List<Car> expected = new ArrayList<>();
-        expected.add(new Car("Audi", 150, 11000));
-        expected.add(new Car("Audi", 200, 12000));
-
-        List<Car> actual = garage.findAllCarsWithMaxSpeedAbove(110);
-
-        Assert.assertEquals(expected.size(), actual.size());
+        List<Car> actual = this.garage.findAllCarsWithMaxSpeedAbove(110);
+        Assert.assertEquals(2, actual.size());
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void when_testAddCar_then_throwException() {
-        Garage garage = new Garage();
-        garage.addCar(null);
+        this.garage.addCar(null);
     }
 
     @Test
     public void when_getTheMostExpensiveCar_then_returnCorrect() {
-        Garage garage = new Garage();
-        garage.addCar(new Car("Audi1", 100, 10000.0));
-        garage.addCar(new Car("Audi2", 150, 11000.0));
-        garage.addCar(new Car("Audi3", 200, 12000.0));
-
-        Car expected = new Car("Audi3", 200, 12000.0);
-
-        Car actual = garage.getTheMostExpensiveCar();
-
+        Car expected = new Car("Audi6", 200, 12000.0);
+        Car actual = this.garage.getTheMostExpensiveCar();
         Assert.assertEquals(expected.getBrand(), actual.getBrand());
     }
 
     @Test
-    public void when_findAllCarsByBrand_then_returnTheCorrect(){
-        Garage garage = new Garage();
-        garage.addCar(new Car("Audi1", 100, 10000.0));
-        garage.addCar(new Car("Audi1", 150, 11000.0));
-        garage.addCar(new Car("Audi3", 200, 12000.0));
-
-        List<Car> expected = new ArrayList<>();
-        expected.add(new Car("Audi1", 100, 10000.0));
-        expected.add(new Car("Audi1", 150, 11000.0));
-
-        List<Car> actual = garage.findAllCarsByBrand("Audi1");
-
-        Assert.assertEquals(expected.size(), actual.size());
+    public void when_findAllCarsByBrand_then_returnTheCorrect() {
+        List<Car> actual = garage.findAllCarsByBrand("Audi5");
+        Assert.assertEquals(1, actual.size());
     }
 
 
