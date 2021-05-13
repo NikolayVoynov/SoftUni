@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class ME01SortNumbers {
     public static void main(String[] args) {
@@ -11,7 +8,7 @@ public class ME01SortNumbers {
             numbers.add(Integer.parseInt(scanner.nextLine()));
         }
 
-        Collections.sort(numbers, (n1,n2)->n2.compareTo(n1));
-        numbers.stream().forEach(n-> System.out.println(n));
+        numbers.sort(Comparator.reverseOrder());
+        numbers.forEach(n-> System.out.println(n));
     }
 }
