@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class M02FromLeftToTheRight {
+public class ME02FromLeftToTheRight {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
