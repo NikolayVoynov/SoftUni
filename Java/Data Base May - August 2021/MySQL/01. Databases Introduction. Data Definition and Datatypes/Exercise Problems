@@ -1,0 +1,60 @@
+#Problem 00
+
+CREATE DATABASE `minions`;
+
+#Problem 01
+
+USE `minions`;
+CREATE TABLE `minions`(
+`id` INT PRIMARY KEY AUTO_INCREMENT,
+`name` VARCHAR(50) NOT NULL,
+`age` INT 
+);
+
+CREATE TABLE `towns`(
+`town_id` INT PRIMARY KEY AUTO_INCREMENT,
+`name` VARCHAR(50) NOT NULL
+);
+
+#Problem 02
+
+ALTER TABLE `minions`
+ADD `town_id` INT NOT NULL;
+
+ALTER TABLE `minions`
+ADD CONSTRAINT `fk_minions_towns`
+FOREIGN KEY (`town_id`) REFERENCES `towns`(`id`);
+
+#Problem 03
+
+-- id	name	age	town_id
+-- 1	Kevin	22	    1
+-- 2	Bob	    15	    3
+-- 3	Steward	NULL	2
+
+
+-- id	name
+-- 1	Sofia
+-- 2	Plovdiv
+-- 3	Varna
+
+INSERT INTO `minions`
+VALUES
+(1,'Kevin',22,1),
+(2,'Bob',15,3),
+(3,'Steward',NULL,2);
+
+INSERT INTO `towns`
+VALUES
+(1,'Sofia'),
+(2,'Plovdiv'),
+(3,'Varna');
+
+#Problem 04
+
+TRUNCATE `minions`;
+
+#Problem 05
+
+DROP TABLE `minions`;
+DROP TABLE `towns`;
