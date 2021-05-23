@@ -80,3 +80,68 @@ VALUES
 (3, 'Aneliya Milusheva', NULL, 174.50, 45.00, 'f', '80-04-19', NULL),
 (4, 'Dimitar Milushev', NULL, 176.00, 90.00, 'm', '80-11-08', NULL),
 (5, 'Voyn Grigorov', NULL, 178.00, 100.00, 'm', '91-08-15', NULL);
+
+#Problem 07
+
+CREATE TABLE `users` (
+`id` INT PRIMARY KEY AUTO_INCREMENT,
+`username` VARCHAR(30) NOT NULL,
+`password` VARCHAR(26) NOT NULL,
+`profile_picture` BLOB,
+`last_login_time` TIME,
+`is_deleted` BOOLEAN
+);
+
+INSERT INTO `users`
+VALUES
+(1, 'levski1', 'cbilsbcbs', NULL, '2021-05-23 12:40:00', 1),
+(2, 'levski2', 'jcbdslhsb', NULL, '2021-05-23 12:40:01', 1),
+(3, 'levski3', 'cdmdivodfbv', NULL, '2021-05-23 12:40:02', 0),
+(4, 'levski4', 'ywbddididj', NULL, '2021-05-23 12:40:03', 1),
+(5, 'levski5', 'cvnfjvj', NULL, '2021-05-23 12:40:04', 0);
+
+#Problem 08
+
+ALTER TABLE `users`
+DROP PRIMARY KEY,
+ADD CONSTRAINT pk_users
+PRIMARY KEY (`id`, `username`);
+
+#Problem 09
+
+ALTER TABLE `users`
+ALTER COLUMN `last_login_time` SET DEFAULT(CURRENT_TIME);
+
+#Problem 10
+
+ALTER TABLE `users`
+DROP PRIMARY KEY,
+ADD CONSTRAINT pk_users
+PRIMARY KEY (`id`);
+
+ALTER TABLE `users`
+MODIFY COLUMN `username` VARCHAR(30) NOT NULL UNIQUE;
+
+#Problem 11
+
+CREATE DATABASE `Movies`;
+USE `Movies`;
+
+CREATE TABLE `directors`(
+`id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+`director_name` VARCHAR(50) NOT NULL,
+`notes` VARCHAR(300)
+);
+
+CREATE TABLE `genres`(
+`id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+`genre_name` VARCHAR(50) NOT NULL,
+`notes` VARCHAR(300)
+);
+
+CREATE TABLE `categories`(
+`id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+`category_name` VARCHAR(50) NOT NULL,
+`notes` VARCHAR(300)
+);
+
