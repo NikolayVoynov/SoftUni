@@ -58,3 +58,25 @@ TRUNCATE `minions`;
 
 DROP TABLE `minions`;
 DROP TABLE `towns`;
+
+#Problem 06
+
+USE `minions`;
+CREATE TABLE `people`(
+`id` INT PRIMARY KEY AUTO_INCREMENT,
+`name` VARCHAR(200) NOT NULL,
+`picture` BLOB,
+`height` DOUBLE(5,2),
+ `weght` DOUBLE(5,2),
+ `gender` CHAR(1) NOT NULL,
+ `birthdate` DATE NOT NULL,
+ `biography` TEXT
+);
+
+INSERT INTO `people`
+VALUES
+(1, 'Nikolay Voynov', NULL, 174.50, 80.00, 'm', '91-04-16', NULL),
+(2, 'Monika Voynova', NULL, 174.00, 50.00, 'f', '99-08-17', NULL),
+(3, 'Aneliya Milusheva', NULL, 174.50, 45.00, 'f', '80-04-19', NULL),
+(4, 'Dimitar Milushev', NULL, 176.00, 90.00, 'm', '80-11-08', NULL),
+(5, 'Voyn Grigorov', NULL, 178.00, 100.00, 'm', '91-08-15', NULL);
