@@ -145,3 +145,57 @@ CREATE TABLE `categories`(
 `notes` VARCHAR(300)
 );
 
+CREATE TABLE `movies` (
+`id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+`title` VARCHAR(50) NOT NULL,
+`director_id` INT NOT NULL,
+`copyright_year` INT,
+`length` INT,
+`genre_id` INT NOT NULL,
+`category_id` INT NOT NULL,
+`rating` DECIMAL(2,1),
+`notes` VARCHAR(300)
+);
+
+ALTER TABLE `movies`
+ADD CONSTRAINT `fk_movies_directors`
+FOREIGN KEY (`director_id`) REFERENCES `directors`(`id`);
+
+ALTER TABLE `movies`
+ADD CONSTRAINT `fk_movies_genres`
+FOREIGN KEY (`genre_id`) REFERENCES `genres`(`id`);
+
+ALTER TABLE `movies`
+ADD CONSTRAINT `fk_movies_categories`
+FOREIGN KEY (`category_id`) REFERENCES `categories`(`id`);
+
+INSERT INTO `directors`
+VALUE
+(1, 'Petar Petrov', 'The best director1'),
+(2, 'Ivan Ivanov', 'The best director2'),
+(3, 'George Georiev', 'The best director3');
+
+INSERT INTO `genres`
+VALUE
+(1, 'comedy', 'smth1'),
+(2, 'horror', 'smth2'),
+(3, 'action', 'smth3');
+
+INSERT INTO `categories`
+VALUE
+(1, 'first', 'smth1'),
+(2, 'second', 'smth2'),
+(3, 'third', 'smth3');
+
+INSERT INTO `movies`
+VALUE
+(1, 'title1', 1, 1988, 220, 2, 3, 8.5, 'a lot'),
+(2, 'title2', 3, 1934, 180, 1, 2, 9.5, 'nothing'),
+(3, 'title3', 2, 2020, 170, 3, 1, 7.3, 'some text');
+
+SELECT * FROM `directors`;
+SELECT * FROM `genres`;
+SELECT * FROM `categories`;
+SELECT * FROM `movies`;
+
+#Problem 12
