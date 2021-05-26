@@ -14,3 +14,20 @@ SELECT first_name, last_name, salary FROM `employees`
 ORDER BY employee_id;
 
 #Problem 04
+
+SELECT first_name, middle_name, last_name FROM `employees`
+ORDER BY employee_id;
+
+#Problem 05
+
+SELECT concat(`first_name`, '.', `last_name`, '@softuni.bg') 
+AS 'full_ email_address'
+FROM `employees`;
+
+#Problem 06
+
+SELECT DISTINCT `salary`
+FROM `employees`;
+
+#Problem 07
+
