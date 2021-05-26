@@ -65,3 +65,7 @@ SELECT first_name, last_name FROM `employees`
 ORDER BY `salary` DESC
 LIMIT 5
 
+#Problem 13
+
+SELECT first_name, last_name FROM `employees`
+WHERE `department_id` <> 4
