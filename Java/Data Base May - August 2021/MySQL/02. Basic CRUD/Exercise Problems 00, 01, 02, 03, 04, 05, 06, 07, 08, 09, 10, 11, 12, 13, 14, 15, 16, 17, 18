@@ -31,3 +31,13 @@ FROM `employees`;
 
 #Problem 07
 
+SELECT * FROM `employees`
+WHERE `job_title` = 'Sales Representative'
+ORDER BY employee_id;
+
+#Problem 08
+
+SELECT first_name, last_name, job_title FROM `employees`
+WHERE 20000 <= `salary` AND `salary` <= 30000
+ORDER BY employee_id;
+
