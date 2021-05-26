@@ -56,7 +56,7 @@ CREATE TABLE `people`(
 `name` VARCHAR(200) NOT NULL,
 `picture` BLOB,
 `height` DOUBLE(5,2),
- `weght` DOUBLE(5,2),
+ `weight` DOUBLE(5,2),
  `gender` CHAR(1) NOT NULL,
  `birthdate` DATE NOT NULL,
  `biography` TEXT
