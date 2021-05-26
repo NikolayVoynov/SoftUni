@@ -1,0 +1,16 @@
+#Problem 01
+
+SELECT * FROM `departments`
+ORDER BY department_id;
+
+#Problem 02
+
+SELECT name FROM `departments`
+ORDER BY department_id;
+
+#Problem 03
+
+SELECT first_name, last_name, salary FROM `employees`
+ORDER BY employee_id;
+
+#Problem 04
