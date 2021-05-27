@@ -57,7 +57,8 @@ WHERE `salary` IN (25000, 14000, 12500, 23600);
 
 #Problem 10
 
-
+SELECT * FROM `employees`
+WHERE `manager_id` IS NULL;
 
 
 #Problem 11
