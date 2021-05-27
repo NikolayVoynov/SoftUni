@@ -380,4 +380,4 @@ SELECT `salary` FROM `employees`;
 
 #Problem 18
 
-/* TRUNCATE `employees` */
+TRUNCATE `employees`
