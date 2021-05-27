@@ -114,3 +114,26 @@ SET `salary` = `salary` * 1.12
 WHERE department_id = 1 OR department_id = 2 OR department_id = 4 OR department_id = 11;
 
 SELECT `salary` FROM `employees`;
+
+#Problem 21
+
+SELECT peak_name FROM `peaks`
+ORDER BY `peak_name` ASC;
+
+#Problem 22
+
+SELECT country_name, population FROM `countries`
+WHERE `continent_code` = 'EU'
+ORDER BY `population` DESC, `country_name` ASC
+LIMIT 30;
+
+#Problem 23
+
+
+
+
+
+#Problem 24
+
+SELECT name FROM `characters`
+ORDER BY name ASC;
