@@ -57,7 +57,7 @@ WHERE `salary` IN (25000, 14000, 12500, 23600);
 
 #Problem 10
 
-SELECT * FROM `employees`
+SELECT `first_name`, `last_name` FROM `employees`
 WHERE `manager_id` IS NULL;
 
 
