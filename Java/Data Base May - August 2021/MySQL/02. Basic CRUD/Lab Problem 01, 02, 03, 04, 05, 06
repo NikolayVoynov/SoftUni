@@ -18,7 +18,7 @@ ORDER BY id;
 UPDATE `employees`
 SET `salary` = `salary` + 100
 WHERE `job_title` = 'Manager';
-SELECT * FROM `employees`;
+SELECT `salary` FROM `employees`;
 
 #Problem 04
 
