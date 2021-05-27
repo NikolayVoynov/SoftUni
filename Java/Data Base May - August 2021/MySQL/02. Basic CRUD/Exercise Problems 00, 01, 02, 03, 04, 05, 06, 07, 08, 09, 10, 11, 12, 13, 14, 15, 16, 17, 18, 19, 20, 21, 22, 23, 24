@@ -89,3 +89,8 @@ SELECT concat_ws(' ', `first_name`, `middle_name`, `last_name`) AS `full_name`, 
 FROM `employees`;
 
 SELECT * FROM `v_employees_job_titles`;
+
+#Problem 17
+
+SELECT DISTINCT `job_title` FROM `employees`
+ORDER BY `job_title` ASC;
