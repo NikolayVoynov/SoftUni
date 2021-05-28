@@ -51,3 +51,52 @@ CREATE TABLE clients (
 INSERT INTO clients(`first_name`,`last_name`,`room_id`) 
 VALUES('Pesho','Petrov', 1),('Gosho','Georgiev', 2),
 ('Mariya','Marieva', 2), ('Katya','Katerinova', 1), ('Nikolay','Nikolaev', 2);
+
+
+#Problem 01
+
+SELECT id, first_name, last_name, job_title FROM `employees`
+ORDER BY id;
+
+#Problem 02
+
+SELECT id, 
+concat(`first_name`, ' ', `last_name`) AS 'full_name',
+job_title,
+salary
+FROM `employees`
+WHERE salary > 1000
+ORDER BY id;
+
+#Problem 03
+
+UPDATE `employees`
+SET `salary` = `salary` + 100
+WHERE `job_title` = 'Manager';
+SELECT * FROM `employees`;
+
+#Problem 04
+
+CREATE VIEW `top_paid_employee` AS
+SELECT * FROM `employees`
+ORDER BY salary DESC
+LIMIT 1;
+
+SELECT * FROM `top_paid_employee`;
+
+#Problem 05
+
+SELECT * FROM `employees`
+WHERE `department_id` = 4 AND `salary` >= 1000
+ORDER BY id;
+
+#Problem 06
+
+DELETE FROM `employees`
+WHERE `department_id` = 1 OR `department_id` = 2;
+
+SELECT * FROM `employees`
+ORDER BY id;
+
+
+
