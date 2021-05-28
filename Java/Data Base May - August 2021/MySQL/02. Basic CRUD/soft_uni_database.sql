@@ -1672,3 +1672,133 @@ INSERT INTO `towns` (`town_id`, `name`) VALUES
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+
+
+#Problem 01
+
+SELECT * FROM `departments`
+ORDER BY department_id;
+
+#Problem 02
+
+SELECT name FROM `departments`
+ORDER BY department_id;
+
+#Problem 03
+
+SELECT first_name, last_name, salary FROM `employees`
+ORDER BY employee_id;
+
+#Problem 04
+
+SELECT first_name, middle_name, last_name FROM `employees`
+ORDER BY employee_id;
+
+#Problem 05
+
+SELECT concat(`first_name`, '.', `last_name`, '@softuni.bg') 
+AS 'full_ email_address'
+FROM `employees`;
+
+#Problem 06
+
+SELECT DISTINCT `salary`
+FROM `employees`;
+
+#Problem 07
+
+SELECT * FROM `employees`
+WHERE `job_title` = 'Sales Representative'
+ORDER BY employee_id;
+
+#Problem 08
+
+SELECT first_name, last_name, job_title FROM `employees`
+WHERE 20000 <= `salary` AND `salary` <= 30000
+ORDER BY employee_id;
+
+#Problem 09
+
+SELECT concat_ws(' ',`first_name`, `middle_name`, `last_name`) 
+AS 'Full name'
+FROM `employees`
+WHERE `salary` = 25000 OR `salary` = 14000 OR `salary` = 12500 OR `salary` = 23600;
+
+#Problem 10
+
+SELECT first_name, last_name FROM `employees`
+WHERE `manager_id` IS NULL;
+
+
+#Problem 11
+
+SELECT first_name, last_name, salary FROM `employees`
+WHERE `salary` > 50000
+ORDER BY `salary` DESC;
+
+#Problem 12
+
+SELECT first_name, last_name FROM `employees`
+ORDER BY `salary` DESC
+LIMIT 5;
+
+#Problem 13
+
+SELECT first_name, last_name FROM `employees`
+WHERE `department_id` <> 4;
+
+#Proble 14
+
+SELECT * FROM `employees`
+ORDER BY `salary` DESC, `first_name` ASC, `last_name` DESC, `middle_name` ASC, `employee_id`;
+
+#Problem 15
+
+CREATE VIEW `v_employees_salaries` AS
+SELECT first_name, last_name, salary FROM `employees`;
+
+SELECT * FROM `v_employees_salaries`;
+
+#Problem 16
+
+CREATE VIEW `v_employees_job_titles` AS
+SELECT concat_ws(' ', `first_name`, `middle_name`, `last_name`) AS `full_name`, `job_title`
+FROM `employees`;
+
+SELECT * FROM `v_employees_job_titles`;
+
+#Problem 17
+
+SELECT DISTINCT `job_title` FROM `employees`
+ORDER BY `job_title` ASC;
+
+#Problem 18
+
+SELECT * FROM `projects`
+ORDER BY `start_date` ASC, name, `project_id`
+LIMIT 10;
+
+#Problem 19
+
+SELECT first_name, last_name, hire_date FROM `employees`
+ORDER BY `hire_date` DESC
+LIMIT 7;
+
+#Problem 20
+
+UPDATE `employees`
+SET `salary` = `salary` * 1.12
+WHERE department_id = 1 OR department_id = 2 OR department_id = 4 OR department_id = 11;
+
+SELECT `salary` FROM `employees`;
+
+
+
+
+
+
+
+
+
+
+

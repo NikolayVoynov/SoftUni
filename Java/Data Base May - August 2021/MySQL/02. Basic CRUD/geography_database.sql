@@ -800,3 +800,32 @@ INSERT INTO `rivers` (`id`, `river_name`, `length`, `drainage_area`, `average_di
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+
+#Problem 21
+
+SELECT peak_name FROM `peaks`
+ORDER BY `peak_name` ASC;
+
+#Problem 22
+
+SELECT country_name, population FROM `countries`
+WHERE `continent_code` = 'EU'
+ORDER BY `population` DESC, `country_name` ASC
+LIMIT 30;
+
+#Problem 23
+
+SELECT country_name, country_code, 
+IF(`currency_code` = 'EUR','Euro','Not Euro') AS `currency`
+FROM `countries`
+ORDER BY `country_name` ASC;
+
+
+
+
+
+
+
+
+
+
