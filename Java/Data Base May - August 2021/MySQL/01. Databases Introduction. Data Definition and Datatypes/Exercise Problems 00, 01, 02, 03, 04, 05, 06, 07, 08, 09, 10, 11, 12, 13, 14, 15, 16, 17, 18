@@ -99,7 +99,7 @@ PRIMARY KEY (`id`, `username`);
 #Problem 09
 
 ALTER TABLE `users`
-ALTER COLUMN `last_login_time` SET DEFAULT(CURRENT_TIME);
+CHANGE COLUMN `last_login_time` `last_login_time` DATETIME NULL DEFAULT CURRENT_TIMESTAMP;
 
 #Problem 10
 
