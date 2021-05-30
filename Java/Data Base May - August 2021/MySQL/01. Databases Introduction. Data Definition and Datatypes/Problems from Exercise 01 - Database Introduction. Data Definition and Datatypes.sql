@@ -340,10 +340,10 @@ FOREIGN KEY (`address_id`) REFERENCES `addresses`(`id`);
 
 INSERT INTO `towns`
 VALUE 
-('Sofia'),
-('Plovdiv'),
-('Varna'),
-('Burgas');
+(1, 'Sofia'),
+(2, 'Plovdiv'),
+(3, 'Varna'),
+(4, 'Burgas');
 
 INSERT INTO `addresses`
 VALUES 
@@ -354,11 +354,11 @@ VALUES
 
 INSERT INTO `departments`
 VALUE 
-('Engineering'),
-('Sales'),
-('Marketing'),
-('Software Development'),
-('Quality Assurance');
+(1, 'Engineering'),
+(2, 'Sales'),
+(3, 'Marketing'),
+(4, 'Software Development'),
+(5, 'Quality Assurance');
 
 INSERT INTO `employees` (`id`, `first_name`, `middle_name`, `last_name`, `job_title`, `department_id`, `hire_date`, `salary`, `address_id`)
 VALUE
