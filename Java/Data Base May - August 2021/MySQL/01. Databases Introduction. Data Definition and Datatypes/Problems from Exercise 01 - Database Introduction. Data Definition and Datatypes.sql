@@ -27,28 +27,17 @@ FOREIGN KEY (`town_id`) REFERENCES `towns`(`id`);
 
 #Problem 03
 
--- id	name	age	town_id
--- 1	Kevin	22	    1
--- 2	Bob	    15	    3
--- 3	Steward	NULL	2
-
-
--- id	name
--- 1	Sofia
--- 2	Plovdiv
--- 3	Varna
+INSERT INTO `towns`
+VALUES
+(1,'Sofia'),
+(2,'Plovdiv'),
+(3,'Varna');
 
 INSERT INTO `minions`
 VALUES
 (1,'Kevin',22,1),
 (2,'Bob',15,3),
 (3,'Steward',NULL,2);
-
-INSERT INTO `towns`
-VALUES
-(1,'Sofia'),
-(2,'Plovdiv'),
-(3,'Varna');
 
 #Problem 04
 
@@ -129,32 +118,32 @@ USE `Movies`;
 
 CREATE TABLE `directors`(
 `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-`director_name` VARCHAR(50) NOT NULL,
-`notes` VARCHAR(300)
+`director_name` VARCHAR(75) NOT NULL,
+`notes` VARCHAR(500)
 );
 
 CREATE TABLE `genres`(
 `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-`genre_name` VARCHAR(50) NOT NULL,
-`notes` VARCHAR(300)
+`genre_name` VARCHAR(75) NOT NULL,
+`notes` VARCHAR(500)
 );
 
 CREATE TABLE `categories`(
 `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-`category_name` VARCHAR(50) NOT NULL,
-`notes` VARCHAR(300)
+`category_name` VARCHAR(75) NOT NULL,
+`notes` VARCHAR(500)
 );
 
 CREATE TABLE `movies` (
 `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-`title` VARCHAR(50) NOT NULL,
+`title` VARCHAR(75) NOT NULL,
 `director_id` INT NOT NULL,
-`copyright_year` INT,
-`length` INT,
+`copyright_year` INT NOT NULL,
+`length` INT NOT NULL,
 `genre_id` INT NOT NULL,
 `category_id` INT NOT NULL,
-`rating` DECIMAL(2,1),
-`notes` VARCHAR(300)
+`rating` DECIMAL(2,1) NOT NULL,
+`notes` VARCHAR(500)
 );
 
 ALTER TABLE `movies`
@@ -170,28 +159,36 @@ ADD CONSTRAINT `fk_movies_categories`
 FOREIGN KEY (`category_id`) REFERENCES `categories`(`id`);
 
 INSERT INTO `directors`
-VALUE
+VALUES
 (1, 'Petar Petrov', 'The best director1'),
 (2, 'Ivan Ivanov', 'The best director2'),
-(3, 'George Georiev', 'The best director3');
+(3, 'George Georiev', 'The best director3'),
+(4, 'George Ivanov', 'The best director4'),
+(5, 'Ivan Georiev', 'The best director5');
 
 INSERT INTO `genres`
-VALUE
+VALUES
 (1, 'comedy', 'smth1'),
 (2, 'horror', 'smth2'),
-(3, 'action', 'smth3');
+(3, 'action', 'smth3'),
+(4, 'sci-fi', 'smth4'),
+(5, 'thriller', 'smth5');
 
 INSERT INTO `categories`
-VALUE
+VALUES
 (1, 'first', 'smth1'),
 (2, 'second', 'smth2'),
-(3, 'third', 'smth3');
+(3, 'third', 'smth3'),
+(4, 'forth', 'smth4'),
+(5, 'fifth', 'smth5');
 
 INSERT INTO `movies`
-VALUE
+VALUES
 (1, 'title1', 1, 1988, 220, 2, 3, 8.5, 'a lot'),
-(2, 'title2', 3, 1934, 180, 1, 2, 9.5, 'nothing'),
-(3, 'title3', 2, 2020, 170, 3, 1, 7.3, 'some text');
+(2, 'title2', 3, 1934, 180, 1, 2, 7.5, 'nothing2'),
+(3, 'title3', 2, 1952, 181, 3, 4, 9.3, 'nothing3'),
+(4, 'title4', 4, 1939, 300, 4, 5, 5.5, 'nothing4'),
+(5, 'title5', 5, 2020, 170, 5, 1, 7.3, 'some text');
 
 SELECT * FROM `directors`;
 SELECT * FROM `genres`;
@@ -372,14 +369,14 @@ SELECT * FROM `employees`;
 
 #Problem 15
 
-SELECT * FROM `towns` ORDER BY `name`;
-SELECT * FROM `departments` ORDER BY `name`;
+SELECT * FROM `towns` ORDER BY `name` ASC;
+SELECT * FROM `departments` ORDER BY `name` ASC;
 SELECT * FROM `employees` ORDER BY `salary` DESC;
 
 #Problem 16
 
-SELECT `name` FROM `towns` ORDER BY `name`;
-SELECT `name` FROM `departments` ORDER BY `name`;
+SELECT `name` FROM `towns` ORDER BY `name` ASC;
+SELECT `name` FROM `departments` ORDER BY `name` ASC;
 SELECT `first_name`, `last_name`,`job_title`,`salary` FROM `employees` ORDER BY `salary` DESC;
 
 #Problem 17
