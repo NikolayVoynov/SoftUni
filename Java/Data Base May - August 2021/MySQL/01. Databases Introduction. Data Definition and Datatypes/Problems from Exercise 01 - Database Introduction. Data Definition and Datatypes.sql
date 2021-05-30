@@ -345,6 +345,13 @@ VALUE
 ('Varna'),
 ('Burgas');
 
+INSERT INTO `addresses`
+VALUES 
+(1, 'address1', 1),
+(2, 'address2', 2),
+(3, 'address3', 3),
+(4, 'addres4', 4);
+
 INSERT INTO `departments`
 VALUE 
 ('Engineering'),
