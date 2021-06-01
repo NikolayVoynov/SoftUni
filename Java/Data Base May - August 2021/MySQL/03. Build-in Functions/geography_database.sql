@@ -815,5 +815,13 @@ FROM `peaks`, `rivers`
 WHERE right(`peak_name`, 1) = left(`river_name`, 1)
 ORDER BY `mix`;
 
+#Problem 11
+
+SELECT `peak_name`, `river_name`, 
+lower(concat(`peak_name`, substring(`river_name`, 2))) AS 'mix' 
+FROM `peaks`, `rivers`
+WHERE right(`peak_name`, 1) = left(`river_name`, 1)
+ORDER BY `mix`;
+
 
 
