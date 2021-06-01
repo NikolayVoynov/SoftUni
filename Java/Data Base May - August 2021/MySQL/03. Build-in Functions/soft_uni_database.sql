@@ -1680,6 +1680,18 @@ SELECT `first_name`,`last_name` FROM `employees`
 WHERE substring(`first_name`, 1,2) = 'Sa'
 ORDER BY employee_id;
 
+/* Problem 01 */
+
+SELECT `first_name`,`last_name` FROM `employees`
+WHERE left(`first_name`, 2) = 'Sa'
+ORDER BY employee_id;
+
+/* Problem 01 */
+
+SELECT `first_name`,`last_name` FROM `employees`
+WHERE `first_name` LIKE 'Sa%'
+ORDER BY employee_id;
+
 /* Problem 02 */
 
 SELECT `first_name`, `last_name` FROM `employees`
