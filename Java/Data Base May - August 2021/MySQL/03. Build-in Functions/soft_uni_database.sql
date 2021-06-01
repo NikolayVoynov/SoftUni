@@ -1690,19 +1690,20 @@ ORDER BY employee_id;
 
 SELECT `first_name`,`last_name` FROM `employees`
 WHERE `first_name` LIKE 'Sa%'
-ORDER BY employee_id;
+ORDER BY `employee_id`;
 
 /* Problem 02 */
 
 SELECT `first_name`, `last_name` FROM `employees`
 WHERE `last_name` LIKE '%ei%'
-ORDER BY employee_id;
+ORDER BY `employee_id`;
 
 /* Problem 03 */
 
 SELECT `first_name` FROM `employees`
-WHERE `department_id` IN (3, 10) AND year(`hire_date`) BETWEEN 1995 AND 2005
-ORDER BY employee_id;
+WHERE `department_id` IN (3, 10) 
+AND year(`hire_date`) BETWEEN 1995 AND 2005
+ORDER BY `employee_id`;
 
 /* Problem 04 */
 
@@ -1722,10 +1723,22 @@ SELECT `town_id`, `name` FROM `towns`
 WHERE substring(`name`, 1, 1) IN ('M','K','B','E')
 ORDER BY `name` ASC;
 
+/* Problem 06 */
+
+SELECT `town_id`, `name` FROM `towns`
+WHERE left(`name`, 1) IN ('M','K','B','E')
+ORDER BY `name` ASC;
+
 /* Problem 07 */
 
 SELECT `town_id`, `name` FROM `towns`
 WHERE substring(`name`, 1,1) NOT IN ('R','B','D')
+ORDER BY `name` ASC;
+
+/* Problem 07 */
+
+SELECT `town_id`, `name` FROM `towns`
+WHERE left(`name`, 1) NOT IN ('R','B','D')
 ORDER BY `name` ASC;
 
 /* Problem 08 */
