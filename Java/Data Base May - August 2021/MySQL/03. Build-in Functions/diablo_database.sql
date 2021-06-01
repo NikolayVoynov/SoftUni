@@ -4136,25 +4136,21 @@ ORDER BY `user_name`;
 
 /* Problem 15 */
 
-SELECT `name` AS `game`,
-CASE
-WHEN hour(`start`) BETWEEN 0 AND 11
-THEN 'Morning'
-WHEN hour(`start`) BETWEEN 12 AND 17
-THEN 'Afternoon'
-WHEN hour(`start`) BETWEEN 18 AND 23
-THEN 'Evening'
-END AS `Part of the Day`,
-CASE
-WHEN `duration` <= 3
-THEN 'Extra Short'
-WHEN `duration` >= 4 AND `duration` <= 6
-THEN 'Short'
-WHEN `duration` >=7 AND `duration` <= 10
-THEN 'Long'
-ELSE 'Extra Long'
-END AS `Duration`
-FROM `games`;
+SELECT 
+    `name` AS `game`,
+    (CASE
+        WHEN HOUR(`start`) BETWEEN 0 AND 11 THEN 'Morning'
+        WHEN HOUR(`start`) BETWEEN 12 AND 17 THEN 'Afternoon'
+        WHEN HOUR(`start`) BETWEEN 18 AND 23 THEN 'Evening'
+    END) AS `Part of the Day`,
+    (CASE
+        WHEN `duration` <= 3 THEN 'Extra Short'
+        WHEN `duration` >= 4 AND `duration` <= 6 THEN 'Short'
+        WHEN `duration` >= 7 AND `duration` <= 10 THEN 'Long'
+        ELSE 'Extra Long'
+    END) AS `Duration`
+FROM
+    `games`;
 
 
 
