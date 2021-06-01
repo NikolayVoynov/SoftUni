@@ -4121,6 +4121,13 @@ right(`email`, length(`email`) - position('@' IN `email`)) AS `Email Provider`
 FROM `users`
 ORDER BY `Email Provider` ASC, `user_name` ASC;
 
+/* Problem 13 */
+
+SELECT `user_name`, 
+substring(`email`, locate('@', `email`) + 1) AS `Email Provider` 
+FROM `users`
+ORDER BY `Email Provider`, `user_name`;
+
 /* Problem 14 */
 
 SELECT `user_name`, `ip_address` FROM `users`
