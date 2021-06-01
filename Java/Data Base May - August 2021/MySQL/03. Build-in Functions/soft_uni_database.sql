@@ -1673,65 +1673,61 @@ INSERT INTO `towns` (`town_id`, `name`) VALUES
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 
-#Problem 01
+
+/* Problem 01 */
 
 SELECT `first_name`,`last_name` FROM `employees`
 WHERE substring(`first_name`, 1,2) = 'Sa'
 ORDER BY employee_id;
 
-#Problem 02
+/* Problem 02 */
 
 SELECT `first_name`, `last_name` FROM `employees`
 WHERE `last_name` LIKE '%ei%'
 ORDER BY employee_id;
 
-#Problem 03
+/* Problem 03 */
 
 SELECT `first_name` FROM `employees`
 WHERE `department_id` IN (3, 10) AND year(`hire_date`) BETWEEN 1995 AND 2005
 ORDER BY employee_id;
 
-#Problem 04
+/* Problem 04 */
 
 SELECT `first_name`, `last_name` FROM `employees`
 WHERE `job_title` NOT LIKE '%engineer%'
 ORDER BY `employee_id`;
 
-#Problem 05
+/* Problem 05 */
 
 SELECT `name` FROM `towns`
 WHERE char_length(`name`) IN (5,6)
 ORDER BY `name` ASC;
 
-#Problem 06
+/* Problem 06 */
 
 SELECT `town_id`, `name` FROM `towns`
 WHERE substring(`name`, 1, 1) IN ('M','K','B','E')
 ORDER BY `name` ASC;
 
-#Problem 07
+/* Problem 07 */
 
 SELECT `town_id`, `name` FROM `towns`
 WHERE substring(`name`, 1,1) NOT IN ('R','B','D')
 ORDER BY `name` ASC;
 
-#Problem 08
+/* Problem 08 */
 
+ CREATE VIEW `v_employees_hired_after_2000` AS 
+ SELECT `first_name`, `last_name` FROM `employees`
+ WHERE year(`hire_date`) > 2000;
 
+SELECT * FROM `v_employees_hired_after_2000`;
 
-
-#Problem 09
+/* Problem 09 */
 
 SELECT `first_name`, `last_name` FROM `employees`
 WHERE char_length(`last_name`) = 5;
-
-
-
-
-
-
-
-
 
 
 
