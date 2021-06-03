@@ -1674,6 +1674,18 @@ HAVING `department_id` IN (2, 5, 7);
 
 /* Problem 13 */
 
+SELECT 
+    `department_id`,
+    CASE
+        WHEN `department_id` = 1 THEN AVG(`salary`) + 5000
+        ELSE AVG(`salary`)
+    END AS `avg_salary`
+FROM
+    `employees`
+WHERE
+    `salary` > 30000 AND `manager_id` != 42
+GROUP BY `department_id`
+ORDER BY `department_id`;
 
 
 /* Problem 14 */
@@ -1686,13 +1698,19 @@ ORDER BY `department_id` ASC;
 
 /* Problem 15 */
 
-SELECT count(`salary`) FROM `employees`
-WHERE `job_title` NOT LIKE '%Manager'
+SELECT count(`salary`)
+FROM`employees`
+WHERE isnull(`manager_id`);
 
 /* Problem 16 */
 
 /* Problem 17 */
 
 /* Problem 18 */
+
+SELECT `department_id`, sum(`salary`) AS `total_salary`
+FROM `employees`
+GROUP BY `department_id`
+ORDER BY `department_id`;
 
 
