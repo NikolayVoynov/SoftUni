@@ -1687,7 +1687,6 @@ WHERE
 GROUP BY `department_id`
 ORDER BY `department_id`;
 
-
 /* Problem 14 */
 
 SELECT `department_id`, max(`salary`) AS `max_salary`
