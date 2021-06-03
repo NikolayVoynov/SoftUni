@@ -1670,4 +1670,13 @@ SELECT `department_id`, min(`salary`) AS `minimum_salary`
 FROM `employees`
 WHERE date_format(`hire_date`, '%d/%m/%Y') > '01/01/2000'
 GROUP BY `department_id`
-HAVING `department_id` IN (2, 5, 7)
+HAVING `department_id` IN (2, 5, 7);
+
+/* Problem 13 */
+
+
+
+/* Problem 14 */
+
+SELECT `department_id`, max(`salary`) AS `max_salary`
+FROM `employees`
