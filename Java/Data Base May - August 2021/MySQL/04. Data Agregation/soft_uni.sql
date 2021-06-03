@@ -1680,3 +1680,19 @@ HAVING `department_id` IN (2, 5, 7);
 
 SELECT `department_id`, max(`salary`) AS `max_salary`
 FROM `employees`
+GROUP BY `department_id`
+HAVING `max_salary` NOT BETWEEN 30000 AND 70000
+ORDER BY `department_id` ASC;
+
+/* Problem 15 */
+
+SELECT count(`salary`) FROM `employees`
+WHERE `job_title` NOT LIKE '%Manager'
+
+/* Problem 16 */
+
+/* Problem 17 */
+
+/* Problem 18 */
+
+
