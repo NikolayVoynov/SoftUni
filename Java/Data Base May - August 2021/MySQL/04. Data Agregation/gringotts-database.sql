@@ -242,5 +242,21 @@ FROM `wizzard_deposits`
 GROUP BY `deposit_group`, `magic_wand_creator`
 ORDER BY `magic_wand_creator` ASC, `deposit_group` ASC;
 
+/* Problem 09 */
 
 
+/* Problem 10 */
+
+SELECT left(`first_name`, 1) AS `first_letter`
+FROM `wizzard_deposits`
+WHERE `deposit_group` = 'Troll Chest'
+GROUP BY `first_letter`
+ORDER BY `first_letter`;
+
+/* Problem 11 */
+
+SELECT `deposit_group`, `is_deposit_expired`, avg(`deposit_interest`) AS `average_interest`
+FROM `wizzard_deposits`
+WHERE date_format(`deposit_start_date`, '%d/%m/%Y') > '01/01/1985'
+GROUP BY `deposit_group`, `is_deposit_expired`
+ORDER BY `deposit_group` DESC, `is_deposit_expired` ASC
