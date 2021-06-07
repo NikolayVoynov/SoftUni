@@ -1,3 +1,6 @@
+CREATE DATABASE `self_referencing`;
+USE `self_referencing`;
+
 CREATE TABLE `teachers` (
 `teacher_id` INT PRIMARY KEY AUTO_INCREMENT,
 `name` VARCHAR(30),

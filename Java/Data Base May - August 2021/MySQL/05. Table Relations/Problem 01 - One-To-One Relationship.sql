@@ -1,3 +1,6 @@
+CREATE DATABASE `one_to_one`;
+USE `one_to_one`;
+
 CREATE TABLE `passports`(
 `passport_id` INT PRIMARY KEY AUTO_INCREMENT,
 `passport_number` VARCHAR(50) UNIQUE

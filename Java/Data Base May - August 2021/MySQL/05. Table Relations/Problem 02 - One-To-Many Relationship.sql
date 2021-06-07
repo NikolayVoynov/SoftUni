@@ -1,3 +1,6 @@
+CREATE DATABASE `one_to_many`;
+USE `one_to_many`;
+
 CREATE TABLE `manufacturers` (
 `manufacturer_id` INT PRIMARY KEY AUTO_INCREMENT,
 `name` VARCHAR(20),
