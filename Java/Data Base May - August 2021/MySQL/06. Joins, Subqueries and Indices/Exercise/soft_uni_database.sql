@@ -1725,12 +1725,20 @@ LIMIT 5;
 
 SELECT e.employee_id, e.first_name
 FROM employees AS e
-JOIN employees_projects AS ep
-ON  e.(employee_id, project_id) = ep.(employee_id, project_id)
-WHERE p.name IS NULL
+LEFT JOIN employees_projects AS ep
+ON  e.employee_id = ep.employee_id
+WHERE ep.project_id IS NULL
 ORDER BY e.employee_id DESC
 LIMIT 3;
 	
+/* Problem 05 - Employees Without Project */
+
+SELECT e.employee_id, e.first_name
+FROM employees AS e
+WHERE e.employee_id NOT IN
+(SELECT employee_id FROM employees_projects)
+ORDER BY e.employee_id DESC
+LIMIT 3;    
 	
 /* Problem 06 - Employees Hired After */
 
@@ -1743,10 +1751,61 @@ ORDER BY e.hire_date ASC;
 
 /* Problem 07 - Employees with Project */
 
+SELECT e.employee_id, e.first_name, p.name AS project_name
+FROM employees AS e
+JOIN employees_projects AS ep
+ON e.employee_id = ep.employee_id
+JOIN projects AS p
+USING(project_id)
+WHERE date(p.start_date) > '2002-08-13' 
+AND p.end_date IS NULL
+ORDER BY e.first_name, p.name
+LIMIT 5;
 
 
 /* Problem 08 - Employee 24 */
 
+SELECT e.employee_id, e.first_name,
+IF(year(p.start_date) > 2004, NULL, p.name)
+AS project_name
+FROM employees AS e
+JOIN employees_projects AS ep
+ON e.employee_id = ep.employee_id
+JOIN projects AS p
+ON ep.project_id = p.project_id
+WHERE e.employee_id = 24
+ORDER BY p.name;
+
+/* Problem 09 - Employee Manager */
+
+SELECT e.employee_id, e.first_name, e.manager_id, m.first_name AS manager_name
+FROM employees AS e
+JOIN employees AS m
+ON e.manager_id = m.employee_id
+WHERE e.manager_id IN (3,7)
+ORDER BY e.first_name;
+
+/* Problem 10 - Employee Summary */
+
+SELECT e.employee_id, 
+concat_ws(' ',e.first_name, e.last_name) AS employee_name, 
+concat_ws(' ', m.first_name, m.last_name) AS manager_name, 
+d.name AS department_name
+FROM employees AS e
+JOIN employees AS m
+ON e.manager_id = m.employee_id
+JOIN departments AS d
+ON e.department_id = d.department_id
+ORDER BY e.employee_id
+LIMIT 5;
+
+/* Problem 11 - Min Average Salary */
+
+SELECT avg(salary) AS min_average_salary
+FROM employees
+GROUP BY department_id
+ORDER BY min_average_salary
+LIMIT 1;
 
 
 
