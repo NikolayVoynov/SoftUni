@@ -828,4 +828,22 @@ WHERE c.country_code IN ('BG','RU','US')
 GROUP BY c.country_code
 ORDER BY mountain_range_count DESC;
 
+/* Problem 14 - Countries with Rivers */
+
+SELECT c.country_name, r.river_name
+FROM countries AS c
+LEFT JOIN countries_rivers AS cr
+USING(country_code)
+LEFT JOIN rivers r
+ON cr.river_id = r.id
+WHERE c.continent_code = 'AF'
+ORDER BY c.country_name
+LIMIT 5;
+
+
+
+
+
+
+
 
