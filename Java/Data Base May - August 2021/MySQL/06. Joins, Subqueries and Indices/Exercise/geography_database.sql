@@ -842,10 +842,24 @@ LIMIT 5;
 
 /* Problem 15 - Continents and Currencies */
 
--- SELECT ctr.continent_code, cur.currency_code, count(ctr.currency_code)
--- FROM countries AS ctr
--- JOIN currencies AS cur
--- GROUP BY ctr.continent_code
+SELECT 
+    ctr.continent_code,
+    ctr.currency_code,
+    COUNT(*) AS currency_usage
+FROM
+    countries AS ctr
+GROUP BY ctr.continent_code , ctr.currency_code
+HAVING COUNT(currency_code) > 1
+    AND currency_usage = (SELECT 
+        COUNT(*) AS cnt
+    FROM
+        countries AS ctr2
+    WHERE
+        ctr.continent_code = ctr2.continent_code
+    GROUP BY ctr2.currency_code
+    ORDER BY cnt DESC
+    LIMIT 1)
+ORDER BY ctr.continent_code , ctr.currency_code;
 
 /* Problem 16 - Countries Without Any Mountains */
 
@@ -856,6 +870,32 @@ USING (country_code)
 LEFT JOIN mountains AS m
 ON mc.mountain_id = m.id
 WHERE m.mountain_range IS NULL;
+
+/* Problem 16 - Countries Without Any Mountains */
+
+SELECT count(*)
+FROM countries AS c
+WHERE c.country_code NOT IN
+(SELECT country_code FROM mountains_countries);
+
+/* Problem 17 - Highest Peak and Longest River by Country */
+
+SELECT c.country_name, max(p.elevation) AS highest_peak_elevation, max(r.length) AS longest_river_length
+FROM countries AS c
+JOIN countries_rivers AS cr
+USING(country_code)
+JOIN rivers AS r
+ON cr.river_id = r.id
+JOIN mountains_countries AS mc
+USING(country_code)
+JOIN mountains AS m
+ON mc.mountain_id = m.id
+JOIN peaks AS p
+ON m.id = p.mountain_id
+GROUP BY c.country_name
+ORDER BY highest_peak_elevation DESC, longest_river_length DESC, c.country_name
+LIMIT 5;
+
 
 
 
