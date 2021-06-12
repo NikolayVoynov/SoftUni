@@ -840,7 +840,22 @@ WHERE c.continent_code = 'AF'
 ORDER BY c.country_name
 LIMIT 5;
 
+/* Problem 15 - Continents and Currencies */
 
+-- SELECT ctr.continent_code, cur.currency_code, count(ctr.currency_code)
+-- FROM countries AS ctr
+-- JOIN currencies AS cur
+-- GROUP BY ctr.continent_code
+
+/* Problem 16 - Countries Without Any Mountains */
+
+SELECT count(*) AS country_count
+FROM countries AS ctr
+LEFT JOIN mountains_countries AS mc
+USING (country_code)
+LEFT JOIN mountains AS m
+ON mc.mountain_id = m.id
+WHERE m.mountain_range IS NULL;
 
 
 
