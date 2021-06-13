@@ -1674,4 +1674,16 @@ INSERT INTO `towns` (`town_id`, `name`) VALUES
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 
 
-/* Problem */
+/* Problem 01 - Count Employees by Town */
+
+SELECT count(employee_id)
+FROM employees AS e
+JOIN addresses AS a
+ON a.address_id = e.address_id
+JOIN towns AS t
+ON t.town_id = a.town_id
+WHERE t.name = 'Sofia';
+
+SELECT ufn_count_employees_by_town('Sofia');
+SELECT ufn_count_employees_by_town('Berlin');
+SELECT ufn_count_employees_by_town(NULL);
