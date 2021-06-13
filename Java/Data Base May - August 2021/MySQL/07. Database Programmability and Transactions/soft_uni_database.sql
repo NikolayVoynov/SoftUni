@@ -1687,3 +1687,13 @@ WHERE t.name = 'Sofia';
 SELECT ufn_count_employees_by_town('Sofia');
 SELECT ufn_count_employees_by_town('Berlin');
 SELECT ufn_count_employees_by_town(NULL);
+
+/* Problem 02 - Employees Promotion */
+
+UPDATE employees AS e
+JOIN departments AS d
+ON e.department_id = d.department_id
+SET salary = salary* 1.05
+WHERE d.name = department_nameusp_raise_salariesusp_raise_salaries
+`trigger_example`
+
