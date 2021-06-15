@@ -1765,6 +1765,15 @@ CALL usp_get_employees_by_salary_level('High');
 
 /* Problem 07 - Define Function */
 
+DELIMITER $$
+CREATE FUNCTION `ufn_is_word_comprised`(set_of_letters varchar(50), word varchar(50)) RETURNS bit(1)
+    DETERMINISTIC
+BEGIN
 
+RETURN (SELECT word REGEXP(concat('^[', set_of_letters, ']+$')));
 
+END$$
+
+SELECT ufn_is_word_comprised('oistmiahf', 'Sofia');
+SELECT ufn_is_word_comprised('oistmiahf', 'halves');
 
