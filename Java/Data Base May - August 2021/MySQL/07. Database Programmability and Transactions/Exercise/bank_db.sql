@@ -152,5 +152,21 @@ CALL usp_deposit_money(1,10);
 
 /* Problem 13 - Withdraw Money */
 
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `usp_withdraw_money`(account_id INT, money_amount DECIMAL(20,4))
+BEGIN
+IF money_amount > 0 
+AND
+(SELECT balance FROM accounts WHERE id = account_id) >= money_amount
+THEN
+START TRANSACTION;
 
+UPDATE accounts AS acc SET acc.balance = acc.balance - money_amount WHERE acc.id = account_id;
+END IF;
+
+END$$
+
+CALL usp_withdraw_money(1,10);
+
+/* Problem 14 - Money Transfer */
 
