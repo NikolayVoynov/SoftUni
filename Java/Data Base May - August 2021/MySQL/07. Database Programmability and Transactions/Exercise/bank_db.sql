@@ -3,7 +3,8 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
-USE soft_uni;
+CREATE DATABASE bank_db;
+USE bank_db;
 
 -- Dumping structure for table bank.accounts
 DROP TABLE IF EXISTS `accounts`;
@@ -84,24 +85,27 @@ END$$
 
 CALL usp_get_holders_full_name;
 
-/* Problem 09 - People with Balanace Higher Than*/
+/* Problem 09 - People with Balanace Higher Than */
 
--- SELECT ah.first_name, ah.last_name, 
--- FROM account_holders AS ah
--- JOIN accounts AS acc
--- ON ah.id = acc.account_holder_id
--- WHERE (
--- SELECT sum(balance)
--- FROM accounts AS acc1
--- JOIN account_holders AS ah1
--- WHERE acc1.account_holder_id = ah1.id
--- )> 7000
--- ORDER BY ah.id;
+DELIMITER $$
+CREATE PROCEDURE `usp_calculate_future_value_for_account`(acc_id INT, interest DECIMAL(20,4))
+BEGIN
+
+SELECT a.id AS account_id, ah.first_name, ah.last_name, a.balance AS current_balance,
+(SELECT ufn_calculate_future_value(a.balance, interest, 5)) AS balance_in_5_years
+FROM accounts AS a
+JOIN account_holders AS ah
+ON a.account_holder_id = ah.id
+WHERE a.id = acc_id;
+
+END$$
+
+CALL usp_get_holders_with_balance_higher_than(7000);
 
 /* Problem 10 - Future Value Function */
 
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` FUNCTION `ufn_calculate_future_value`(sum DECIMAL(25,4), yearly_interest_rate DOUBLE, number_of_years INT) RETURNS decimal(50,4)
+CREATE FUNCTION `ufn_calculate_future_value`(sum DECIMAL(25,4), yearly_interest_rate DOUBLE, number_of_years INT) RETURNS decimal(50,4)
     DETERMINISTIC
 BEGIN
 DECLARE future_value DECIMAL(50,4);
@@ -112,4 +116,41 @@ RETURN future_value;
 END$$
 
 SELECT ufn_calculate_future_value(1000,0.5,5);
+
+/* Problem 11 - Calculating Interest */
+
+DELIMITER $$
+CREATE PROCEDURE `usp_calculate_future_value_for_account`(acc_id INT, interest DECIMAL(20,4))
+BEGIN
+
+SELECT a.id AS account_id, ah.first_name, ah.last_name, a.balance AS current_balance,
+(SELECT ufn_calculate_future_value(a.balance, interest, 5)) AS balance_in_5_years
+FROM accounts AS a
+JOIN account_holders AS ah
+ON a.account_holder_id = ah.id
+WHERE a.id = acc_id;
+
+END$$
+
+CALL usp_calculate_future_value_for_account(1,0.1);
+
+/* Problem 12 - Deposit Money */
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `usp_deposit_money`(account_id INT, money_amount DECIMAL(20,4))
+BEGIN
+	IF money_amount > 0 THEN
+    START TRANSACTION;
+    
+    UPDATE accounts AS acc 
+    SET acc.balance = acc.balance + money_amount
+    WHERE acc.id = account_id;
+    END IF;
+END$$
+
+CALL usp_deposit_money(1,10);
+
+/* Problem 13 - Withdraw Money */
+
+
 
