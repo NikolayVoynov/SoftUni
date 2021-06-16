@@ -1,4 +1,5 @@
-USE fsd;
+CREATE DATABASE fsd_5_6_7_8_9_10_11;
+USE fsd_5_6_7_8_9_10_11;
 
 CREATE TABLE players(
 id INT AUTO_INCREMENT PRIMARY KEY,
@@ -153,13 +154,14 @@ ORDER BY salary DESC;
  
 DELIMITER $$
 CREATE FUNCTION `udf_stadium_players_count`(stadium_name VARCHAR(30)) RETURNS int
-    DETERMINISTIC
+DETERMINISTIC
 BEGIN
-		DECLARE `count_players` INT;
-		SET `count_players` :=( SELECT count(p.first_name) FROM players AS p
-								RIGHT JOIN teams AS t ON p.team_id = t.id 
-                                JOIN stadiums AS stm ON t.stadium_id = stm.id
-								WHERE stm.`name` = `stadium_name`);
+DECLARE `count_players` INT;
+SET `count_players` :=( 
+SELECT count(p.first_name) FROM players AS p
+RIGHT JOIN teams AS t ON p.team_id = t.id 
+JOIN stadiums AS stm ON t.stadium_id = stm.id
+WHERE stm.`name` = `stadium_name`);
 RETURN `count_players`;
 END$$
 
