@@ -141,7 +141,56 @@ GROUP BY str.`name`
 HAVING employees_count >= 1
 ORDER BY full_address ASC;
 
+/* Problem 10 - Find full name of top paid employee by store name */
 
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` FUNCTION `udf_top_paid_employee_by_store`(store_name VARCHAR(50)) RETURNS varchar(450) CHARSET utf8mb4
+    DETERMINISTIC
+BEGIN
+
+DECLARE top_paid_employee_name VARCHAR(450);
+
+SET top_paid_employee_name := (
+SELECT concat(first_name, ' ' , middle_name,'. ', last_name, ' works in store for ', 2020 - year(hire_date),' years')
+FROM employees
+JOIN stores
+ON employees.store_id = stores.id
+WHERE stores.`name` LIKE store_name
+ORDER BY salary DESC
+LIMIT 1
+);
+
+RETURN top_paid_employee_name;
+END$$
+
+SELECT udf_top_paid_employee_by_store('Stronghold');
+SELECT udf_top_paid_employee_by_store('Keylex');
+
+
+/* Problem 11 - Update product price by address */
+
+SELECT 
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `udp_update_product_price`(address_name VARCHAR (50))
+BEGIN
+
+UPDATE products
+SET price = IF(substring(address_name, 1, 1) = 0, price + 100, price +200)
+WHERE id = (
+SELECT product_id
+FROM products_stores AS ps
+JOIN stores AS str
+ON ps.store_id = str.id
+JOIN addresses AS a
+ON str.address_id = a.id
+WHERE a.`name` LIKE address_name
+LIMIT 1
+);
+
+END$$
+
+-- Result is 10/15
 
 
 
