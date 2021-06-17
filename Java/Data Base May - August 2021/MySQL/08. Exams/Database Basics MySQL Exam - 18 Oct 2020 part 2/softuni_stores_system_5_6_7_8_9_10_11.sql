@@ -102,7 +102,48 @@ ON prd.picture_id = pic.id
 WHERE char_length(prd.`description`) > 100 AND year(pic.added_on) < 2019 AND prd.price >20
 ORDER BY prd.price DESC;
 
-/* Problem 07 Counts of products in stores and their average */
+/* Problem 07 - Counts of products in stores and their average */
+
+SELECT str.`name`, count(prd.`name`) AS product_count, round(avg(prd.price), 2) AS `avg`
+FROM stores AS str
+LEFT JOIN products_stores AS prst
+ON str.id = prst.store_id
+LEFT JOIN products AS prd
+ON prst.product_id = prd.id
+GROUP BY str.`name`
+ORDER BY product_count DESC,  `avg` DESC, str.id;
+
+/* Problem 08 - Specific employee */
+
+SELECT concat_ws(' ', e.first_name, e.last_name) AS full_name,
+str.`name`, a.`name`, e.salary
+FROM employees AS e
+JOIN stores AS str
+ON e.store_id = str.id
+JOIN addresses AS a
+ON str.address_id = a.id
+WHERE e.salary < 4000 AND a.`name` LIKE '%5%' AND 
+char_length(str.`name`) > 8 AND e.last_name LIKE '%n';
+
+/* Problem 09 - Find all information of stores */
+
+SELECT reverse(str.`name`) AS reversed_name,
+concat_ws('-', upper(tw.`name`), a.`name`) AS full_address,
+count(e.first_name) AS employees_count
+FROM stores AS str
+JOIN addresses AS a
+ON str.address_id = a.id
+JOIN towns AS tw
+ON a.town_id = tw.id
+JOIN employees AS e
+ON str.id = e.store_id
+GROUP BY str.`name`
+HAVING employees_count >= 1
+ORDER BY full_address ASC;
+
+
+
+
 
 
 
