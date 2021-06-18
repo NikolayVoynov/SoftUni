@@ -149,8 +149,20 @@ SELECT udf_client_cards_count('Baxy David');
 
 /* Problem 11 - Extract Client Info */
 
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `udp_clientinfo`(fullname VARCHAR(50))
+BEGIN
 
- 
+SELECT cl.full_name, cl.age, ba.account_number, concat('$','',ba.balance) AS balance
+FROM clients AS cl
+JOIN bank_accounts AS ba
+ON cl.id = ba.client_id
+WHERE cl.full_name LIKE fullname;
+
+END$$
+
+CALL udp_clientinfo('Hunter Wesgate');
+
 
 
 
