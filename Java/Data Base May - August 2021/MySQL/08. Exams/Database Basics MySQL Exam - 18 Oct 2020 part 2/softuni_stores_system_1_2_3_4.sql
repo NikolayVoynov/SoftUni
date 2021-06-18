@@ -85,17 +85,16 @@ REFERENCES stores(id)
 
 /* Problem 02 - Insert */
 
--- INSERT INTO products_stores (product_id, store_id)
--- SELECT id, 1
--- FROM products AS p
--- WHERE p.id NOT IN (SELECT product_id FROM products_stores);
+INSERT INTO products_stores (product_id, store_id)
+(SELECT p.id, 1 FROM products AS p where p.id not in 
+(SELECT product_id FROM products_stores as ps));
 
 /* Problem 03 - Update */
 
--- UPDATE employees
--- SET manager_id = 3 AND salary = salary - 500
--- WHERE year(hire_date) > 2003
--- AND store_id != (SELECT id FROM stores WHERE `name` LIKE 'Cardguard' OR `name` LIKE '');
+UPDATE employees e
+SET e.manager_id = 3, e.salary = e.salary - 500
+WHERE year(e.hire_date) > 2003
+AND e.store_id IN (SELECT id FROM stores WHERE `name` NOT IN ('Cardguard', 'Veribet'));
 
 /* Problem 04 - Delete */
 
