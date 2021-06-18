@@ -169,15 +169,15 @@ SELECT udf_top_paid_employee_by_store('Keylex');
 
 /* Problem 11 - Update product price by address */
 
-SELECT 
+-- FIRST SOLUTION
 
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `udp_update_product_price`(address_name VARCHAR (50))
+CREATE PROCEDURE `udp_update_product_price`(address_name VARCHAR (50))
 BEGIN
 
 UPDATE products
 SET price = IF(substring(address_name, 1, 1) = 0, price + 100, price +200)
-WHERE id = (
+WHERE id IN (
 SELECT product_id
 FROM products_stores AS ps
 JOIN stores AS str
@@ -185,12 +185,32 @@ ON ps.store_id = str.id
 JOIN addresses AS a
 ON str.address_id = a.id
 WHERE a.`name` LIKE address_name
-LIMIT 1
 );
 
 END$$
 
--- Result is 10/15
+-- SECOND SOLUTION
+
+DELIMITER $$
+CREATE PROCEDURE `udp_update_product_price`(address_name VARCHAR (50))
+BEGIN
+
+DECLARE increase_amount INT;
+IF address_name LIKE '0%' THEN SET increase_amount = 100;
+ELSE SET increase_amount = 200;
+END IF;
+
+UPDATE products AS p
+SET p.price = p.price + increase_amount
+WHERE p.id IN (
+SELECT ps.product_id
+FROM addresses AS a 
+JOIN stores AS s ON a.id = s.address_id
+JOIN products_stores AS ps ON s.id = ps.store_id
+WHERE a.`name` = address_name
+);
+END$$
+
 
 
 
