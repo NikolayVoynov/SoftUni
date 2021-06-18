@@ -75,10 +75,9 @@ WHERE ec.employee_id = ec.client_id;
 
 /* Problem 04 - Delete */
 
--- DELETE FROM employees_clients ec
--- JOIN ( SELECT ec2.client_id FROM employees_clients ec2
--- WHERE ec2.client_id IS NULL
--- )
+DELETE FROM employees
+WHERE id NOT IN (SELECT employee_id FROM employees_clients);
+
 
 /* Problem 05 - Clients */
 
