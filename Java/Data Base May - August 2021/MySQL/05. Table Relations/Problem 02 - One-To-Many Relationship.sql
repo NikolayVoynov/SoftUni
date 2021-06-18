@@ -10,11 +10,15 @@ CREATE TABLE `manufacturers` (
 CREATE TABLE `models` (
 `model_id` INT PRIMARY KEY AUTO_INCREMENT,
 `name` VARCHAR(40),
-`manufacturer_id` INT,
-CONSTRAINT `fk_models_manufacturers`
-FOREIGN KEY (`manufacturer_id`)
-REFERENCES `manufacturers`(`manufacturer_id`)
+`manufacturer_id` INT
 );
+
+ALTER TABLE `models` AUTO_INCREMENT = 101;
+
+ALTER TABLE `models`
+ADD CONSTRAINT `fk_models_manufacturers`
+FOREIGN KEY (`manufacturer_id`)
+REFERENCES `manufacturers`(`manufacturer_id`);
 
 INSERT INTO `manufacturers`
 VALUES
@@ -22,13 +26,13 @@ VALUES
 (2,'Tesla','2003-01-01'),
 (3,'Lada','1966-05-01');
 
-INSERT INTO `models`
+INSERT INTO `models` (`name`, `manufacturer_id`)
 VALUES
-(101,	'X1',	1),
-(102,	'i6',	1),
-(103,	'Model S',	2),
-(104,	'Model X',	2),
-(105,	'Model 3',	2),
-(106,	'Nova',	3);
+('X1',	1),
+('i6',	1),
+('Model S',	2),
+('Model X',	2),
+('Model 3',	2),
+('Nova', 3);
 
 
