@@ -1,5 +1,5 @@
-CREATE DATABASE fsd;
-USE fsd;
+CREATE DATABASE fsd_1_2_3_4;
+USE fsd_1_2_3_4;
 
 CREATE TABLE players(
 id INT AUTO_INCREMENT PRIMARY KEY,
@@ -103,10 +103,17 @@ WHERE age >= 45;
 
 /* Problem 03 - Update */
 
+/* 1st solution */
 UPDATE coaches
 SET coach_level = coach_level + 1
 WHERE first_name LIKE 'A%' 
 AND id = (SELECT coach_id FROM players_coaches WHERE coach_id = id LIMIT 1);
+
+/* 2nd solution */
+UPDATE coaches
+SET coach_level = coach_level + 1
+WHERE first_name LIKE 'A%' 
+AND id IN (SELECT coach_id FROM players_coaches WHERE count(player_id) > 0 GROUP BY coach_id);
 
 /* Problem 04 - Delete */
 
