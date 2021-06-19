@@ -159,6 +159,91 @@ WHERE '2019' - year(c.birth_date) < 30 AND tc.job_during_journey LIKE 'Pilot'
 ORDER BY ssh.`name`;
 
 
+/* Problem 11 - Extract all educational mission */
+
+SELECT pl.`name`, spt.`name`
+FROM planets AS pl
+JOIN spaceports AS spt ON pl.id = spt.planet_id
+JOIN journeys AS j ON spt.id = j.destination_spaceport_id
+WHERE j.purpose LIKE 'Educational'
+ORDER BY spt.`name` DESC;
+
+/* Problem 12 - Extract all planets and their journey count */
+
+SELECT pl.`name`, count(j.id) AS journeys_count
+FROM planets AS pl
+JOIN spaceports AS spt ON pl.id = spt.planet_id
+JOIN journeys AS j ON spt.id = j.destination_spaceport_id
+GROUP BY pl.id
+ORDER BY journeys_count DESC, pl.`name`;
+
+/* Problem 13 - Extract the shortest journey */
+
+SELECT j.id, pl.`name` AS planet_name, spt.`name` AS spaceport_name, j.purpose AS journey_purpose
+FROM journeys AS j
+JOIN spaceports AS spt ON spt.id = j.destination_spaceport_id
+JOIN planets AS pl ON pl.id = spt.planet_id
+ORDER BY datediff(j.journey_end, j.journey_start) ASC
+LIMIT 1;
+
+/* Problem 14 - Extract the less popular job */
+
+SELECT tc.job_during_journey
+FROM travel_cards AS tc
+WHERE tc.journey_id = 
+(
+SELECT j.id FROM journeys AS j
+ORDER BY datediff(j.journey_end, j.journey_start) DESC
+LIMIT 1
+)
+GROUP BY tc.job_during_journey
+ORDER BY count(tc.job_during_journey)
+LIMIT 1;
+
+/* Problem 15 - Get colonists count */
+
+DELIMITER $$
+CREATE FUNCTION `udf_count_colonists_by_destination_planet`(planet_name VARCHAR (30)) RETURNS int
+    DETERMINISTIC
+BEGIN
+DECLARE colonists_number INT;
+SET colonists_number := (SELECT count(c.id)
+FROM colonists AS c
+JOIN travel_cards tc ON tc.colonist_id = c.id 
+JOIN journeys AS j ON j.id = tc.journey_id
+JOIN spaceports AS spt ON spt.id = j.destination_spaceport_id
+JOIN planets AS pl ON pl.id = spt.planet_id
+WHERE pl.`name` LIKE planet_name);
+
+RETURN colonists_number;
+END$$
+
+SELECT udf_count_colonists_by_destination_planet('Otroyphus');
+
+/* Problem 16 - Modify spaceship */
+
+DELIMITER $$
+CREATE PROCEDURE `udp_modify_spaceship_light_speed_rate`(spaceship_name VARCHAR(50), light_speed_rate_increse INT(11))
+BEGIN
+
+IF spaceship_name IN (SELECT `name` FROM spaceships) 
+THEN
+	UPDATE spaceships ssh
+    SET ssh.light_speed_rate = ssh.light_speed_rate + light_speed_rate_increse
+    WHERE ssh.`name` = spaceship_name;
+ELSE
+	SIGNAL SQLSTATE '45000'
+	SET MESSAGE_TEXT = 'Spaceship you are trying to modify does not exists.';
+    ROLLBACK;
+END IF;
+END$$
+
+
+CALL udp_modify_spaceship_light_speed_rate('Na Pesho koraba', 1914);
+CALL udp_modify_spaceship_light_speed_rate('USS Templar', 5);
+
+
+
 
 
 
