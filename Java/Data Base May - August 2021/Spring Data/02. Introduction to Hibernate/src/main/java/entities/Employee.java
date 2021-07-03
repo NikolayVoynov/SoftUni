@@ -79,7 +79,7 @@ public class Employee {
         this.department = department;
     }
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "manager_id", referencedColumnName = "employee_id")
     public Employee getManager() {
         return manager;
