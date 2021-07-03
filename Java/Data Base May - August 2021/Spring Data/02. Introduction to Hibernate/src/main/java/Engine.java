@@ -77,6 +77,22 @@ public class Engine implements Runnable {
         System.out.printf("%d addresses in %s deleted", addresses.size(), townName);
     }
 
+    @SuppressWarnings("unchecked")
+    private void exerciseTwelveEmployeesMaximumSalaries() {
+        List<Object[]> listOfDeptMaxSalary =
+                entityManager.
+                        createNativeQuery("SELECT d.name, MAX(e.salary) AS `m_salary` FROM departments d " +
+                                "JOIN employees e on d.department_id = e.department_id " +
+                                "GROUP BY d.name " +
+                                "HAVING m_salary NOT BETWEEN 30000 AND 70000;")
+                        .getResultList();
+
+        listOfDeptMaxSalary.forEach(objects -> {
+            System.out.printf("%s %s%n", objects[0],objects[1]);
+        });
+
+    }
+
     private void exerciseElevenFindEmployeesByFirstName() throws IOException {
         System.out.println("Enter pattern for first name of employee:");
         String pattern = bufferedReader.readLine();
@@ -92,76 +108,6 @@ public class Engine implements Runnable {
             System.out.printf("%s %s - %s - ($%.2f)%n",
                     employee.getFirstName(), employee.getLastName(), employee.getJobTitle(), employee.getSalary());
         }
-    }
-
-    private void exerciseNineFindLatest10Projects() {
-        List<Project> projectList =
-                entityManager
-                .createQuery("SELECT p FROM Project p " +
-                        "ORDER BY p.startDate DESC, p.name", Project.class)
-                        .setMaxResults(10)
-                .getResultList();
-
-        StringBuilder resultList10Projects = new StringBuilder();
-        for (Project project : projectList) {
-            resultList10Projects
-                    .append(String.format("Project name: %s", project.getName()))
-                    .append(System.lineSeparator())
-                    .append(String.format("       Project Description: %s", project.getDescription()))
-                    .append(System.lineSeparator())
-                    .append(String.format("       Project Start Date: %s",  project.getStartDate()
-                            .format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.s"))))
-                    .append(System.lineSeparator())
-                    .append(String.format("       Project End Date: %s",project.getEndDate()))
-                    .append(System.lineSeparator());
-        }
-
-        System.out.print(resultList10Projects.toString().trim());
-    }
-
-    @SuppressWarnings("unchecked")
-    private void exerciseEightGetEmployeeWithProject() throws IOException {
-        System.out.println("Enter employee id:");
-        int idEmployee = Integer.parseInt(bufferedReader.readLine());
-
-        Employee employee =
-                entityManager
-                .createQuery("SELECT e FROM Employee e " +
-                        "WHERE e.id = :e_id", Employee.class)
-                .setParameter("e_id", idEmployee)
-                .getSingleResult();
-
-       List<String> list = entityManager
-               .createNativeQuery("SELECT p.name FROM projects p " +
-                       "JOIN employees_projects ep on p.project_id = ep.project_id " +
-                       "WHERE employee_id = :e_id " +
-                       "ORDER BY p.name ASC")
-               .setParameter("e_id", idEmployee)
-               .getResultList();
-
-
-        System.out.printf("%s %s - %s%n", employee.getFirstName(), employee.getLastName(), employee.getJobTitle());
-
-        for (String s : list) {
-            System.out.printf("      %s%n", s);
-        }
-
-    }
-
-    @SuppressWarnings("unchecked")
-    private void exerciseTwelveEmployeesMaximumSalaries() {
-        List<Object[]> listOfDeptMaxSalary =
-                entityManager.
-                        createNativeQuery("SELECT d.name, MAX(e.salary) AS `m_salary` FROM departments d " +
-                                "JOIN employees e on d.department_id = e.department_id " +
-                                "GROUP BY d.name " +
-                                "HAVING m_salary NOT BETWEEN 30000 AND 70000;")
-                .getResultList();
-
-        listOfDeptMaxSalary.forEach(objects -> {
-            System.out.printf("%s %s%n", objects[0],objects[1]);
-        });
-
     }
 
     private void exerciseTenIncreaseSalaries() {
@@ -188,6 +134,60 @@ public class Engine implements Runnable {
                             employee.getLastName(),
                             employee.getSalary());
                 });
+    }
+
+    private void exerciseNineFindLatest10Projects() {
+        List<Project> projectList =
+                entityManager
+                        .createQuery("SELECT p FROM Project p " +
+                                "ORDER BY p.startDate DESC, p.name", Project.class)
+                        .setMaxResults(10)
+                        .getResultList();
+
+        StringBuilder resultList10Projects = new StringBuilder();
+        for (Project project : projectList) {
+            resultList10Projects
+                    .append(String.format("Project name: %s", project.getName()))
+                    .append(System.lineSeparator())
+                    .append(String.format("       Project Description: %s", project.getDescription()))
+                    .append(System.lineSeparator())
+                    .append(String.format("       Project Start Date: %s",  project.getStartDate()
+                            .format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.s"))))
+                    .append(System.lineSeparator())
+                    .append(String.format("       Project End Date: %s",project.getEndDate()))
+                    .append(System.lineSeparator());
+        }
+
+        System.out.print(resultList10Projects.toString().trim());
+    }
+
+    @SuppressWarnings("unchecked")
+    private void exerciseEightGetEmployeeWithProject() throws IOException {
+        System.out.println("Enter employee id:");
+        int idEmployee = Integer.parseInt(bufferedReader.readLine());
+
+        Employee employee =
+                entityManager
+                        .createQuery("SELECT e FROM Employee e " +
+                                "WHERE e.id = :e_id", Employee.class)
+                        .setParameter("e_id", idEmployee)
+                        .getSingleResult();
+
+        List<String> list = entityManager
+                .createNativeQuery("SELECT p.name FROM projects p " +
+                        "JOIN employees_projects ep on p.project_id = ep.project_id " +
+                        "WHERE employee_id = :e_id " +
+                        "ORDER BY p.name ASC")
+                .setParameter("e_id", idEmployee)
+                .getResultList();
+
+
+        System.out.printf("%s %s - %s%n", employee.getFirstName(), employee.getLastName(), employee.getJobTitle());
+
+        for (String s : list) {
+            System.out.printf("      %s%n", s);
+        }
+
     }
 
     private void exerciseSevenAddressesWithEmployeeCount() {
