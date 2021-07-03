@@ -9,8 +9,10 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.math.BigDecimal;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Set;
+import java.sql.Timestamp;
 
 public class Engine implements Runnable {
 
@@ -48,7 +50,6 @@ public class Engine implements Runnable {
         } finally {
             entityManager.close();
         }
-
     }
 
     private void exerciseElevenFindEmployeesByFirstName() throws IOException {
@@ -83,9 +84,10 @@ public class Engine implements Runnable {
                     .append(System.lineSeparator())
                     .append(String.format("       Project Description: %s", project.getDescription()))
                     .append(System.lineSeparator())
-                    .append(String.format("       Project Start Date: %s", project.getStartDate()))
+                    .append(String.format("       Project Start Date: %s",  project.getStartDate()
+                            .format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.s"))))
                     .append(System.lineSeparator())
-                    .append(String.format("       Project End Date: %s", project.getEndDate()))
+                    .append(String.format("       Project End Date: %s",project.getEndDate()))
                     .append(System.lineSeparator());
         }
 
