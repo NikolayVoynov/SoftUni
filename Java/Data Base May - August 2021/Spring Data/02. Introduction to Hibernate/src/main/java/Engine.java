@@ -12,7 +12,6 @@ import java.math.BigDecimal;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Set;
-import java.sql.Timestamp;
 
 public class Engine implements Runnable {
 
@@ -50,6 +49,32 @@ public class Engine implements Runnable {
         } finally {
             entityManager.close();
         }
+    }
+
+    private void exerciseThirteenRemoveTowns() throws IOException {
+        System.out.println("Enter town name:");
+        String townName = bufferedReader.readLine();
+
+        Town town = entityManager
+                .createQuery("SELECT t FROM Town t " +
+                        "WHERE t.name = :t_name", Town.class)
+                .setParameter("t_name", townName)
+                .getSingleResult();
+
+
+        List<Address> addresses = entityManager
+                .createQuery("SELECT a FROM Address a " +
+                        "WHERE a.town.id = :t_id", Address.class)
+                .setParameter("t_id",town.getId())
+                .getResultList();
+
+        entityManager.createQuery("SELECT e FROM Employee e " +
+                "WHERE e.address.town.name = :town_name", Employee.class)
+                .setParameter("town_name", townName)
+                .getResultStream()
+                .forEach(e -> e.setAddress(null));
+
+        System.out.printf("%d addresses in %s deleted", addresses.size(), townName);
     }
 
     private void exerciseElevenFindEmployeesByFirstName() throws IOException {
@@ -121,41 +146,6 @@ public class Engine implements Runnable {
             System.out.printf("      %s%n", s);
         }
 
-    }
-
-    private void exerciseThirteenRemoveTowns() throws IOException {
-        System.out.println("Enter town name:");
-        String townName = bufferedReader.readLine();
-
-        Town town = entityManager
-                .createQuery("SELECT t FROM Town t " +
-                        "WHERE t.name = :t_name", Town.class)
-                .setParameter("t_name", townName)
-                .getSingleResult();
-
-        int affectedAddresses = removeAddressesByTownId(town.getId());
-
-        entityManager.getTransaction().begin();
-        entityManager.remove(town);
-        entityManager.getTransaction().commit();
-
-        System.out.printf("%d addresses in %s deleted", affectedAddresses, townName);
-
-    }
-
-    private int removeAddressesByTownId(Integer id) {
-
-        List<Address> addresses = entityManager
-                .createQuery("SELECT a FROM Address a " +
-                        "WHERE a.town.id = :t_id", Address.class)
-                .setParameter("t_id",id)
-                .getResultList();
-
-        entityManager.getTransaction().begin();
-        addresses.forEach(entityManager::remove);
-        entityManager.getTransaction().commit();
-
-        return addresses.size();
     }
 
     @SuppressWarnings("unchecked")
