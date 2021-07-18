@@ -107,8 +107,13 @@ public class GameServiceImpl implements GameService {
         System.out.printf("Release date: %s%n", gameList.get(0).getReleaseDate().toString());
     }
 
-    @Override
-    public void printGamesBoughtByLoggedUser() {
-
-    }
+//    @Override
+//    public void purchaseGameByLoggedUser(String purchasedGameTitle) {
+//
+//    }
+//
+//    @Override
+//    public void printGamesBoughtByLoggedUser() {
+//
+//    }
 }

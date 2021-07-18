@@ -15,5 +15,7 @@ public interface GameService {
 
     void printDetailGame(String gameTitle);
 
-    void printGamesBoughtByLoggedUser();
+//    void purchaseGameByLoggedUser(String command);
+//
+//    void printGamesBoughtByLoggedUser();
 }

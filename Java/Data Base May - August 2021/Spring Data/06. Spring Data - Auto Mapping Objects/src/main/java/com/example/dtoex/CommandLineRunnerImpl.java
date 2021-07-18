@@ -50,7 +50,8 @@ public class CommandLineRunnerImpl implements CommandLineRunner {
                 case "DeleteGame" -> gameService.deleteGame(Long.parseLong(commands[1]));
                 case "AllGames" -> gameService.printAllGamesTitlesAndPrices();
                 case "DetailGame" -> gameService.printDetailGame(commands[1]);
-                case "OwnedGames" -> gameService.printGamesBoughtByLoggedUser();
+//                case "PurchaseGame" -> gameService.purchaseGameByLoggedUser(commands[1]);
+//                case "OwnedGames" -> gameService.printGamesBoughtByLoggedUser();
             }
         }
     }
