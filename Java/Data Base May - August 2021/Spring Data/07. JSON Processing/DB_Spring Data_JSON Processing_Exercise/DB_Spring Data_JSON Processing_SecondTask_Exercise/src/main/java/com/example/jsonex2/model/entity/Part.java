@@ -2,6 +2,7 @@ package com.example.jsonex2.model.entity;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.Objects;
 import java.util.Set;
 
 @Entity
@@ -53,7 +54,7 @@ public class Part extends BaseEntity {
         this.supplier = supplier;
     }
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     public Set<Car> getCars() {
         return cars;
     }

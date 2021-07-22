@@ -1,6 +1,9 @@
 package com.example.jsonex2.service.impl;
 
 import com.example.jsonex2.model.dto.SaleSeedDtos;
+import com.example.jsonex2.model.entity.Car;
+import com.example.jsonex2.model.entity.Customer;
+import com.example.jsonex2.model.entity.Sale;
 import com.example.jsonex2.repository.SaleRepository;
 import com.example.jsonex2.service.CarService;
 import com.example.jsonex2.service.CustomerService;
@@ -26,7 +29,7 @@ public class SaleServiceImpl implements SaleService {
     private final ModelMapper modelMapper;
     private final SaleSeedDtos saleSeedDtos;
 
-    public SaleServiceImpl( CarService carService, CustomerService customerService,
+    public SaleServiceImpl(CarService carService, CustomerService customerService,
                            SaleRepository saleRepository, ValidationUtil validationUtil,
                            ModelMapper modelMapper) {
         this.saleSeedDtos = new SaleSeedDtos();
@@ -39,10 +42,25 @@ public class SaleServiceImpl implements SaleService {
 
     @Override
     public void seedSales() {
-        saleSeedDtos.setCar(carService.findRandomCar());
-        saleSeedDtos.setCustomer(customerService.findRandomCustomer());
-        saleSeedDtos.setDiscount(findRandomDiscount());
 
+        if (saleRepository.count() > 0) {
+            return;
+        }
+
+        int salesCount = ThreadLocalRandom.current().nextInt(5,21);
+
+        for (int i = 0; i < salesCount; i++) {
+            Car car = carService.findRandomCar();
+            Customer customer = customerService.findRandomCustomer();
+            Double discount = findRandomDiscount();
+
+            if (customer.isYoungDriver()) {
+                discount += 0.05;
+            }
+
+            Sale sale = new Sale(discount, car, customer);
+            saleRepository.save(sale);
+        }
     }
 
 
@@ -55,6 +73,5 @@ public class SaleServiceImpl implements SaleService {
 
         return discount;
     }
-
 
 }

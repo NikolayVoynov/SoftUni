@@ -13,6 +13,12 @@ public class Sale extends BaseEntity {
     public Sale() {
     }
 
+    public Sale(Double discount, Car car, Customer customer) {
+        this.discount = discount;
+        this.car = car;
+        this.customer = customer;
+    }
+
     @Column
     public Double getDiscount() {
         return discount;
