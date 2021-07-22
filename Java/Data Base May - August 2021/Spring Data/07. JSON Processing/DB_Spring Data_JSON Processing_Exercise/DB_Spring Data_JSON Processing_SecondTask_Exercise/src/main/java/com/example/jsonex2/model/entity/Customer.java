@@ -3,6 +3,7 @@ package com.example.jsonex2.model.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
@@ -10,7 +11,7 @@ import java.time.LocalDateTime;
 public class Customer extends BaseEntity{
 
     private String name;
-    private String birthDate;
+    private LocalDateTime birthDate;
     private boolean isYoungDriver;
 
     public Customer() {
@@ -26,11 +27,11 @@ public class Customer extends BaseEntity{
     }
 
     @Column
-    public String getBirthDate() {
+    public LocalDateTime getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(String birthDate) {
+    public void setBirthDate(LocalDateTime birthDate) {
         this.birthDate = birthDate;
     }
 

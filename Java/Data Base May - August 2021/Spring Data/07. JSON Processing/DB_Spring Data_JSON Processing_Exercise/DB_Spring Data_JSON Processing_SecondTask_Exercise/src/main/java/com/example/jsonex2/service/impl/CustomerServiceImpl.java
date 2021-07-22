@@ -14,6 +14,9 @@ import org.springframework.stereotype.Service;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -50,7 +53,15 @@ public class CustomerServiceImpl implements CustomerService {
 
         Arrays.stream(customerSeedDtos)
                 .filter(validationUtil::isValid)
-                .map(customerSeedDto -> modelMapper.map(customerSeedDto, Customer.class))
+                .map(customerSeedDto -> {
+                    Customer customer = modelMapper.map(customerSeedDto, Customer.class);
+
+                    customer.setBirthDate(LocalDateTime.parse(
+                            customerSeedDto.getBirthDate(),
+                            DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss")));
+
+                    return customer;
+                })
                 .forEach(customerRepository::save);
 
     }
