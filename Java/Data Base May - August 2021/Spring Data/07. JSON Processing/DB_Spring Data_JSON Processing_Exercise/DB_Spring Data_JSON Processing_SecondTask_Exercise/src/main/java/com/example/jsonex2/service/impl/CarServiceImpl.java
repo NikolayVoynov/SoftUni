@@ -2,6 +2,7 @@ package com.example.jsonex2.service.impl;
 
 import com.example.jsonex2.constants.GlobalConstants;
 import com.example.jsonex2.model.dto.CarSeedDtos;
+import com.example.jsonex2.model.dto.CarsMakeFromToyotaDtos;
 import com.example.jsonex2.model.entity.Car;
 import com.example.jsonex2.repository.CarRepository;
 import com.example.jsonex2.service.CarService;
@@ -15,7 +16,9 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Arrays;
+import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.stream.Collectors;
 
 @Service
 public class CarServiceImpl implements CarService {
@@ -70,5 +73,25 @@ public class CarServiceImpl implements CarService {
         car = carRepository.findById(randomId).orElse(null);
 
         return car;
+    }
+
+    @Override
+    public List<CarsMakeFromToyotaDtos> findCarsMakeByToyota() {
+
+        return carRepository
+                .getCarsMakeByToyota()
+                .stream()
+                .map(car -> {
+                    CarsMakeFromToyotaDtos carsMakeFromToyotaDtos =
+                            modelMapper.map(car, CarsMakeFromToyotaDtos.class);
+
+                    carsMakeFromToyotaDtos.setId(car.getId());
+                    carsMakeFromToyotaDtos.setMake(car.getMake());
+                    carsMakeFromToyotaDtos.setModel(car.getModel());
+                    carsMakeFromToyotaDtos.setTravelledDistance(car.getTravelledDistance());
+
+                    return carsMakeFromToyotaDtos;
+                })
+                .collect(Collectors.toList());
     }
 }

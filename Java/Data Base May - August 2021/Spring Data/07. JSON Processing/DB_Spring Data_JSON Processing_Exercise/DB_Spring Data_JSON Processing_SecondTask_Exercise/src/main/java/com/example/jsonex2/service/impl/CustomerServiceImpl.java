@@ -1,10 +1,13 @@
 package com.example.jsonex2.service.impl;
 
 import com.example.jsonex2.constants.GlobalConstants;
+import com.example.jsonex2.model.dto.CustomerOrderedSalesDtos;
 import com.example.jsonex2.model.dto.CustomerSeedDtos;
+import com.example.jsonex2.model.dto.CustomersOrderedDtos;
 import com.example.jsonex2.model.entity.Customer;
-import com.example.jsonex2.model.entity.Supplier;
+import com.example.jsonex2.model.entity.Sale;
 import com.example.jsonex2.repository.CustomerRepository;
+import com.example.jsonex2.repository.SaleRepository;
 import com.example.jsonex2.service.CustomerService;
 import com.example.jsonex2.util.ValidationUtil;
 import com.google.gson.Gson;
@@ -14,11 +17,11 @@ import org.springframework.stereotype.Service;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Arrays;
+import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.stream.Collectors;
 
 @Service
 public class CustomerServiceImpl implements CustomerService {
@@ -29,13 +32,15 @@ public class CustomerServiceImpl implements CustomerService {
     private final Gson gson;
     private final ValidationUtil validationUtil;
     private final CustomerRepository customerRepository;
+    private final SaleRepository saleRepository;
 
     public CustomerServiceImpl(ModelMapper modelMapper, Gson gson, ValidationUtil validationUtil,
-                               CustomerRepository customerRepository) {
+                               CustomerRepository customerRepository, SaleRepository saleRepository) {
         this.modelMapper = modelMapper;
         this.gson = gson;
         this.validationUtil = validationUtil;
         this.customerRepository = customerRepository;
+        this.saleRepository = saleRepository;
     }
 
     @Override
@@ -74,5 +79,43 @@ public class CustomerServiceImpl implements CustomerService {
         customer = customerRepository.findById(randomId).orElse(null);
 
         return customer;
+    }
+
+    @Override
+    public List<CustomersOrderedDtos> findAllCustomersAndOrder() {
+
+
+
+        return customerRepository
+                .getCustomersOrderedByBirthDateIsYoungDriver()
+                .stream()
+                .map(customer -> {
+                    CustomersOrderedDtos customersOrderedDto =
+                            modelMapper.map(customer, CustomersOrderedDtos.class);
+
+                    customersOrderedDto.setId(customer.getId());
+                    customersOrderedDto.setName(customer.getName());
+                    customersOrderedDto.setBirthDate(customer.getBirthDate().toString());
+                    customersOrderedDto.setYoungDriver(customer.isYoungDriver());
+
+                    CustomerOrderedSalesDtos customerOrderedSalesDtos = new CustomerOrderedSalesDtos();
+                    List<CustomerOrderedSalesDtos> customerOrderedSalesDtosList = new ArrayList<>();
+                    List<Sale> customerSales = customer.getSales();
+
+                    for (Sale customerSale : customerSales) {
+                        customerOrderedSalesDtos.setId(customerSale.getId());
+                        customerOrderedSalesDtos.setDiscount(customerSale.getDiscount());
+                        customerOrderedSalesDtos.setCar_id(customerSale.getCar().getId());
+                        customerOrderedSalesDtos.setCustomer_id(customerSale.getCustomer().getId());
+
+                        customerOrderedSalesDtosList.add(customerOrderedSalesDtos);
+                        customerOrderedSalesDtos = new CustomerOrderedSalesDtos();
+                    }
+
+                    customersOrderedDto.setSales(customerOrderedSalesDtosList);
+
+                    return customersOrderedDto;
+                })
+                .collect(Collectors.toList());
     }
 }

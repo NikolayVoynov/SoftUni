@@ -1,6 +1,7 @@
 package com.example.jsonex2.service.impl;
 
 import com.example.jsonex2.constants.GlobalConstants;
+import com.example.jsonex2.model.dto.SupplierLocalDtos;
 import com.example.jsonex2.model.dto.SupplierSeedDtos;
 import com.example.jsonex2.model.entity.Supplier;
 import com.example.jsonex2.repository.SupplierRepository;
@@ -13,7 +14,9 @@ import org.springframework.stereotype.Service;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 @Service
@@ -62,5 +65,28 @@ public class SupplierServiceImpl implements SupplierService {
         supplier = supplierRepository.findById(randomId).orElse(null);
 
         return supplier;
+    }
+
+    @Override
+    public List<SupplierLocalDtos> findSuppliersNotImport() {
+
+        List<Object[]> objectListSuppliers = supplierRepository.findSupplierNotImporterAndCountParts();
+
+        List<SupplierLocalDtos> supplierLocalDtosList = new ArrayList<>();
+
+        for (Object[] objectListSupplier : objectListSuppliers) {
+            boolean checkIsImporter = (boolean) objectListSupplier[3];
+            if (!checkIsImporter) {
+                long id = (long) objectListSupplier[0];
+                String name = (String) objectListSupplier[1];
+                long partsCount = (long) objectListSupplier[2];
+
+                SupplierLocalDtos supplierLocalDtos = new SupplierLocalDtos(id,name, partsCount);
+
+                supplierLocalDtosList.add(supplierLocalDtos);
+            }
+        }
+
+        return supplierLocalDtosList;
     }
 }
