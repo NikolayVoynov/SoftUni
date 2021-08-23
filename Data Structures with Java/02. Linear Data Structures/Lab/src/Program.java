@@ -3,7 +3,7 @@ import java.util.Arrays;
 
 public class Program {
 
-    class DynamicArray<E> {
+    class ArrayList<E> {
         private Object[] elements = new Object[1];
         private int size = 0;
 
@@ -57,7 +57,7 @@ public class Program {
     }
 
     public static void main(String[] args) {
-        ArrayList<Integer> numbers = new ArrayList<>(Arrays.asList(4, 1, 32, 15, 96, 42, 7, 15));
+        java.util.ArrayList<Integer> numbers = new java.util.ArrayList<>(Arrays.asList(4, 1, 32, 15, 96, 42, 7, 15));
         numbers.add(13);
 
         int[] counts = new int[101];
