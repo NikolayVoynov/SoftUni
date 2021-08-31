@@ -16,7 +16,7 @@ public class PaintFillArea {
                 new StringBuilder("...........#########.......")
         ));
 
-        fill(rows, 2, 4, 'o');
+        fill(rows, 2, 4, 'A');
 
         printRows(rows);
     }
@@ -25,20 +25,22 @@ public class PaintFillArea {
         char oldChar = matrix.get(row).charAt(col);
         matrix.get(row).setCharAt(col, fillChar);
 
+        char nextFillChar = (char) (fillChar + 1);
+
         if (matrix.get(row).charAt(col - 1) == oldChar) {
-            fill(matrix, row, col - 1, fillChar);
+            fill(matrix, row, col - 1, nextFillChar);
         }
 
         if (matrix.get(row).charAt(col + 1) == oldChar) {
-            fill(matrix, row, col + 1, fillChar);
+            fill(matrix, row, col + 1, nextFillChar);
         }
 
         if (matrix.get(row - 1).charAt(col) == oldChar) {
-            fill(matrix, row - 1, col, fillChar);
+            fill(matrix, row - 1, col, nextFillChar);
         }
 
         if (matrix.get(row + 1).charAt(col) == oldChar) {
-            fill(matrix, row + 1, col, fillChar);
+            fill(matrix, row + 1, col, nextFillChar);
         }
     }
 
