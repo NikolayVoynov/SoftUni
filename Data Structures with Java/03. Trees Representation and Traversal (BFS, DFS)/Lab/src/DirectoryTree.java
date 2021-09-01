@@ -49,6 +49,23 @@ public class DirectoryTree {
         ));
 
         printDirectory(root, 0);
+
+        Directory cdBurnerXP = findDirectory(root, "CDBurnerXP");
+    }
+
+    private static Directory findDirectory(Directory searchDirectory, String name) {
+        if (searchDirectory.getName().equals(name)) {
+            return searchDirectory;
+        }
+
+        for (Directory subdirectory : searchDirectory.getSubdirectories()) {
+            Directory result = findDirectory(subdirectory, name);
+            if (result != null) {
+                return result;
+            }
+        }
+
+        return null;
     }
 
     private static void printDirectory(Directory directory, int indentationLevel) {
