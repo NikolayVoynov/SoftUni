@@ -27,20 +27,51 @@ public class BinaryTreeProg {
 
         Node<K> root;
 
-        public void insert(Node<K> node) {
+        public void insert(K key) {
+            Node<K> node = new Node<>(key, null, null);
             if (root == null) {
                 root = node;
             }
-
-
         }
 
+        public BinaryTree(Node<K> root) {
+            this.root = root;
+        }
+
+        public void print() {
+            print(this.root, 0);
+        }
+
+        private void print(Node<K> node, int level) {
+            if (node == null) {
+                return;
+            }
+
+            for (int i = 0; i < level; i++) {
+                System.out.print('\t');
+            }
+
+            System.out.println(node.getKey());
+            print(node.getLeft(), level + 1);
+            print(node.getRight(), level + 1);
+        }
     }
 
     public static void main(String[] args) {
-        BinaryTree<Integer> binaryTree = new BinaryTree<>();
 
-        binaryTree.insert(new BinaryTree.Node<>(14, null, null));
+        BinaryTree.Node<Integer> root = new BinaryTree.Node<Integer>(
+                14,
+                new BinaryTree.Node<>(12,
+                        new BinaryTree.Node<>(5, null, null),
+                        null),
+                new BinaryTree.Node<>(13,
+                        new BinaryTree.Node<>(28, null, null),
+                        new BinaryTree.Node<>(7, null, null))
+        );
+
+        BinaryTree<Integer> tree = new BinaryTree<>(root);
+
+        tree.print();
 
     }
 }
