@@ -1,6 +1,7 @@
 public class BinaryTreeProg {
 
     static class BinaryTree<K> {
+
         static class Node<K> {
             K key;
             Node<K> left;
@@ -55,6 +56,22 @@ public class BinaryTreeProg {
             print(node.getLeft(), level + 1);
             print(node.getRight(), level + 1);
         }
+
+        public BinaryTree<K> copy() {
+            return new BinaryTree<>(copy(this.root));
+        }
+
+        private Node<K> copy(Node<K> node) {
+            if (node == null) {
+                return null;
+            }
+
+            Node<K> copiedNode = new Node<>(node.key, null, null);
+            copiedNode.left = copy(node.getLeft());
+            copiedNode.right = copy(node.getRight());
+
+            return copiedNode;
+        }
     }
 
     public static void main(String[] args) {
@@ -72,6 +89,10 @@ public class BinaryTreeProg {
         BinaryTree<Integer> tree = new BinaryTree<>(root);
 
         tree.print();
+
+        BinaryTree<Integer> copiedTree = tree.copy();
+
+        copiedTree.print();
 
     }
 }
