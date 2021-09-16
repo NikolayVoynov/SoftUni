@@ -34,4 +34,34 @@ public class ImportController extends BaseController {
 
         return "xml/import-xml";
     }
+
+    @GetMapping("/import/companies")
+    public String importCompanies(Model model, HttpServletRequest request){
+        if (!this.isLogged(request)) {
+            return "redirect:/";
+        }
+
+        return "xml/import-companies";
+
+    }
+
+    @GetMapping("/import/employees")
+    public String importEmployees(Model model, HttpServletRequest request){
+        if (!this.isLogged(request)) {
+            return "redirect:/";
+        }
+
+        return "xml/import-employees";
+
+    }
+
+    @GetMapping("/import/projects")
+    public String importProjects(Model model, HttpServletRequest request){
+        if (!this.isLogged(request)) {
+            return "redirect:/";
+        }
+
+        return "xml/import-projects";
+
+    }
 }
