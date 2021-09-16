@@ -10,40 +10,28 @@ import org.springframework.web.bind.annotation.GetMapping;
 import javax.servlet.http.HttpServletRequest;
 
 @Controller
-public class HomeController extends BaseController {
+public class ImportController extends BaseController {
 
     private final EmployeeService employeeService;
     private final CompanyService companyService;
     private final ProjectService projectService;
 
-    public HomeController(EmployeeService employeeService, CompanyService companyService,
-                          ProjectService projectService) {
+    public ImportController(EmployeeService employeeService, CompanyService companyService,
+                            ProjectService projectService) {
         this.employeeService = employeeService;
         this.companyService = companyService;
         this.projectService = projectService;
     }
 
-
-    @GetMapping("/")
-    public String index(HttpServletRequest request) {
-        if (this.isLogged(request)) {
-            return "redirect:/home";
-        }
-
-        return "index";
-    }
-
-    @GetMapping("/home")
-    public String home(HttpServletRequest request, Model model) {
+    @GetMapping("/import/xml")
+    public String importXml(Model model, HttpServletRequest request) {
         if (!this.isLogged(request)) {
             return "redirect:/";
         }
 
         model.addAttribute("areImported",
-                this.companyService.exists() && this.projectService.exists()
-                        && this.employeeService.exists()
-        );
+                new boolean[]{this.companyService.exists(), this.projectService.exists(), this.employeeService.exists()});
 
-        return "home";
+        return "xml/import-xml";
     }
 }
