@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
 
 @Controller
 public class ImportController extends BaseController {
@@ -36,30 +37,45 @@ public class ImportController extends BaseController {
     }
 
     @GetMapping("/import/companies")
-    public String importCompanies(Model model, HttpServletRequest request){
+    public String importCompanies(Model model, HttpServletRequest request) throws IOException {
         if (!this.isLogged(request)) {
             return "redirect:/";
         }
+
+        model.addAttribute(
+                "companies",
+                this.companyService.getXmlForImport()
+        );
 
         return "xml/import-companies";
 
     }
 
     @GetMapping("/import/employees")
-    public String importEmployees(Model model, HttpServletRequest request){
+    public String importEmployees(Model model, HttpServletRequest request) throws IOException {
         if (!this.isLogged(request)) {
             return "redirect:/";
         }
+
+        model.addAttribute(
+                "employees",
+                this.employeeService.getXmlForImport()
+        );
 
         return "xml/import-employees";
 
     }
 
     @GetMapping("/import/projects")
-    public String importProjects(Model model, HttpServletRequest request){
+    public String importProjects(Model model, HttpServletRequest request) throws IOException {
         if (!this.isLogged(request)) {
             return "redirect:/";
         }
+
+        model.addAttribute(
+                "projects",
+                this.projectService.getXmlForImport()
+        );
 
         return "xml/import-projects";
 
