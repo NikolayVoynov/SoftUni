@@ -1,8 +1,15 @@
 package com.example.db_spring_data_mvc_project.dto;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
+
 public class UserLoginDto {
 
+    @NotBlank
     private String username;
+    @NotBlank
+    @Size(min = 3)
     private String password;
 
     public String getUsername() {
