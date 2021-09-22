@@ -1,5 +1,7 @@
 package com.example.db_spring_data_mvc_project.service;
 
+import com.example.db_spring_data_mvc_project.dto.EmployeeDto;
+
 import java.io.IOException;
 
 public interface EmployeeService {
@@ -9,4 +11,6 @@ public interface EmployeeService {
     boolean exists();
 
     String getXmlForImport() throws IOException;
+
+    Long create(EmployeeDto request);
 }

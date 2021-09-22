@@ -1,6 +1,7 @@
 package com.example.db_spring_data_mvc_project.service;
 
 import com.example.db_spring_data_mvc_project.dto.ProjectDto;
+import com.example.db_spring_data_mvc_project.entity.Project;
 
 import java.io.IOException;
 
@@ -13,4 +14,6 @@ public interface ProjectService {
     String getXmlForImport() throws IOException;
 
     Long create(ProjectDto request);
+
+    Project find(Long id);
 }
