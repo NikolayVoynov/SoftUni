@@ -1,6 +1,5 @@
 package com.example.db_spring_data_mvc_project.dto;
 
-import org.w3c.dom.stylesheets.LinkStyle;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
