@@ -9,11 +9,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
 @Controller
+@RequestMapping("/import")
 public class ImportController extends BaseController {
 
     private final EmployeeService employeeService;
@@ -30,7 +32,7 @@ public class ImportController extends BaseController {
         this.converter = converter;
     }
 
-    @GetMapping("/import/xml")
+    @GetMapping("/xml")
     public String importXml(Model model, HttpServletRequest request) {
         if (!this.isLogged(request)) {
             return "redirect:/";
@@ -42,7 +44,7 @@ public class ImportController extends BaseController {
         return "xml/import-xml";
     }
 
-    @GetMapping("/import/companies")
+    @GetMapping("/companies")
     public String importCompanies(Model model, HttpServletRequest request) throws IOException {
         if (!this.isLogged(request)) {
             return "redirect:/";
@@ -56,10 +58,14 @@ public class ImportController extends BaseController {
         return "xml/import-companies";
     }
 
-    @PostMapping("/import/companies")
-    public String importCompanies(ImportCompaniesDto request) {
+    @PostMapping("/companies")
+    public String importCompanies(ImportCompaniesDto dto, HttpServletRequest req) {
+        if (!this.isLogged(req)) {
+            return "redirect:/";
+        }
+
         var companyRoot = this.converter.deserialize(
-                request.getCompanies(),
+                dto.getCompanies(),
                 CompanyCollectionDto.class
         );
 
@@ -68,7 +74,7 @@ public class ImportController extends BaseController {
         return "redirect:/xml/import/xml";
     }
 
-    @GetMapping("/import/employees")
+    @GetMapping("/employees")
     public String importEmployees(Model model, HttpServletRequest request) throws IOException {
         if (!this.isLogged(request)) {
             return "redirect:/";
@@ -83,10 +89,14 @@ public class ImportController extends BaseController {
 
     }
 
-    @PostMapping("/import/employees")
-    public String importEmployees(ImportEmployeesDto request) {
+    @PostMapping("/employees")
+    public String importEmployees(ImportEmployeesDto dto, HttpServletRequest req) {
+        if (!this.isLogged(req)) {
+            return "redirect:/";
+        }
+
         var employeeRoot = this.converter.deserialize(
-                request.getEmployees(),
+                dto.getEmployees(),
                 EmployeeCollectionDto.class
         );
 
@@ -95,7 +105,7 @@ public class ImportController extends BaseController {
         return "redirect:/xml/import/xml";
     }
 
-    @GetMapping("/import/projects")
+    @GetMapping("/projects")
     public String importProjects(Model model, HttpServletRequest request) throws IOException {
         if (!this.isLogged(request)) {
             return "redirect:/";
@@ -109,10 +119,14 @@ public class ImportController extends BaseController {
         return "xml/import-projects";
     }
 
-    @PostMapping("/import/projects")
-    public String importProjects(ImportProjectsDto request) {
+    @PostMapping("/projects")
+    public String importProjects(ImportProjectsDto dto, HttpServletRequest req) {
+        if (!this.isLogged(req)) {
+            return "redirect:/";
+        }
+
         var projectRoot = this.converter.deserialize(
-                request.getProjects(),
+                dto.getProjects(),
                 ProjectCollectionDto.class
         );
 

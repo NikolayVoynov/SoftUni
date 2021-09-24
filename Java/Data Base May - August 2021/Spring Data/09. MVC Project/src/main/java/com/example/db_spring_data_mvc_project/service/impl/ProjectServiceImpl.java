@@ -1,5 +1,6 @@
 package com.example.db_spring_data_mvc_project.service.impl;
 
+import com.example.db_spring_data_mvc_project.dto.ExportedProjectDto;
 import com.example.db_spring_data_mvc_project.dto.ProjectDto;
 import com.example.db_spring_data_mvc_project.entity.Project;
 import com.example.db_spring_data_mvc_project.repository.ProjectRepository;
@@ -10,6 +11,8 @@ import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class ProjectServiceImpl implements ProjectService {
@@ -61,5 +64,12 @@ public class ProjectServiceImpl implements ProjectService {
     @Override
     public Project find(Long id) {
         return this.projectRepository.findById(id).orElseThrow();
+    }
+
+    @Override
+    public List<ExportedProjectDto> finishedProjects() {
+        return this.projectRepository.findAllByFinishedIsTrue()
+                .stream().map(p -> this.mapper.map(p, ExportedProjectDto.class))
+                .collect(Collectors.toList());
     }
 }
