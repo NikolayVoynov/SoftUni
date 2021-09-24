@@ -1,9 +1,12 @@
 package com.example.db_spring_data_mvc_project.service.util;
 
+import org.springframework.stereotype.Component;
+
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import java.io.StringReader;
 
+@Component
 public class XmlConverterImpl implements XmlConverter {
     @Override
     public <T> T deserialize(String input, Class<T> type) {

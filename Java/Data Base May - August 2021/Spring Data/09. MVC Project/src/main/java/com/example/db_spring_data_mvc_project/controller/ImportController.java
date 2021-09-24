@@ -1,7 +1,6 @@
 package com.example.db_spring_data_mvc_project.controller;
 
-import com.example.db_spring_data_mvc_project.dto.CompanyCollectionDto;
-import com.example.db_spring_data_mvc_project.dto.ImportCompaniesDto;
+import com.example.db_spring_data_mvc_project.dto.*;
 import com.example.db_spring_data_mvc_project.service.CompanyService;
 import com.example.db_spring_data_mvc_project.service.EmployeeService;
 import com.example.db_spring_data_mvc_project.service.ProjectService;
@@ -57,7 +56,7 @@ public class ImportController extends BaseController {
         return "xml/import-companies";
     }
 
-    @PostMapping("/import/projects")
+    @PostMapping("/import/companies")
     public String importCompanies(ImportCompaniesDto request) {
         var companyRoot = this.converter.deserialize(
                 request.getCompanies(),
@@ -66,7 +65,7 @@ public class ImportController extends BaseController {
 
         companyRoot.getCompanies().forEach(this.companyService::create);
 
-        return "redirect:/xml/import-xml";
+        return "redirect:/xml/import/xml";
     }
 
     @GetMapping("/import/employees")
@@ -84,6 +83,18 @@ public class ImportController extends BaseController {
 
     }
 
+    @PostMapping("/import/employees")
+    public String importEmployees(ImportEmployeesDto request) {
+        var employeeRoot = this.converter.deserialize(
+                request.getEmployees(),
+                EmployeeCollectionDto.class
+        );
+
+        employeeRoot.getEmployees().forEach(this.employeeService::create);
+
+        return "redirect:/xml/import/xml";
+    }
+
     @GetMapping("/import/projects")
     public String importProjects(Model model, HttpServletRequest request) throws IOException {
         if (!this.isLogged(request)) {
@@ -96,6 +107,17 @@ public class ImportController extends BaseController {
         );
 
         return "xml/import-projects";
+    }
 
+    @PostMapping("/import/projects")
+    public String importProjects(ImportProjectsDto request) {
+        var projectRoot = this.converter.deserialize(
+                request.getProjects(),
+                ProjectCollectionDto.class
+        );
+
+        projectRoot.getProjects().forEach(this.projectService::create);
+
+        return "redirect:/xml/import/xml";
     }
 }
