@@ -1,6 +1,7 @@
 package com.example.db_spring_data_mvc_project.service.impl;
 
 import com.example.db_spring_data_mvc_project.dto.EmployeeDto;
+import com.example.db_spring_data_mvc_project.dto.ExportedEmployeeDto;
 import com.example.db_spring_data_mvc_project.entity.Employee;
 import com.example.db_spring_data_mvc_project.repository.EmployeeRepository;
 import com.example.db_spring_data_mvc_project.service.EmployeeService;
@@ -10,6 +11,8 @@ import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
@@ -57,5 +60,13 @@ public class EmployeeServiceImpl implements EmployeeService {
         this.employeeRepository.save(employee);
 
         return employee.getId();
+    }
+
+    @Override
+    public List<ExportedEmployeeDto> getEmployeesAfter25() {
+        return this.employeeRepository.findAllByAgeAfter(25)
+                .stream()
+                .map(e -> this.mapper.map(e, ExportedEmployeeDto.class))
+                .collect(Collectors.toList());
     }
 }
