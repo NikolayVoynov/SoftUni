@@ -56,6 +56,7 @@ public class DBInit implements CommandLineRunner {
                     .setCategory(CategoryEnum.CAR)
                     .setName("Fiesta")
                     .setStartYear(1976)
+                    .setEndYear(2017)
                     .setImageUrl("https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/2017_Ford_Fiesta_Zetec_Turbo_1.0_Front.jpg/1920px-2017_Ford_Fiesta_Zetec_Turbo_1.0_Front.jpg");
 
             ModelEntity escort = new ModelEntity();
