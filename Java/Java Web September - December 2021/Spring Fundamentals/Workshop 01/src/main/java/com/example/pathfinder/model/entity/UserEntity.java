@@ -9,7 +9,7 @@ import java.util.Set;
 @Table(name = "users")
 public class UserEntity extends BaseEntity {
 
-    private String fullName;
+    private String fullname;
     private String username;
     private String password;
     private Integer age;
@@ -20,13 +20,13 @@ public class UserEntity extends BaseEntity {
     public UserEntity() {
     }
 
-    @Column(nullable = false)
-    public String getFullName() {
-        return fullName;
+    @Column(nullable = false, name = "full_name")
+    public String getFullname() {
+        return fullname;
     }
 
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
+    public void setFullname(String fullName) {
+        this.fullname = fullName;
     }
 
     @Column(nullable = false)
@@ -64,7 +64,6 @@ public class UserEntity extends BaseEntity {
     public void setLevel(LevelEnum level) {
         this.level = level;
     }
-
 
     @Column
     public Integer getAge() {

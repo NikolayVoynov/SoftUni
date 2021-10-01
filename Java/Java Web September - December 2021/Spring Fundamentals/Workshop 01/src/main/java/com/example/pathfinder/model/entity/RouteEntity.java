@@ -9,7 +9,7 @@ import java.util.Set;
 @Table(name = "routes")
 public class RouteEntity extends BaseEntity{
 
-    private String gpxCoordinate;
+    private String gpxCoordinates;
     private String description;
     private LevelEnum level;
     private String name;
@@ -22,12 +22,12 @@ public class RouteEntity extends BaseEntity{
     }
 
     @Column(columnDefinition = "LONGTEXT")
-    public String getGpxCoordinate() {
-        return gpxCoordinate;
+    public String getGpxCoordinates() {
+        return gpxCoordinates;
     }
 
-    public void setGpxCoordinate(String gpxCoordinate) {
-        this.gpxCoordinate = gpxCoordinate;
+    public void setGpxCoordinates(String gpxCoordinate) {
+        this.gpxCoordinates = gpxCoordinate;
     }
 
     @Enumerated(EnumType.STRING)

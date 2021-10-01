@@ -27,7 +27,7 @@ public class MessageEntity extends BaseEntity {
         this.dateTime = dateTime;
     }
 
-    @Column(columnDefinition = "TEXT", nullable = false)
+    @Column(columnDefinition = "TEXT")
     public String getTextContent() {
         return textContent;
     }
