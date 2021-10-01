@@ -75,7 +75,7 @@ public class UserEntity extends BaseEntity {
         this.age = age;
     }
 
-    @Column
+    @Column(nullable = false, unique = true)
     public String getUsername() {
         return username;
     }
