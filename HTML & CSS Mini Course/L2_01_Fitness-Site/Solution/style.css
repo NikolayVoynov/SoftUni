@@ -54,6 +54,7 @@ main section:nth-child(1) button {
     font-size: 22px;
     padding: 12px;
     font-weight: bold;
+    position: center;
 }
 
 main section:nth-child(1) button:hover {
@@ -63,7 +64,11 @@ main section:nth-child(1) button:hover {
     font-size: 22px;
     padding: 12px;
     font-weight: bold;
-    align-items: center;
+}
+
+button {
+    margin: auto;
+    display: block;
 }
 
 main section:nth-child(2) article {
