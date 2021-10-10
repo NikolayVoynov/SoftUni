@@ -1,14 +1,15 @@
-package com.example.pathfinder.model.entity;
+package com.example.pathfinder.model.service;
 
+import com.example.pathfinder.model.entity.CategoryEntity;
+import com.example.pathfinder.model.entity.PictureEntity;
+import com.example.pathfinder.model.entity.UserEntity;
 import com.example.pathfinder.model.entity.enums.LevelEnum;
 
-import javax.persistence.*;
 import java.util.Set;
 
-@Entity
-@Table(name = "routes")
-public class RouteEntity extends BaseEntity{
+public class RouteServiceModel {
 
+    private Long id;
     private String gpxCoordinates;
     private String description;
     private LevelEnum level;
@@ -18,56 +19,25 @@ public class RouteEntity extends BaseEntity{
     private Set<PictureEntity> pictures;
     private Set<CategoryEntity> categories;
 
-
-    public RouteEntity() {
+    public RouteServiceModel() {
     }
 
-    @Column(columnDefinition = "LONGTEXT")
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public String getGpxCoordinates() {
         return gpxCoordinates;
     }
 
-    public void setGpxCoordinates(String gpxCoordinate) {
-        this.gpxCoordinates = gpxCoordinate;
+    public void setGpxCoordinates(String gpxCoordinates) {
+        this.gpxCoordinates = gpxCoordinates;
     }
 
-    @Enumerated(EnumType.STRING)
-    public LevelEnum getLevel() {
-        return level;
-    }
-
-    public void setLevel(LevelEnum level) {
-        this.level = level;
-    }
-
-    @Column(unique = true, nullable = false)
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    @ManyToOne
-    public UserEntity getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(UserEntity author) {
-        this.author = author;
-    }
-
-    @Column
-    public String getVideoUrl() {
-        return videoUrl;
-    }
-
-    public void setVideoUrl(String videoUrl) {
-        this.videoUrl = videoUrl;
-    }
-
-    @Column(columnDefinition = "TEXT")
     public String getDescription() {
         return description;
     }
@@ -76,21 +46,51 @@ public class RouteEntity extends BaseEntity{
         this.description = description;
     }
 
-    @ManyToMany(fetch = FetchType.EAGER)
-    public Set<CategoryEntity> getCategories() {
-        return categories;
+    public LevelEnum getLevel() {
+        return level;
     }
 
-    public void setCategories(Set<CategoryEntity> categories) {
-        this.categories = categories;
+    public void setLevel(LevelEnum level) {
+        this.level = level;
     }
 
-    @OneToMany(mappedBy = "route", fetch = FetchType.EAGER)
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public UserEntity getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(UserEntity author) {
+        this.author = author;
+    }
+
+    public String getVideoUrl() {
+        return videoUrl;
+    }
+
+    public void setVideoUrl(String videoUrl) {
+        this.videoUrl = videoUrl;
+    }
+
     public Set<PictureEntity> getPictures() {
         return pictures;
     }
 
     public void setPictures(Set<PictureEntity> pictures) {
         this.pictures = pictures;
+    }
+
+    public Set<CategoryEntity> getCategories() {
+        return categories;
+    }
+
+    public void setCategories(Set<CategoryEntity> categories) {
+        this.categories = categories;
     }
 }
