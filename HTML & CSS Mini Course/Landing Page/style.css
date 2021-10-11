@@ -5,8 +5,18 @@ body {
     margin: 0 auto;
 }
 
+.navigation {
+    padding: 0 20px;
+}
+
 .navigation p {
     display: inline-block;
+    font-size: 22px;
+    width: 650px;
+}
+
+.navigation p span {
+    color: #50b9e1;
 }
 
 nav {
@@ -15,4 +25,29 @@ nav {
 
 li {
     display: inline-block;
+    padding-right: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+nav i {
+    border: 1px solid black;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+body > header > section.navigation > nav > ul > li:nth-child(5) {
+    padding-right: 5px;
+}
+
+ul {
+    padding: 0;
+}
+
+a:hover {
+    color: #50b9e1;
+    cursor: pointer;
 }
