@@ -5,10 +5,14 @@ body {
     margin: 0 auto;
 }
 
-.navigation{
+.navigation p {
     display: inline-block;
 }
 
-nav{
-    
+nav {
+    display: inline-block;
+}
+
+li {
+    display: inline-block;
 }
