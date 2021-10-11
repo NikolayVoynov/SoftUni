@@ -1,3 +1,14 @@
-body{
-    background: lightblue;
+body {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 16px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.navigation{
+    display: inline-block;
+}
+
+nav{
+    
 }
