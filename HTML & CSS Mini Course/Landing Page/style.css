@@ -116,7 +116,7 @@ h2 {
     width: 70px;
 }
 
-.offers ul{
+.offers ul {
     text-align: center;
 }
 
@@ -126,6 +126,43 @@ h2 {
     padding: 20px 30px;
 }
 
-.offers a{
+.offers a {
     color: white;
+}
+
+/*Main - Camps*/
+
+.camps {
+    color: #5a7c8a;
+    padding: 20px 0;
+}
+
+body > main > section.camps > p {
+    width: 60%;
+    text-align: center;
+    margin: 0 auto;
+    padding-bottom: 30px;
+}
+
+.camps img {
+    width: 400px;
+    height: 250px;
+}
+
+.camps li {
+    width: 400px;
+}
+
+.info div {
+    display: inline-block;
+}
+
+.info div p,
+.info div h3 {
+    margin: 0;
+    padding: 0;
+}
+
+.info div:nth-child(1) {
+    width: 350px;
 }
