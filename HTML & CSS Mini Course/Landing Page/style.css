@@ -25,6 +25,9 @@ nav {
 
 li {
     display: inline-block;
+}
+
+li:not(:last-child) {
     padding-right: 10px;
 }
 
@@ -149,6 +152,10 @@ body > main > section.camps > p {
     height: 250px;
 }
 
+.camps li:not(:last-child) {
+    padding-right: 45px;
+}
+
 .camps li {
     width: 400px;
 }
@@ -164,5 +171,60 @@ body > main > section.camps > p {
 }
 
 .info div:nth-child(1) {
-    width: 350px;
+    width: 339px;
+}
+
+.info div:nth-child(2) {
+    background: #50b9e1;
+    padding: 10px;
+    color: white;
+    font-size: 22px;
+}
+
+.info {
+    border-bottom: 2px solid #5a7c8a;
+    padding-bottom: 15px;
+}
+
+.more-info button {
+    border: 2px solid #43bae3;
+    color: #43bae3;
+    background: transparent;
+    font-size: 18px;
+    padding: 5px 10px;
+}
+
+.more-info button:hover {
+    border: 2px solid #43bae3;
+    color: white;
+    background: #43bae3;
+    cursor: pointer;
+}
+
+/* Footer */
+
+footer{
+    font-size: 16px;
+    color: #5a7c8a;
+    background: #43bae3;
+    padding: 0 40px 0 80px;
+}
+
+footer p{
+    display: inline-block;
+    width: 88%;
+}
+
+footer ul{
+    display: inline-block;
+}
+
+footer ul a{
+    color: #5a7c8a;
+}
+
+footer ul a i{
+    border: 1px solid #5a7c8a;
+    border-radius: 50%;
+    padding: 5px;
 }
