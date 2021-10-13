@@ -12,7 +12,7 @@ body {
 .navigation p {
     display: inline-block;
     font-size: 22px;
-    width: 650px;
+    width: 735px;
 }
 
 .navigation p span {
@@ -74,4 +74,58 @@ a:hover {
     color: white;
     padding: 10px 15px;
     margin: 0 0 100px 100px;
+}
+
+.site-header button:hover {
+    background: #50b9e1;
+    border: 2px solid #50b9e1;
+    cursor: pointer;
+}
+
+/*Main - Welcome section*/
+
+.welcome {
+    color: #5a7c8a;
+    width: 60%;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+h2 {
+    text-align: center;
+    font-size: 32px;
+    font-family: 'PT Serif', serif;
+    font-style: italic;
+    letter-spacing: 2px;
+}
+
+.welcome p {
+    text-align: center;
+}
+
+/*Main - offers*/
+
+.offers {
+    background: #50b9e1;
+    font-family: 'PT Serif', serif;
+    color: white;
+    padding: 20px 30px;
+}
+
+.offers img {
+    width: 70px;
+}
+
+.offers ul{
+    text-align: center;
+}
+
+.offers li {
+    width: 28%;
+    text-align: center;
+    padding: 20px 30px;
+}
+
+.offers a{
+    color: white;
 }
