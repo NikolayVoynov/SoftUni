@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class UserLoginController {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(UserLoginController.class);
+    private static Logger LOGGER = LoggerFactory.getLogger(UserLoginController.class);
 
     private final UserService userService;
 
@@ -27,11 +27,11 @@ public class UserLoginController {
 
     @PostMapping("/users/login")
     public String login(UserLoginBindingModel userLoginBindingModel) {
-
-       boolean loginSuccessful = userService.
-               login(new UserLoginServiceModel().
-                       setUsername(userLoginBindingModel.getUsername()).
-                       setRawPassword(userLoginBindingModel.getPassword()));
+        // Delegate the logic to the service layer
+        boolean loginSuccessful = userService.
+                login(new UserLoginServiceModel().
+                        setUsername(userLoginBindingModel.getUsername()).
+                        setRawPassword(userLoginBindingModel.getPassword()));
 
         LOGGER.info("User tried to login. User with name {} tried to login. Success = {}?",
                 userLoginBindingModel.getUsername(),
@@ -43,6 +43,5 @@ public class UserLoginController {
 
         return "redirect:/users/login";
     }
-
 
 }

@@ -3,7 +3,7 @@ spring:
     driverClassName: com.mysql.cj.jdbc.Driver
     url: "jdbc:mysql://localhost:3306/mobilelele?useSSL=false&createDatabaseIfNotExist=true&serverTimezone=UTC"
     username: root
-    password: *****************
+    password: Eleanor#1967
   sql:
     init:
       mode: always
@@ -14,7 +14,7 @@ spring:
     #For MySQL 5
     #database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     hibernate:
-      ddl-auto: create
+      ddl-auto: create-drop
     open-in-view: false
     properties:
       hibernate:

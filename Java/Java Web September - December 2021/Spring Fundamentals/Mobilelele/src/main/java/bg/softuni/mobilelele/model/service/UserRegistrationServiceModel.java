@@ -1,16 +1,15 @@
 package bg.softuni.mobilelele.model.service;
 
-import bg.softuni.mobilelele.model.binding.UserRegistrationBindingModel;
-
 public class UserRegistrationServiceModel {
-
-    private String username;
     private String firstName;
     private String lastName;
     private String password;
+    private String username;
 
     public String getUsername() {
-        return username;
+        return username != null ?
+                username.trim() :
+                null;
     }
 
     public UserRegistrationServiceModel setUsername(String username) {
@@ -44,5 +43,4 @@ public class UserRegistrationServiceModel {
         this.password = password;
         return this;
     }
-
 }

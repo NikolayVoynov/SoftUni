@@ -8,14 +8,13 @@ import bg.softuni.mobilelele.model.service.UserRegistrationServiceModel;
 import bg.softuni.mobilelele.repository.UserRepository;
 import bg.softuni.mobilelele.repository.UserRoleRepository;
 import bg.softuni.mobilelele.service.UserService;
+import bg.softuni.mobilelele.user.CurrentUser;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
-
-import bg.softuni.mobilelele.user.CurrentUser;
-import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.stereotype.Service;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -25,13 +24,16 @@ public class UserServiceImpl implements UserService {
     private final UserRoleRepository userRoleRepository;
     private final CurrentUser currentUser;
 
-    public UserServiceImpl(PasswordEncoder passwordEncoder,
-                           UserRepository userRepository,
-                           UserRoleRepository userRoleRepository,
-                           CurrentUser currentUser) {
+    public UserServiceImpl(
+            PasswordEncoder passwordEncoder,
+            UserRepository userRepository,
+            UserRoleRepository userRoleRepository,
+            CurrentUser currentUser) {
         this.passwordEncoder = passwordEncoder;
+
         this.userRepository = userRepository;
         this.userRoleRepository = userRoleRepository;
+
         this.currentUser = currentUser;
     }
 
@@ -119,19 +121,25 @@ public class UserServiceImpl implements UserService {
     public void registerAndLoginUser(UserRegistrationServiceModel userRegistrationServiceModel) {
 
         UserRoleEntity userRole = userRoleRepository.findByRole(UserRoleEnum.USER);
+
         UserEntity newUser = new UserEntity();
 
         newUser.
                 setUsername(userRegistrationServiceModel.getUsername()).
                 setFirstName(userRegistrationServiceModel.getFirstName()).
                 setLastName(userRegistrationServiceModel.getLastName()).
+                setActive(true).
                 setPassword(passwordEncoder.encode(userRegistrationServiceModel.getPassword())).
-                setRoles(Set.of(userRole)).
-                setActive(true);
+                setRoles(Set.of(userRole));
 
         newUser = userRepository.save(newUser);
 
         login(newUser);
+    }
+
+    public boolean isUserNameFree(String username) {
+        return userRepository.findByUsernameIgnoreCase(username).
+                isEmpty();
     }
 
     private void login(UserEntity user) {

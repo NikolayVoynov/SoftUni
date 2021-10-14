@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -18,103 +19,30 @@
 </div>
 
 
-<div class="container">
-    <h2 class="text-center text-white">Upload Offer</h2>
-    <form method="POST"
-          class="main-form mx-auto col-md-8 d-flex flex-column justify-content-center">
-        <div class="row">
-
-            <div class="form-group col-md-6 mb-3">
-                <label class="text-center text-white font-weight-bold" for="model">Model</label>
-                <select id="model" class="form-control">
-                    <option value="">- Select a model -</option>
-                    <optgroup label="Brand name">
-                        <option>Model</option>
-                    </optgroup>
-                </select>
-                <p class="errors alert alert-danger">
-                    Vechicle model is required.
-                </p>
+<div class="container-fluid">
+    <h2 class="text-center text-white mt-5">All Offers</h2>
+    <div class="offers row mx-auto d-flex flex-row justify-content-center">
+        <div th:each="o : ${offers}" th:object="${o}" class="offer card col-sm-6 col-md-3  col-lg-2 m-1 p-0">
+            <div class="card-img-top-wrapper">
+                <img class="card-img-top" th:src="*{getImageUrl()}" alt="Car image">
             </div>
-            <div class="form-group col-md-6 mb-3">
-                <label for="price" class="text-white font-weight-bold">Price</label>
-                <input id="price" type="number" min="0" step="100" class="form-control"
-                       placeholder="Suggested price"/>
-                <p  class="errors alert alert-danger">
-                    Suggested price is required.
-                </p>
+            <div class="card-body pb-1">
+                <h5 class="card-title" th:text="*{year} + ' '  + *{brand} + ' '  + *{model}">
+                    Offer year Brand name Model name</h5>
+            </div>
+            <ul class="offer-details list-group list-group-flush">
+                <li class="list-group-item">
+                    <div class="card-text"><span th:text="|Mileage: *{mileage}km|">Mileage</span></div>
+                    <div class="card-text"><span th:text="|Price: *{price}bgn|">Price</span></div>
+                    <div class="card-text"><span th:text="|Engine: *{engine}|">Engine type</span></div>
+                    <div class="card-text"><span th:text="|Transmission: *{transmission}|">Transmission type</span></div>
+                </li>
+            </ul>
+            <div class="card-body">
+                <a class="card-link" th:href="@{/offers/{id}/details(id=*{id})}">Details</a>
             </div>
         </div>
-        <div class="row">
-            <div class="form-group col-md-6 mb-3">
-                <label class="text-center text-white font-weight-bold" for="engine">Engine</label>
-                <select id="engine" class="form-control">
-                    <option value="">- Select engine type -</option>
-                    <option>
-                        Engine type
-                    </option>
-                </select>
-                <p class="errors alert alert-danger">
-                    Engine type is required.
-                </p>
-            </div>
-            <div class="form-group col-md-6 mb-3">
-                <label class="text-center text-white font-weight-bold" for="transmission">Transmission</label>
-                <select id="transmission" class="form-control">
-                    <option value="">- Select transmission type -</option>
-                    <option> Transmission type
-                    </option>
-                </select>
-                <p class="errors alert alert-danger">
-                    Transmission type is required.
-                </p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="form-group col-md-6 mb-3">
-                <label for="year" class="text-white font-weight-bold">Year</label>
-                <input id="year" type="number" min="1900" max="2099" step="1" class="form-control"
-                       placeholder="Manufacturing year"/>
-                <p class="errors alert alert-danger">
-                    Manufacturing year is required.
-                </p>
-            </div>
-            <div class="form-group col-md-6 mb-3">
-                <label for="mileage" class="text-white font-weight-bold">Mileage</label>
-                <input id="mileage" type="number" min="0" max="900000" step="1000"
-                       class="form-control"
-                       placeholder="Mileage in kilometers"/>
-                <p class="errors alert alert-danger">
-                    Mileage in kilometers is required.
-                </p>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label class="text-white font-weight-bold" for="description">Description</label>
-            <textarea id="description" type="textarea" class="form-control" rows="3"
-                      placeholder="Description"></textarea>
-            <p class="errors alert alert-danger">
-                Description is required.
-            </p>
-        </div>
-        <div class="form-group">
-            <label class="text-white font-weight-bold" for="imageUrl">Image URL</label>
-            <input id="imageUrl" type="url" class="form-control"
-                   placeholder="Put vehicle image URL here">
-            <p class="errors alert alert-danger">
-                Vehicle image URL is required.
-            </p>
-        </div>
-
-        <div class="row">
-            <div class="col col-md-4">
-                <div class="button-holder d-flex">
-                    <input type="submit" class="btn btn-info btn-lg" value="Submit Offer"/>
-                </div>
-            </div>
-        </div>
-    </form>
+    </div>
 </div>
 
 <div>

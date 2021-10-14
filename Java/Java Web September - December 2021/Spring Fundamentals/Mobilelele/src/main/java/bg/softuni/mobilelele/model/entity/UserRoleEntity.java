@@ -1,18 +1,13 @@
 package bg.softuni.mobilelele.model.entity;
 
+
 import bg.softuni.mobilelele.model.entity.enums.UserRoleEnum;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "roles")
-public class UserRoleEntity{
+public class UserRoleEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

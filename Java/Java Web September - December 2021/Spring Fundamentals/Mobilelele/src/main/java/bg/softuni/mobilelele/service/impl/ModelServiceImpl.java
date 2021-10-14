@@ -5,7 +5,6 @@ import bg.softuni.mobilelele.model.entity.ModelEntity;
 import bg.softuni.mobilelele.model.entity.enums.CategoryEnum;
 import bg.softuni.mobilelele.repository.BrandRepository;
 import bg.softuni.mobilelele.repository.ModelRepository;
-import bg.softuni.mobilelele.service.BrandService;
 import bg.softuni.mobilelele.service.ModelService;
 import org.springframework.stereotype.Service;
 
@@ -34,7 +33,6 @@ public class ModelServiceImpl implements ModelService {
                 .setCategory(CategoryEnum.CAR)
                 .setImageUrl("https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/2017_Ford_Fiesta_Zetec_Turbo_1.0_Front.jpg/1920px-2017_Ford_Fiesta_Zetec_Turbo_1.0_Front.jpg")
                 .setStartYear(1976)
-                .setEndYear(1990)
                 .setBrand(ford);
 
         ModelEntity escort = new ModelEntity();
@@ -47,5 +45,10 @@ public class ModelServiceImpl implements ModelService {
                 .setBrand(ford);
 
         modelRepository.saveAll(List.of(fiesta, escort));
+    }
+
+    @Override
+    public ModelEntity findById(Long id) {
+        return modelRepository.findById(id).orElse(null);
     }
 }

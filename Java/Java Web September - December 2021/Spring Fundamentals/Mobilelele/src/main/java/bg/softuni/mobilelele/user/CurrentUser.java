@@ -17,13 +17,12 @@ public class CurrentUser {
     private String lastName;
     private Set<UserRoleEnum> roles = new HashSet<>();
 
-
     public boolean isLoggedIn() {
         return loggedIn;
     }
 
     public CurrentUser setLoggedIn(boolean loggedIn) {
-        this.loggedIn = loggedIn;
+        this.loggedIn= loggedIn;
         return this;
     }
 
@@ -70,9 +69,7 @@ public class CurrentUser {
 
     public void clean() {
         setLoggedIn(false).
-                setFirstName(null).
-                setLastName(null).
-                setUserName(null).
+                setUserName(null).setFirstName(null).setLastName(null).
                 clearRoles();
     }
 }
