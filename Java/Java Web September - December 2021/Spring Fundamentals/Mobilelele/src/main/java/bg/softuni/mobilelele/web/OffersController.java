@@ -3,6 +3,7 @@ package bg.softuni.mobilelele.web;
 import bg.softuni.mobilelele.service.OfferService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
@@ -27,4 +28,12 @@ public class OffersController {
         model.addAttribute("offer", this.offerService.findById(id));
         return "details";
     }
+
+    @DeleteMapping("/offers/{id}")
+    public String deleteOffer(@PathVariable Long id){
+        offerService.deleteOffer(id);
+
+        return "redirect:/offers/all";
+    }
+
 }
