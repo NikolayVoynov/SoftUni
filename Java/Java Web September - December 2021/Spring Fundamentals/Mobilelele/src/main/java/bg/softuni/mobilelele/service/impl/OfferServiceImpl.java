@@ -1,16 +1,20 @@
 package bg.softuni.mobilelele.service.impl;
+
 import bg.softuni.mobilelele.model.entity.OfferEntity;
 import bg.softuni.mobilelele.model.entity.enums.EngineEnum;
 import bg.softuni.mobilelele.model.entity.enums.TransmissionEnum;
+import bg.softuni.mobilelele.model.service.OfferUpdateServiceModel;
 import bg.softuni.mobilelele.model.view.OfferDetailsView;
 import bg.softuni.mobilelele.model.view.OfferSummaryView;
 import bg.softuni.mobilelele.repository.ModelRepository;
 import bg.softuni.mobilelele.repository.OfferRepository;
 import bg.softuni.mobilelele.repository.UserRepository;
 import bg.softuni.mobilelele.service.OfferService;
+import bg.softuni.mobilelele.web.exception.ObjectNotFoundException;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.time.Instant;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -73,6 +77,7 @@ public class OfferServiceImpl implements OfferService {
                 map(this::map).
                 collect(Collectors.toList());
     }
+
     @Override
     public OfferDetailsView findById(Long id) {
         OfferDetailsView offerDetailsView = this.offerRepository.findById(id).map(this::mapDetailsView).get();
@@ -83,6 +88,25 @@ public class OfferServiceImpl implements OfferService {
     public void deleteOffer(Long id) {
         offerRepository.deleteById(id);
 
+    }
+
+    @Override
+    public void updateOffer(OfferUpdateServiceModel offerModel) {
+
+        OfferEntity offerEntity =
+                offerRepository.findById(offerModel.getId()).orElseThrow(() ->
+                        new ObjectNotFoundException("Offer with id " + offerModel.getId() + " not found!"));
+
+        offerEntity.setPrice(offerModel.getPrice())
+                .setDescription(offerModel.getDescription())
+                .setEngine(offerModel.getEngine())
+                .setImageUrl(offerModel.getImageUrl())
+                .setMileage(offerModel.getMileage())
+                .setTransmission(offerModel.getTransmission())
+                .setYear(offerModel.getYear());
+
+
+        offerRepository.save(offerEntity);
     }
 
     private OfferSummaryView map(OfferEntity offerEntity) {
