@@ -1,8 +1,7 @@
 package com.example.examprep.model.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "users")
@@ -13,6 +12,7 @@ public class UserEntity extends BaseEntity{
     private String password;
     private String email;
     private String username;
+    private Set<OrderEntity> orders;
 
     public UserEntity() {
     }
@@ -60,5 +60,14 @@ public class UserEntity extends BaseEntity{
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    @OneToMany(mappedBy = "employee", fetch = FetchType.EAGER)
+    public Set<OrderEntity> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(Set<OrderEntity> orders) {
+        this.orders = orders;
     }
 }
