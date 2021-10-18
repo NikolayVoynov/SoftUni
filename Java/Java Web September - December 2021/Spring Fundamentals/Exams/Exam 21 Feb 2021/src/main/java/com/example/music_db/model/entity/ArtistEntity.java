@@ -1,5 +1,7 @@
 package com.example.music_db.model.entity;
 
+import com.example.music_db.model.entity.enums.ArtistNameEnum;
+
 import javax.persistence.*;
 
 @Entity

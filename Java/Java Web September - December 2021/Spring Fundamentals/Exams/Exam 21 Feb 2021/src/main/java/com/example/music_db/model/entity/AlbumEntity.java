@@ -1,8 +1,11 @@
 package com.example.music_db.model.entity;
 
+import com.example.music_db.model.entity.enums.GenreEnum;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
+
 
 @Entity
 @Table(name = "albums")
@@ -13,7 +16,7 @@ public class AlbumEntity extends BaseEntity {
     private String description;
     private Integer copies;
     private BigDecimal price;
-    private LocalDateTime releaseDate;
+    private LocalDate releaseDate;
     private String producer;
     private GenreEnum genre;
     private ArtistEntity artist;
@@ -68,11 +71,11 @@ public class AlbumEntity extends BaseEntity {
     }
 
     @Column(nullable = false)
-    public LocalDateTime getReleaseDate() {
+    public LocalDate getReleaseDate() {
         return releaseDate;
     }
 
-    public void setReleaseDate(LocalDateTime releaseDate) {
+    public void setReleaseDate(LocalDate releaseDate) {
         this.releaseDate = releaseDate;
     }
 
