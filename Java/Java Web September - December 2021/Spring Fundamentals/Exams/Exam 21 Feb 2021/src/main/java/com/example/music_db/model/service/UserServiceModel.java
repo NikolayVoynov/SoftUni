@@ -2,12 +2,21 @@ package com.example.music_db.model.service;
 
 public class UserServiceModel {
 
+    private Long id;
     private String username;
     private String fullname;
     private String password;
     private String email;
 
     public UserServiceModel() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getUsername() {

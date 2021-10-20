@@ -28,4 +28,18 @@ public class UserServiceImpl implements UserService {
 
         userRepository.save(userEntity);
     }
+
+    @Override
+    public UserServiceModel findUserByUsernameAndPassword(String username, String password) {
+        return userRepository.findByUsernameAndPassword(username, password)
+                .map(userEntity -> modelMapper.map(userEntity, UserServiceModel.class))
+                .orElse(null);
+    }
+
+    @Override
+    public void loginUser(Long id, String username) {
+
+        currentUser.setId(id);
+        currentUser.setUsername(username);
+    }
 }

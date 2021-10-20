@@ -1,10 +1,12 @@
 package com.example.music_db.web;
 
+import com.example.music_db.model.binding.UserLoginBindingModel;
 import com.example.music_db.model.binding.UserRegisterBindingModel;
 import com.example.music_db.model.service.UserServiceModel;
 import com.example.music_db.service.UserService;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -55,9 +57,52 @@ public class UserController {
         return "redirect:login";
     }
 
+    @GetMapping("/login")
+    public String login(Model model) {
+
+        if (!model.containsAttribute("isFound")) {
+            model.addAttribute("isFound", true);
+        }
+
+        return "login";
+    }
+
+    @PostMapping("/login")
+    public String loginConfirm(@Valid UserLoginBindingModel userLoginBindingModel,
+                               BindingResult bindingResult,
+                               RedirectAttributes redirectAttributes) {
+
+        if (bindingResult.hasErrors()) {
+            redirectAttributes.addFlashAttribute("userLoginBindingModel", userLoginBindingModel);
+            redirectAttributes
+                    .addFlashAttribute("org.springframework.validation.BindingResult.userLoginBindingModel", bindingResult);
+
+            return "redirect:login";
+        }
+
+        UserServiceModel userServiceModel = userService
+                .findUserByUsernameAndPassword(userLoginBindingModel.getUsername(), userLoginBindingModel.getPassword());
+
+        if (userServiceModel == null) {
+            redirectAttributes.addFlashAttribute("userLoginBindingModel", userLoginBindingModel);
+            redirectAttributes.addFlashAttribute("isFound", false);
+
+            return "redirect:login";
+        }
+
+        userService.loginUser(userServiceModel.getId(), userServiceModel.getUsername());
+
+        return "redirect:/";
+    }
+
     @ModelAttribute
     public UserRegisterBindingModel userRegisterBindingModel() {
         return new UserRegisterBindingModel();
+    }
+
+    @ModelAttribute
+    public UserLoginBindingModel userLoginBindingModel() {
+        return new UserLoginBindingModel();
     }
 
 
