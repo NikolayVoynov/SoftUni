@@ -15,6 +15,7 @@ public class AlbumViewModel {
     private BigDecimal price;
     private LocalDate releaseDate;
     private Integer copies;
+    private String imgUrl;
 
     public AlbumViewModel() {
     }
@@ -73,5 +74,13 @@ public class AlbumViewModel {
 
     public void setCopies(Integer copies) {
         this.copies = copies;
+    }
+
+    public String getImgUrl() {
+        return imgUrl;
+    }
+
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
     }
 }

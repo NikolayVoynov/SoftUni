@@ -8,7 +8,7 @@
     <div class="row">
         <div class="col-md-3">
             <div class="card mb-4 box-shadow" th:each="al : ${albums}" th:object="${al}">
-                <img th:src="'/img/' + *{artist.name.name().toLowerCase()} + '.jpg'" class="card-img-top"
+                <img th:src="*{imgUrl}" class="card-img-top"
                      alt="Thumbnail [100%x225]"
                      data-holder-rendered="true"
                      style="height: 225px; width: 100%; display: block;">
