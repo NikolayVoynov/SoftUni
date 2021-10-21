@@ -38,4 +38,11 @@ public class ArtistServiceImpl implements ArtistService {
                     artistRepository.save(artistEntity);
                 });
     }
+
+    @Override
+    public ArtistEntity findByArtistNameEnum(ArtistNameEnum artistNameEnum) {
+        return artistRepository.findByName(artistNameEnum).orElse(null);
+    }
+
+
 }

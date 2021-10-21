@@ -23,8 +23,6 @@
                                id="inputUsername"
                                class="form-control"
                                aria-describedby="usernameHelpInline">
-                    </div>
-                    <div class="col-auto">
                         <small id="usernameError"
                                class="text-light form-text invalid-feedback bg-danger rounded">Username length must be
                             more than 3
@@ -36,13 +34,10 @@
                         <label for="inputFullName" class="col-form-label text-light">Full Name</label>
                     </div>
                     <div class="col-auto">
-                        <input
-                                th:field="*{fullname}" th:errorclass="is-invalid"
+                        <input th:field="*{fullname}" th:errorclass="is-invalid"
                                 type="text" name="fullName"
                                 id="inputFullName" class="form-control"
                                 aria-describedby="fullNameHelpInline">
-                    </div>
-                    <div class="col-auto">
                         <small id="fullNameError"
                                class="text-light form-text invalid-feedback bg-danger rounded">Full name length must be
                             more than 3
@@ -57,8 +52,6 @@
                         <input th:field="*{email}" th:errorclass="is-invalid" type="text" name="email" id="inputEmail"
                                class="form-control"
                                aria-describedby="emailHelpInline">
-                    </div>
-                    <div class="col-auto">
                         <small id="emailError"
                                class="text-light form-text invalid-feedback bg-danger rounded">Must be valid
                             email</small>
@@ -69,13 +62,10 @@
                         <label for="inputPassword" class="col-form-label text-light">Password</label>
                     </div>
                     <div class="col-auto">
-                        <input
-                                th:field="*{password}" th:errorclass="is-invalid"
+                        <input th:field="*{password}" th:errorclass="is-invalid"
                                 type="password" name="password" id="inputPassword"
                                 class="form-control"
                                 aria-describedby="passwordHelpInline">
-                    </div>
-                    <div class="col-auto">
                         <small id="passwordError"
                                class="text-light form-text invalid-feedback bg-danger rounded">Password length must be
                             between 5 and 20
@@ -88,13 +78,10 @@
                         <label for="inputConfirmPassword" class="col-form-label text-light">Confirm Password</label>
                     </div>
                     <div class="col-auto">
-                        <input
-                                th:field="*{confirmPassword}" th:errorclass="is-invalid"
+                        <input th:field="*{confirmPassword}" th:errorclass="is-invalid"
                                 type="password" name="confirmPassword"
                                 id="inputConfirmPassword" class="form-control"
                                 aria-describedby="confirmPasswordHelpInline">
-                    </div>
-                    <div class="col-auto">
                         <small id="confirmPasswordError" class="text-light form-text invalid-feedback bg-danger rounded">Password length
                             must be between 5 and 20 characters</small>
                     </div>

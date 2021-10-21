@@ -21,8 +21,6 @@
                         <input th:field="*{username}" th:errorclass="is-invalid" type="text" name="username" id="inputUsername"
                                class="form-control"
                                aria-describedby="usernameHelpInline">
-                    </div>
-                    <div class="col-auto">
                         <small id="usernameError" class="text-light form-text invalid-feedback bg-danger rounded">Length must between 3
                             and 20 characters</small>
                     </div>
@@ -32,10 +30,8 @@
                         <label for="inputPassword" class="col-form-label text-light">Password</label>
                     </div>
                     <div class="col-auto">
-                        <input th:field="*{password}" th:errorclass="" type="password" name="password" id="inputPassword" class="form-control"
+                        <input th:field="*{password}" th:errorclass="is-invalid" type="password" name="password" id="inputPassword" class="form-control"
                                aria-describedby="passwordHelpInline">
-                    </div>
-                    <div class="col-auto">
                         <small id="passwordError" class="text-light form-text invalid-feedback bg-danger rounded">Length must between 5
                             and 20 characters</small>
                     </div>
