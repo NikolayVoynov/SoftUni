@@ -1,8 +1,6 @@
 package com.example.shopping_list.model.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "categories")
@@ -15,6 +13,7 @@ public class CategoryEntity extends BaseEntity{
     }
 
     @Column(unique = true, nullable = false)
+    @Enumerated(value = EnumType.STRING)
     public CategoryNameEnum getName() {
         return name;
     }

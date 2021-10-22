@@ -1,5 +1,6 @@
 package com.example.shopping_list.service;
 
+import com.example.shopping_list.model.entity.UserEntity;
 import com.example.shopping_list.model.service.UserServiceModel;
 
 public interface UserService {
@@ -8,4 +9,6 @@ public interface UserService {
     UserServiceModel findUsernameAndPassword(String username, String password);
 
     void loginUser(Long id, String username);
+
+    UserEntity findById(Long id);
 }
