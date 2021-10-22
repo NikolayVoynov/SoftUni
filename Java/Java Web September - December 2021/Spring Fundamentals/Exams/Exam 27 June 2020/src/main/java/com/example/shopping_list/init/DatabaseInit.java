@@ -1,6 +1,6 @@
 package com.example.shopping_list.init;
 
-import com.example.shopping_list.model.service.CategoryService;
+import com.example.shopping_list.service.CategoryService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
