@@ -8,16 +8,16 @@ import javax.persistence.Table;
 @Table(name = "books")
 public class BookEntity extends BaseEntity {
 
-    private String name;
+    private String title;
     private String isbn;
     private AuthorEntity author;
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getIsbn() {
@@ -40,7 +40,7 @@ public class BookEntity extends BaseEntity {
     @Override
     public String toString() {
         return "BookEntity{" +
-                "name='" + name + '\'' +
+                "title='" + title + '\'' +
                 ", isbn='" + isbn + '\'' +
                 ", author=" + author +
                 '}';
