@@ -7,31 +7,35 @@ import java.util.LinkedList;
 import java.util.List;
 
 @Entity
-@Table(name = "authors")
+@Table(name="authors")
 public class AuthorEntity extends BaseEntity{
 
     private String name;
+
+    @OneToMany(mappedBy = "author")
     private List<BookEntity> books = new LinkedList<>();
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public AuthorEntity setName(String name) {
         this.name = name;
+        return this;
     }
 
-    @OneToMany
     public List<BookEntity> getBooks() {
         return books;
     }
 
-    public void setBooks(List<BookEntity> books) {
+    public AuthorEntity setBooks(List<BookEntity> books) {
         this.books = books;
+        return this;
     }
 
-    public void addBook(BookEntity book) {
+    public AuthorEntity addBook(BookEntity book) {
         this.books.add(book);
+        return this;
     }
 
     @Override
