@@ -1,8 +1,12 @@
 package bg.softuni.mobilelele.service.impl;
 
+import bg.softuni.mobilelele.model.binding.OfferAddBindingModel;
+import bg.softuni.mobilelele.model.entity.ModelEntity;
 import bg.softuni.mobilelele.model.entity.OfferEntity;
+import bg.softuni.mobilelele.model.entity.UserEntity;
 import bg.softuni.mobilelele.model.entity.enums.EngineEnum;
 import bg.softuni.mobilelele.model.entity.enums.TransmissionEnum;
+import bg.softuni.mobilelele.model.service.OfferAddServiceModel;
 import bg.softuni.mobilelele.model.service.OfferUpdateServiceModel;
 import bg.softuni.mobilelele.model.view.OfferDetailsView;
 import bg.softuni.mobilelele.model.view.OfferSummaryView;
@@ -107,6 +111,21 @@ public class OfferServiceImpl implements OfferService {
 
 
         offerRepository.save(offerEntity);
+    }
+
+    @Override
+    public OfferAddServiceModel addOffer(OfferAddBindingModel offerAddBindingModel, String ownerId) {
+
+        UserEntity userEntity = userRepository.findByUsername(ownerId).orElseThrow();
+        OfferAddServiceModel offerAddServiceModel = modelMapper.map(offerAddBindingModel, OfferAddServiceModel.class);
+        OfferEntity newOffer = modelMapper.map(offerAddServiceModel, OfferEntity.class);
+        newOffer.setCreated(Instant.now());
+        newOffer.setSeller(userEntity);
+        ModelEntity model = modelRepository.getById(offerAddBindingModel.getModelId());
+        newOffer.setModel(model);
+
+        OfferEntity savedOffer = offerRepository.save(newOffer);
+        return modelMapper.map(savedOffer, OfferAddServiceModel.class);
     }
 
     private OfferSummaryView map(OfferEntity offerEntity) {
