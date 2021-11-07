@@ -3,16 +3,18 @@ package bg.softuni.mobilelele.service.impl;
 import bg.softuni.mobilelele.model.entity.UserEntity;
 import bg.softuni.mobilelele.model.entity.UserRoleEntity;
 import bg.softuni.mobilelele.model.entity.enums.UserRoleEnum;
-import bg.softuni.mobilelele.model.service.UserLoginServiceModel;
 import bg.softuni.mobilelele.model.service.UserRegistrationServiceModel;
 import bg.softuni.mobilelele.repository.UserRepository;
 import bg.softuni.mobilelele.repository.UserRoleRepository;
 import bg.softuni.mobilelele.service.UserService;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.Set;
 
 @Service
@@ -21,15 +23,17 @@ public class UserServiceImpl implements UserService {
     private final PasswordEncoder passwordEncoder;
     private final UserRepository userRepository;
     private final UserRoleRepository userRoleRepository;
+    private final MobileleUserServiceImpl mobileleUserService;
 
     public UserServiceImpl(
             PasswordEncoder passwordEncoder,
             UserRepository userRepository,
-            UserRoleRepository userRoleRepository) {
+            UserRoleRepository userRoleRepository, MobileleUserServiceImpl mobileleUserService) {
         this.passwordEncoder = passwordEncoder;
 
         this.userRepository = userRepository;
         this.userRoleRepository = userRoleRepository;
+        this.mobileleUserService = mobileleUserService;
     }
 
     @Override
@@ -99,8 +103,16 @@ public class UserServiceImpl implements UserService {
 
         newUser = userRepository.save(newUser);
 
-        // TODO register user
-        // login(newUser)
+        UserDetails principal = mobileleUserService.loadUserByUsername(newUser.getUsername());
+        Authentication authentication = new UsernamePasswordAuthenticationToken(
+                principal,
+                newUser.getPassword(),
+                principal.getAuthorities()
+        );
+
+        SecurityContextHolder.
+                getContext().
+                setAuthentication(authentication);
     }
 
     public boolean isUserNameFree(String username) {
