@@ -6,7 +6,9 @@ import com.example.cloudinary.service.CloudinaryService;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
 import java.io.IOException;
+import java.util.Map;
 
 @Service
 public class CloudinaryServiceImpl implements CloudinaryService {
@@ -23,12 +25,40 @@ public class CloudinaryServiceImpl implements CloudinaryService {
 
 
     @Override
-    public CloudinaryImage upload(MultipartFile file) throws IOException {
-        return null;
+    public CloudinaryImage upload(MultipartFile multipartFile) throws IOException {
+
+        File tempFile = File.createTempFile(TEMP_FILE, multipartFile.getOriginalFilename());
+        multipartFile.transferTo(tempFile);
+
+        try {
+            @SuppressWarnings("unchecked")
+            Map<String, String> uploadResult = cloudinary.
+                    uploader().
+                    upload(tempFile, Map.of());
+
+            String url = uploadResult.getOrDefault(URL,
+                    "https://i.pinimg.com/originals/c5/21/64/c52164749f7460c1ededf8992cd9a6ec.jpg");
+            String publicId = uploadResult.getOrDefault(PUBLIC_ID, "");
+
+            CloudinaryImage cloudinaryImage = new CloudinaryImage();
+            cloudinaryImage.setUrl(url);
+            cloudinaryImage.setPublicId(publicId);
+
+            return cloudinaryImage;
+
+        } finally {
+            tempFile.delete();
+        }
+
     }
 
     @Override
     public boolean delete(String publicId) {
-        return false;
+        try {
+            this.cloudinary.uploader().destroy(publicId, Map.of());
+        } catch (IOException e) {
+            return false;
+        }
+        return true;
     }
 }
