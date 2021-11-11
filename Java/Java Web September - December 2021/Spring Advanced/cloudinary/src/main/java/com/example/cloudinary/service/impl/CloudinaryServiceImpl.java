@@ -41,8 +41,10 @@ public class CloudinaryServiceImpl implements CloudinaryService {
             String publicId = uploadResult.getOrDefault(PUBLIC_ID, "");
 
             CloudinaryImage cloudinaryImage = new CloudinaryImage();
-            cloudinaryImage.setUrl(url);
+
             cloudinaryImage.setPublicId(publicId);
+            cloudinaryImage.setUrl(url);
+
 
             return cloudinaryImage;
 
