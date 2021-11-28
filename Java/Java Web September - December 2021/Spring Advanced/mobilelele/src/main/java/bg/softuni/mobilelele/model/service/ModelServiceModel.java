@@ -64,4 +64,3 @@ public class ModelServiceModel {
         return this;
     }
 }
-

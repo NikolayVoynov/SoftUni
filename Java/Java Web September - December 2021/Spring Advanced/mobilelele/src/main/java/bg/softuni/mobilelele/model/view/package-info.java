@@ -1,6 +1,5 @@
 package bg.softuni.mobilelele.model.view;
 
-
 /**
  * This package contains view models.
  *

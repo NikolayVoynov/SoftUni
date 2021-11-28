@@ -1,7 +1,7 @@
 package bg.softuni.mobilelele.service;
 
-import bg.softuni.mobilelele.model.view.BrandViewModel;
 
+import bg.softuni.mobilelele.model.view.BrandViewModel;
 import java.util.List;
 
 public interface BrandService {

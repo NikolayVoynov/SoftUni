@@ -8,18 +8,18 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class StatsController {
 
-    private final StatsService statsService;
+  private final StatsService statsService;
 
-    public StatsController(StatsService statsService) {
-        this.statsService = statsService;
-    }
+  public StatsController(StatsService statsService) {
+    this.statsService = statsService;
+  }
 
-    @GetMapping("/statistics")
-    public ModelAndView statistics() {
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("stats", statsService.getStats());
-        modelAndView.setViewName("stats");
+  @GetMapping("/statistics")
+  public ModelAndView statistics() {
+    ModelAndView modelAndView = new ModelAndView();
+    modelAndView.addObject("stats", statsService.getStats());
+    modelAndView.setViewName("stats");
+    return modelAndView;
+  }
 
-        return modelAndView;
-    }
 }

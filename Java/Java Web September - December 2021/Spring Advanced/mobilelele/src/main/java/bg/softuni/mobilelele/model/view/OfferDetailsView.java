@@ -1,29 +1,49 @@
 package bg.softuni.mobilelele.model.view;
 
-
-
 import bg.softuni.mobilelele.model.entity.enums.EngineEnum;
 import bg.softuni.mobilelele.model.entity.enums.TransmissionEnum;
 
 import java.time.Instant;
 
 public class OfferDetailsView {
-
     private String description;
+
     private EngineEnum engine;
+
     private Instant created;
+
     private Instant modified;
+
     private String imageUrl;
+
     private int mileage;
+
     private String sellerFullName;
+
     private int price;
+
     private TransmissionEnum transmission;
+
     private int year;
+
     private String model;
+
     private String brand;
+
     private Long id;
 
+    private boolean canDelete;
+
     public OfferDetailsView() {
+    }
+
+    public boolean isCanDelete() {
+        return canDelete;
+    }
+
+    public OfferDetailsView setCanDelete(boolean canDelete) {
+        this.canDelete = canDelete;
+        return this;
     }
 
     public String getBrand() {

@@ -6,11 +6,10 @@ import bg.softuni.mobilelele.model.view.BrandViewModel;
 import bg.softuni.mobilelele.model.view.ModelViewModel;
 import bg.softuni.mobilelele.repository.BrandRepository;
 import bg.softuni.mobilelele.service.BrandService;
-import org.modelmapper.ModelMapper;
-import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.stream.Collectors;
+import org.modelmapper.ModelMapper;
+import org.springframework.stereotype.Service;
 
 @Service
 public class BrandServiceImpl implements BrandService {
@@ -39,14 +38,14 @@ public class BrandServiceImpl implements BrandService {
                 .stream()
                 .map(brandEntity -> {
                     BrandViewModel brandViewModel = new BrandViewModel().
-                            setName(brandEntity.getName());
+                        setName(brandEntity.getName());
 
                     brandViewModel.setModels(
-                            brandEntity.
-                                    getModels().
-                                    stream().
-                                    map(this::map).
-                                    collect(Collectors.toList()));
+                        brandEntity.
+                            getModels().
+                            stream().
+                            map(this::map).
+                            collect(Collectors.toList()));
                     return brandViewModel;
                 })
                 .collect(Collectors.toList());
@@ -55,5 +54,4 @@ public class BrandServiceImpl implements BrandService {
     private ModelViewModel map(ModelEntity modelEntity) {
         return modelMapper.map(modelEntity, ModelViewModel.class);
     }
-
 }

@@ -2,23 +2,25 @@ package bg.softuni.mobilelele.model.view;
 
 public class StatsView {
 
-    private final int authRequest;
-    private final int anonRequest;
+  private final int authRequests;
+  private final int anonRequests;
 
-    public StatsView(int authRequest, int anonRequest) {
-        this.authRequest = authRequest;
-        this.anonRequest = anonRequest;
-    }
+  public StatsView(int authRequests, int anonRequests) {
+    this.authRequests = authRequests;
+    this.anonRequests = anonRequests;
+  }
 
-    public int getAuthRequest() {
-        return authRequest;
-    }
+  public int getTotalRequests() {
+    return anonRequests + authRequests;
+  }
 
-    public int getAnonRequest() {
-        return anonRequest;
-    }
+  public int getAuthRequests() {
+    return authRequests;
+  }
 
-    public int getTotalRequest() {
-        return anonRequest + authRequest;
-    }
+
+  public int getAnonRequests() {
+    return anonRequests;
+  }
+
 }

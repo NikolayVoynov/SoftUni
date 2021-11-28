@@ -1,6 +1,6 @@
 package bg.softuni.mobilelele.service;
 
-import bg.softuni.mobilelele.model.binding.OfferAddBindingModel;
+import bg.softuni.mobilelele.model.binding.OfferAddBindModel;
 import bg.softuni.mobilelele.model.service.OfferAddServiceModel;
 import bg.softuni.mobilelele.model.service.OfferUpdateServiceModel;
 import bg.softuni.mobilelele.model.view.OfferDetailsView;
@@ -8,15 +8,17 @@ import bg.softuni.mobilelele.model.view.OfferSummaryView;
 import java.util.List;
 
 public interface OfferService {
-    void initializeOffers();
+  void initializeOffers();
 
-    List<OfferSummaryView> getAllOffers();
+  List<OfferSummaryView> getAllOffers();
 
-    OfferDetailsView findById(Long id);
+  OfferDetailsView findById(Long id, String currentUser);
 
-    void deleteOffer(Long id);
+  void deleteOffer(Long id);
 
-    void updateOffer(OfferUpdateServiceModel offerModel);
+  boolean isOwner(String userName, Long id);
 
-    OfferAddServiceModel addOffer(OfferAddBindingModel offerAddBindingModel, String ownerId);
+  void updateOffer(OfferUpdateServiceModel offerModel);
+
+  OfferAddServiceModel addOffer(OfferAddBindModel offerAddBindModel, String ownerId);
 }

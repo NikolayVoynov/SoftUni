@@ -9,26 +9,26 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class StatsServiceImpl implements StatsService {
-    
-    private int anonRequest;
-    private int authRequest;
+
+  private int anonymousRequests, authRequests;
+
+  @Override
+  public void onRequest() {
+    Authentication authentication = SecurityContextHolder.
+        getContext().
+        getAuthentication();
 
 
-    @Override
-    public void onRequest() {
 
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        
-        if (authentication != null && (authentication.getPrincipal() instanceof UserDetails)) {
-            authRequest++;
-        } else {
-            anonRequest++;
-        }
-        
+    if (authentication != null && (authentication.getPrincipal() instanceof UserDetails)) {
+      authRequests++;
+    } else {
+      anonymousRequests++;
     }
+  }
 
-    @Override
-    public StatsView getStats() {
-        return new StatsView(authRequest, anonRequest);
-    }
+  @Override
+  public StatsView getStats() {
+    return new StatsView(authRequests, anonymousRequests);
+  }
 }

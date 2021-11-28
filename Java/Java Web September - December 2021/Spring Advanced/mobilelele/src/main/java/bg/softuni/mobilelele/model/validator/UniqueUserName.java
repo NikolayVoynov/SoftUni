@@ -12,10 +12,10 @@ import javax.validation.Payload;
 @Constraint(validatedBy = UniqueUserNameValidator.class)
 public @interface UniqueUserName {
 
-    String message() default "Username is not unique";
+  String message() default "Username is not unique";
 
-    Class<?>[] groups() default { };
+  Class<?>[] groups() default { };
 
-    Class<? extends Payload>[] payload() default { };
+  Class<? extends Payload>[] payload() default { };
 
 }

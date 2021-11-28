@@ -7,15 +7,14 @@ import bg.softuni.mobilelele.model.service.UserRegistrationServiceModel;
 import bg.softuni.mobilelele.repository.UserRepository;
 import bg.softuni.mobilelele.repository.UserRoleRepository;
 import bg.softuni.mobilelele.service.UserService;
+import java.util.List;
+import java.util.Set;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
-import java.util.Set;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -25,12 +24,11 @@ public class UserServiceImpl implements UserService {
     private final UserRoleRepository userRoleRepository;
     private final MobileleUserServiceImpl mobileleUserService;
 
-    public UserServiceImpl(
-            PasswordEncoder passwordEncoder,
-            UserRepository userRepository,
-            UserRoleRepository userRoleRepository, MobileleUserServiceImpl mobileleUserService) {
+    public UserServiceImpl(PasswordEncoder passwordEncoder,
+                           UserRepository userRepository,
+                           UserRoleRepository userRoleRepository,
+        MobileleUserServiceImpl mobileleUserService) {
         this.passwordEncoder = passwordEncoder;
-
         this.userRepository = userRepository;
         this.userRoleRepository = userRoleRepository;
         this.mobileleUserService = mobileleUserService;
@@ -85,7 +83,6 @@ public class UserServiceImpl implements UserService {
         }
     }
 
-
     @Override
     public void registerAndLoginUser(UserRegistrationServiceModel userRegistrationServiceModel) {
 
@@ -103,20 +100,20 @@ public class UserServiceImpl implements UserService {
 
         newUser = userRepository.save(newUser);
 
+        // this is the Spring representation of a user
         UserDetails principal = mobileleUserService.loadUserByUsername(newUser.getUsername());
         Authentication authentication = new UsernamePasswordAuthenticationToken(
-                principal,
-                newUser.getPassword(),
-                principal.getAuthorities()
+            principal,
+            newUser.getPassword(),
+            principal.getAuthorities()
         );
 
         SecurityContextHolder.
-                getContext().
-                setAuthentication(authentication);
+            getContext().
+            setAuthentication(authentication);
     }
 
     public boolean isUserNameFree(String username) {
-        return userRepository.findByUsernameIgnoreCase(username).
-                isEmpty();
+        return userRepository.findByUsernameIgnoreCase(username).isEmpty();
     }
 }
