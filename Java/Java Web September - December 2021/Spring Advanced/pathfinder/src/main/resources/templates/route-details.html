@@ -4,9 +4,11 @@
 <head th:replace="fragments/commons::head"></head>
 <body>
 <div class="wrapper">
-    <header th:replace="fragments/commons::nav"></header>
+    <header th:replace="fragments/commons::nav">
+    </header>
 
-    <input type="hidden" name="routeId" id="routeId">   
+    <input type="hidden" name="routeId" id="routeId" th:value="${route.id}">
+
     <div class="details-main" th:object="${route}">
         <section class="route-info text-center">
             <h4 id="track-name" th:text="*{name}"></h4>
@@ -20,12 +22,12 @@
                     <p><img class="level-img" src="/images/difficulty-level.png" alt=""></p>
                     <p><img class="level-img" src="/images/difficulty-level.png" alt=""></p>
                 </th:block>
-                
+
             </div>
             <div>
                 <h4>Choose picture</h4>
                 <form action="/" method="POST" enctype="multipart/form-data">
-                    <input  type="hidden" id="id" name="routeId">
+                    <input type="hidden" id="id" name="routeId">
                     <div class="form-group">
                         <label>
                             <input type="text" name="title">
@@ -52,13 +54,16 @@
             <h4>Description:</h4>
             <p id="route-description" th:text="*{description}">Description: </p>
         </section>
+        <section class="gallery">
+            <img class="rounded" th:each="p : *{pictures}"  th:src="${p.url}" height="100%" alt="">
+        </section>
         <section class="comments">
             <h1>Comments</h1>
 
             <div>
                 <!-- Comments submission -->
                 <form id="commentForm" method="POST"
-                      action="/">
+                      th:action="@{/api/{routeId}/comments(routeId=${route.id})}">
                     <div class="form-group">
                         <h4>Leave a comment</h4>
                         <label for="message">Message</label>
@@ -92,17 +97,9 @@
         </section>
         <p style="visibility: hidden">GPX Download: <a id="gpxDownload"></a></p>
     </div>
-	<!-- Scripts: track and comments 
-    <script th:src="@{/js/track.js}"></script>
     <script th:src="@{/js/comments.js}"></script>
-	-->
 </div>
-<footer class="footer bg-blur rounded">
-    <div class="container-fluid text-center">
-        <div class="h5 text-white">
-            &copy; Lucho, Chocho & Spring Advanced Students 2021. All rights reserved.
-        </div>
-    </div>
+<footer th:replace="fragments/commons::footer">
 </footer>
 </body>
 </html>
