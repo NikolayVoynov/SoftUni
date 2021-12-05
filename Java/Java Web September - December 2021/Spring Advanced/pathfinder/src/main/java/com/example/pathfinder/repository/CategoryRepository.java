@@ -1,14 +1,15 @@
 package com.example.pathfinder.repository;
 
-import com.example.pathfinder.model.entity.CategoryEntity;
+import com.example.pathfinder.model.entity.Category;
+import com.example.pathfinder.model.entity.enums.CategoryNameEnum;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
 @Repository
-public interface CategoryRepository extends JpaRepository<CategoryEntity, Long> {
+public interface CategoryRepository extends JpaRepository<Category, Long> {
 
-    Optional<CategoryEntity> findByName(com.example.pathfinder.model.entity.enums.CategoryNameEnum categoryNameEnum);
+    Optional<Category> findByName(CategoryNameEnum categoryNameEnum);
 
 }

@@ -1,13 +1,14 @@
-package com.example.pathfinder.model.service;
+package com.example.pathfinder.model.entity;
 
-import com.example.pathfinder.model.entity.Role;
 import com.example.pathfinder.model.entity.enums.LevelEnum;
 
+import javax.persistence.*;
 import java.util.Set;
 
-public class UserServiceModel {
+@Entity
+@Table(name = "users")
+public class User extends BaseEntity{
 
-    private Long id;
     private String fullName;
     private String username;
     private String password;
@@ -16,17 +17,11 @@ public class UserServiceModel {
     private LevelEnum level;
     private Set<Role> roles;
 
-    public UserServiceModel() {
-    }
 
-    public Long getId() {
-        return id;
-    }
+    public User(){}
 
-    public void setId(Long id) {
-        this.id = id;
-    }
 
+    @Column(nullable = false)
     public String getFullName() {
         return fullName;
     }
@@ -35,14 +30,7 @@ public class UserServiceModel {
         this.fullName = fullName;
     }
 
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
+    @Column(nullable = false)
     public String getPassword() {
         return password;
     }
@@ -51,6 +39,7 @@ public class UserServiceModel {
         this.password = password;
     }
 
+    @Column()
     public String getEmail() {
         return email;
     }
@@ -59,14 +48,7 @@ public class UserServiceModel {
         this.email = email;
     }
 
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
-    }
-
+    @Enumerated(EnumType.STRING)
     public LevelEnum getLevel() {
         return level;
     }
@@ -75,11 +57,30 @@ public class UserServiceModel {
         this.level = level;
     }
 
+    @ManyToMany(fetch = FetchType.EAGER)
     public Set<Role> getRoles() {
         return roles;
     }
 
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
+    }
+
+    @Column(name = "age")
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    @Column(nullable = false, unique = true)
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 }

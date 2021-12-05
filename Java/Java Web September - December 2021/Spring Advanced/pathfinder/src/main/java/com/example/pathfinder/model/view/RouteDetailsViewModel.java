@@ -1,20 +1,27 @@
 package com.example.pathfinder.model.view;
 
-import com.example.pathfinder.model.entity.PictureEntity;
+import com.example.pathfinder.model.entity.Picture;
 import com.example.pathfinder.model.entity.enums.LevelEnum;
 
 import java.util.Set;
 
 public class RouteDetailsViewModel {
 
+    private Long id;
     private String gpxCoordinates;
     private String description;
     private LevelEnum level;
     private String name;
     private String videoUrl;
-    private Set<PictureEntity> pictures;
+    private Set<Picture> pictures;
 
-    public RouteDetailsViewModel() {
+    public Long getId() {
+        return id;
+    }
+
+    public RouteDetailsViewModel setId(Long id) {
+        this.id = id;
+        return this;
     }
 
     public String getGpxCoordinates() {

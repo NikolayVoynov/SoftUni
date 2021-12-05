@@ -17,7 +17,6 @@ public class PictureServiceImpl implements PictureService {
 
     @Override
     public List<String> findAllUrls() {
-
         return pictureRepository
                 .findAllUrls();
     }
