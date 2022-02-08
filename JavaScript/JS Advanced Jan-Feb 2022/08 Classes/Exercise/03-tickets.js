@@ -7,7 +7,6 @@ function createTickets(array, sortBy) {
             this.price = price;
             this.status = status;
         }
-
     }
 
     let tickets = [];
@@ -21,23 +20,16 @@ function createTickets(array, sortBy) {
         tickets.push(ticket);
     }
 
-    // tickets.sort((a, b) => {
+    tickets.sort((a, b) => {
 
-    // })
+        if (sortBy === 'price') {
+            return a[sortBy] - b[sortBy];
+        } else {
+            return a[sortBy].localeCompare(b[sortBy]);
+        }
+    })
 
-    if (sortBy === 'destination') {
-        tickets.sort((a, b) => a[sortBy].localeCompare(b[sortBy]));
-
-    } else if (sortBy === 'price') {
-        tickets.sort((a, b) => a[sortBy] - b[sortBy]);
-
-    } else if (sortBy === 'status') {
-        tickets.sort((a, b) => a[sortBy].localeCompare(b[sortBy]));
-
-    }
-    console.log(tickets);
-
-    // return tickets;
+    return tickets;
 }
 
 
