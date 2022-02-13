@@ -14,11 +14,6 @@ describe("Testing Library", function () {
             expect(() => library.calcPriceOfBook('Title', 'Title')).to.throw(Error, 'Invalid input');
         });
 
-        it("Should return error when year of book is not integer", function () {
-
-            expect(() => library.calcPriceOfBook('Title', 1.650)).to.throw(Error, 'Invalid input');
-        });
-
         it("Should return message when year > 1980", function () {
             let nameOfBook = 'Title';
             let price = 20;
