@@ -1,3 +1,4 @@
+import { homePage } from './home.js';
 import { showView, spinner } from './util.js';
 
 
@@ -44,6 +45,11 @@ function createMovieCard(movie, user, likes, ownLike) {
         likeBtn.addEventListener('click', (e) => likeMovie(e, movie._id));
     }
 
+    const deleteBtn = element.querySelector('.delete-btn');
+    if (deleteBtn) {
+        deleteBtn.addEventListener('click', (e) => deleteMovie(e, movie._id));
+    }
+
     return element;
 }
 
@@ -53,8 +59,8 @@ function createControls(movie, user, ownLike) {
     let controls = [];
 
     if (isOwner) {
-        controls.push('<a class="btn btn-danger" href="#">Delete</a>');
-        controls.push('<a class="btn btn-warning" href="#">Edit</a>');
+        controls.push('<a class="btn btn-danger delete-btn" href="#">Delete</a>');
+        controls.push('<a class="btn btn-warning edit-btn" href="#">Edit</a>');
     } else if (user && ownLike == false) {
         controls.push('<a class="btn btn-primary like-btn" href="#">Like</a>');
     }
@@ -106,4 +112,20 @@ async function likeMovie(e, movieId) {
     });
 
     detailsPage(movieId);
+}
+
+async function deleteMovie(e, movieId) {
+    e.preventDefault();
+
+    const user = JSON.parse(localStorage.getItem('user'));
+
+    await fetch(`http://localhost:3030/data/movies/${movieId}`, {
+        method: 'DELETE',
+        headers:{
+            'Content-Type': 'application/json',
+            'X-Authorization': user.accessToken
+        }
+    });
+
+    homePage();
 }
