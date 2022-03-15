@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "chai": "^4.3.6",
+    "playwright-chromium": "^1.20.0"
+  },
+  "devDependencies": {
+    "mocha": "^9.2.2"
+  }
+}
