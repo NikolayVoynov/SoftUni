@@ -1,5 +1,4 @@
 import { clearUserData, getUserData, setUserData } from '../util.js';
-import { logout } from './data.js';
 
 const host = 'http://localhost:3030';
 
@@ -39,7 +38,7 @@ function createOptions(method = 'get', data) {
         options.body = JSON.stringify(data);
     }
 
-    const userData = JSON.parse(sessionStorage.getItem('userData'));
+    const userData = getUserData();
     if (userData != null) {
         options.headers['X-Authorization'] = userData.token;
     }
@@ -47,54 +46,44 @@ function createOptions(method = 'get', data) {
     return options;
 }
 
-async function get(url) {
+export async function get(url) {
     return request(url, createOptions());
 }
 
-async function post(url, data) {
+export async function post(url, data) {
     return request(url, createOptions('post', data));
 }
 
-async function put(url, data) {
+export async function put(url, data) {
     return request(url, createOptions('put', data));
 }
 
-async function del(url) {
+export async function del(url) {
     return request(url, createOptions('delete'));
 }
 
-async function login(email, password) {
-    const response = await request('/users/login', createOptions('post', { email, password }));
+export async function login(email, password) {
+    const result = await post('/users/login', { email, password });
     const userData = {
-        email: userData.email,
-        id: userData._id,
-        token: userData.accessToken
+        email: result.email,
+        id: result._id,
+        token: result.accessToken
+    };
+    setUserData(userData);
+}
+
+export async function register(email, password) {
+    const result = await post('/users/register', { email, password });
+    const userData = {
+        email: result.email,
+        id: result._id,
+        token: result.accessToken
     };
 
-    sessionStorage.setItem('userData', JSON.stringify(userData));
+    setUserData(userData);
 }
 
-async function register(email, password) {
-    const response = await request('/users/register', createOptions('post', { email, password }));
-    const userData = {
-        email: userData.email,
-        id: userData._id,
-        token: userData.accessToken
-    };
-
-    sessionStorage.setItem('userData', JSON.stringify(userData));
+export async function logout() {
+    await get('/users/logout');
+    clearUserData();
 }
-
-async function logout() {
-    await request('/users/logout', createOptions());
-    sessionStorage.removeItem('userData');
-}
-
-export {
-    get,
-    post,
-    put,
-    del,
-    login,
-    register
-};
