@@ -1,0 +1,17 @@
+body {
+    padding: 15px, 5px, 15px;
+    background-color: #f9f7cf;
+    width: 480px;
+}
+
+body header {
+    width: 480px;
+    padding: 15px, 5px, 15px;
+    background-color: #f2dcbb;
+}
+
+body footer {
+    width: 480px;
+    padding: 15px, 5px, 15px;
+    background-color: #f2dcbb;
+}
