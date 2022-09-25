@@ -1,0 +1,27 @@
+html {
+  font-family: Raleway, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+article ul li {
+  list-style-type: square;
+}
+
+article ul ul li {
+  list-style-type: disc;
+}
+
+article ul ul ul li {
+  list-style-type: circle;
+}
+
+body h1, h2 {
+  font-family: Great Vibes, cursive;
+  line-height: 1.2;
+  font-weight: bold;
+}
