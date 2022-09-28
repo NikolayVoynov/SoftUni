@@ -1,0 +1,45 @@
+html {
+    font-family: Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Georgia, serif;
+    font-weight: normal;
+}
+
+blockquote {
+    border-left: 2px solid rgb(221, 221, 221);
+    font-style: italic;
+}
+
+blockquote p {
+    padding-left: 20px;
+}
+
+#name {
+    text-align: right;
+}
+
+table {
+    width: 100%;
+}
+
+thead tr {
+    background: #ccc;
+    text-align: left;
+}
+
+tbody tr:nth-child(even) {
+    background: #fff
+}
+
+tbody tr:nth-child(odd) {
+    background: #f1f1f1
+}
