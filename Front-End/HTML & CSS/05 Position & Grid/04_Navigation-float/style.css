@@ -1,0 +1,98 @@
+body {
+    font-family: Georgia, serif;
+    margin: 5% 5%;
+    background-color: rgb(238, 238, 238);
+}
+
+.nav-header {
+    border-bottom: solid 2px;
+}
+
+.nav-header nav {
+    display: inline-block;
+    float: right;
+    padding: 20px;
+}
+
+.nav-header nav ul {
+    display: inline-block;
+
+}
+
+.nav-header nav ul li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+main {
+    display: inline-block;
+    width: 65%;
+}
+
+aside {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 10%;
+}
+
+h1,
+h2,
+h3 {
+    font-family: Georgia, serif;
+    line-height: 1.2;
+    font-size: 1em;
+
+}
+
+a {
+    color: rgb(0, 102, 0);
+    text-decoration: none;
+}
+
+img {
+    background: rgb(255, 255, 255);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    padding: 3px;
+    border: solid 3px black;
+}
+
+.site-title {
+    display: inline-block;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 30px;
+}
+
+.img-first {
+    float: right;
+    margin-left: 15px;
+}
+
+.img-second {
+    float: left;
+    margin-right: 15px;
+}
+
+.para-blockquote {
+    display: inline-flex;
+}
+
+.para {
+    width: 55%;
+    margin-right: 0;
+}
+
+blockquote {
+    font-family: Georgia, serif;
+    font-style: italic;
+    color: grey;
+    float: right;
+    width: 45%;
+    border-left: solid 2px grey;
+    padding-left: 30px;
+}
+
+.author {
+    margin-top: 50px;
+    float: right;
+}
