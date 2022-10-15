@@ -1,0 +1,33 @@
+ul li {
+    display: inline-block;
+    list-style: none;
+    margin-right: 18px;
+
+}
+
+ul li a {
+    padding: 13px;
+    border-radius: 50%;
+    background-color: rgb(238, 234, 234);
+    color: rgb(27, 26, 26);
+}
+
+.fb:hover {
+    color: blue;
+}
+
+.tw:hover {
+    color: blueviolet
+}
+
+.ggl:hover {
+    color: red;
+}
+
+.lnk:hover {
+    color: rgb(82, 82, 220);
+}
+
+.inst:hover {
+    color: rgb(65, 65, 119);
+}
