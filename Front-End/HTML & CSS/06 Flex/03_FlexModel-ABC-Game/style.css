@@ -9,14 +9,15 @@ html {
     height: 35rem;
     flex-wrap: wrap;
     flex-direction: column;
-    margin: 80px;
+    margin: 100px;
+    text-align: center;
 }
 
 .container span {
     border: solid 1px black;
     margin: 5px;
-    height: 57px;
-    text-align: center;
+    padding-top: 20px;
+    min-height: 40px;
 }
 
 span:nth-child(1) {
