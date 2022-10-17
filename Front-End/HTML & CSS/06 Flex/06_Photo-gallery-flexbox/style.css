@@ -1,0 +1,40 @@
+body {
+    display: flex;
+    background-color: #eee;
+    margin: auto;
+    max-width: 1100px;
+}
+
+ul {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+li {
+    display: flex;
+    border: solid 5px black;
+    background: white;
+    margin-bottom: 55px;
+    padding: 35px 14px;
+}
+
+li:nth-child(2) img {
+    max-height: 300px;
+    align-self: center;
+}
+
+li:nth-child(4) img {
+    max-height: 300px;
+    align-self: center;
+}
+
+li:nth-child(5) img {
+    max-height: 300px;
+    align-self: center;
+}
+
+li:nth-child(9) img {
+    max-height: 300px;
+    align-self: center;
+}
