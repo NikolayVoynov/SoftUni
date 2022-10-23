@@ -1,0 +1,32 @@
+body {
+    background: rgb(244, 244, 244);
+}
+
+table, th, td {
+    border-collapse: collapse;
+    border: 1px solid rgb(172, 172, 172);
+}
+
+table{
+    width: 100%;
+    margin: auto;
+}
+
+th {
+    background-color: rgb(52, 51, 51);
+    color: white;
+    width: 33%;
+}
+
+tr{
+    height: 25px;
+}
+
+tr:nth-child(3){
+    background: white;
+}
+
+td, th{
+    padding-left: 5px;
+    text-align: left;
+}
