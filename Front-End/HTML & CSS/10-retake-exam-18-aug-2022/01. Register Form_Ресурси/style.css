@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish&display=swap");
+
+*,
+*::before,
+*::after {
+    font-family: "Mulish", sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    background: url(./images/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.container {
+    background: url(./images/form-background.png);
+    display: flex;
+    flex-direction: column;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 20px 15px 15px rgb(87, 86, 86);
+    width: 850px;
+    height: 610px;
+    border-radius: 30px;
+    overflow: hidden;
+    padding: 3%;
+}
+
+.form-container {
+    width: 25rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container h1 {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.input-container .rounded{
+    background: transparent;
+    border-radius: 18px;
+    width: 100%;
+    height: 2.5rem;
+    border: 1px solid rgb(147, 145, 145);
+}
+
+.form-container .two-aligned {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+    gap: 2rem;
+}
+
+.form-container .two-aligned .input-container {
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.two-aligned .rounded {
+    background: transparent;
+    border-radius: 18px;
+    width: 100%;
+    height: 2.5rem;
+    border: 1px solid rgb(147, 145, 145);
+}
+
+.checkbox {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.btn button{
+    margin-top: 2rem;
+    text-transform: uppercase;
+    background: #ae3c33;
+    color: white;
+    border-radius: 18px;
+    border: none;
+    padding: 10px 22px;
+}
+
+label {
+    font-size:small;
+}
