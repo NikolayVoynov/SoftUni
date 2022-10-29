@@ -1,0 +1,223 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css");
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --accent: #00d08e;
+    --questions-bkg: #b2f1dd;
+    --text-white: rgb(255, 255, 255);
+}
+
+html,
+body,
+button {
+    font-family: "PT Sans";
+}
+
+body {
+    padding: 0 5%;
+    margin: 0 auto;
+}
+
+.first {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)), url(./image/computer-main.jpg);
+    color: var(--text-white);
+    text-shadow: 0px 3px 3px black;
+    background-size: cover;
+    background-position-y: 50%;
+    background-repeat: no-repeat;
+    min-height: 750px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 1.8rem;
+    margin-top: 2.5rem;
+    padding: 0;
+}
+
+.first h1 {
+    font-size: 4.8rem;
+    font-weight: 900;
+    margin-top: 5.8rem;
+}
+
+.first .prgh-one {
+    width: 40%;
+    text-align: center;
+    font-size: 1.9rem;
+    margin-top: 2.5rem;
+}
+
+.first button {
+    border: none;
+    background: var(--accent);
+    color: var(--text-white);
+    font-size: 23px;
+    font-weight: bold;
+    padding: 7px 30px;
+    border-radius: 5px;
+    margin-top: 5rem;
+}
+
+.first button:hover {
+    border: 3px solid var(--text-white);
+    background: none;
+    cursor: pointer;
+}
+
+.first .prgh-two {
+    width: 40%;
+    text-align: center;
+    font-size: 1.4rem;
+    margin-top: 5.5rem;
+}
+
+.first .prgh-two i {
+    border-radius: 100%;
+    background: var(--text-white);
+    text-shadow: none;
+    color: black;
+    padding: 2px;
+    margin-left: 5px;
+}
+
+.second {
+    display: flex;
+}
+
+.left,
+.right {
+    flex-basis: 50%;
+    min-height: 400px;
+}
+
+.second .right {
+    padding: 30px 20px 10px 80px;
+    text-align: left;
+}
+
+.second .right h2 {
+    font-size: 3rem;
+}
+
+.second .right p {
+    font-size: 2rem;
+    font-weight: 200;
+    width: 95%;
+}
+
+ul {
+    list-style-type: none;
+    line-height: 4rem;
+    margin-top: 40px;
+}
+
+li {
+    font-size: 1.5rem;
+}
+
+li i {
+    color: var(--accent);
+    margin-right: 30px;
+}
+
+.third {
+    display: flex;
+}
+
+.third .left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.third h2 {
+    font-size: 2.3rem;
+    font-weight: bold;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+    padding: 10%;
+}
+
+.grid div {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-around;
+}
+
+.card div {
+    width: 50%;
+    align-self: center;
+}
+
+.card img {
+    object-fit: fill;
+}
+
+.card p {
+    color: var(--accent);
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding-top: 5px;
+}
+
+.forth {
+    background: var(--questions-bkg);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.forth h2{
+    margin-top: 3.5rem;
+    font-size: 2.5rem;
+}
+
+.forth .grid {
+    padding: 0;
+    margin: 5rem 15rem 0 15rem;
+    gap: 5rem;
+}
+
+.forth .question {
+    justify-content: flex-start;
+}
+
+.forth .question h3{
+    padding: 0;
+    margin-bottom: 1rem;
+}
+
+.forth .footer{
+    margin-top: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
