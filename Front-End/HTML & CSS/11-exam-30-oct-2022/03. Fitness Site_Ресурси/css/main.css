@@ -1,0 +1,142 @@
+@import url("./reset.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css");
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+
+body {
+    font-family: "PT Sans", sans-serif;
+}
+
+.contacts {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 15px;
+    background: red;
+    color: white;
+}
+
+.top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: url(../image/fitness-main.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 600px;
+}
+
+.header .nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    text-align: end;
+}
+
+.no-pain-no-gain {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    width: 500px;
+    height: 300px;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
+.no-pain-no-gain button{
+    background-color: red;
+    border: none;
+    color: white;
+}
+
+.header .nav .nav-item {
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.header .nav .nav-item .nav-link {
+    text-decoration: none;
+    color: white;
+    line-height: 1;
+    letter-spacing: 1px;
+}
+
+.welcome,
+.coaches {
+    padding: 6rem 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    font-size: 40px;
+    margin-bottom: 25px;
+    margin-top: 10px;
+}
+
+.welcome h3 {
+    font-size: 20px;
+    color: red;
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
+
+.section-flex {
+    display: flex;
+    flex-direction: row;
+    gap: 70px;
+}
+
+.section-flex-item {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+.welcome .section-flex-item .icon-container img {
+    width: 70px;
+    margin: 0 auto;
+}
+
+.coaches {
+    background-color: rgb(214, 211, 211);
+}
+
+.coaches .name {
+    margin-top: 10px;
+}
+
+.coaches .desc {
+    color: grey;
+    margin-top: 10px;
+}
+
+.sport {
+    color: red;
+    margin-top: 10px;
+}
+
+.title,
+.desc,
+.name,
+.sport {
+    text-align: center;
+}
+
+footer p {
+    padding-top: 7px;
+    padding-bottom: 7px;
+    text-align: center;
+    background-color: red;
+}
+
+hr {
+    width: 60px;
+    border: 2px solid red;
+    margin-bottom: 40px;
+}
