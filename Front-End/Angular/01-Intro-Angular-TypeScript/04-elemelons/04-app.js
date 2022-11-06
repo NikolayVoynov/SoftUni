@@ -1,0 +1,11 @@
+"use strict";
+exports.__esModule = true;
+var elemelons_1 = require("./elemelons");
+var watermelon = new elemelons_1.Watermelon(12.5, "Kingsize");
+var firemelon = new elemelons_1.Firemelon(21, "SuperDuperSize");
+var earthmelon = new elemelons_1.Earthmelon(10, "Normalsize");
+var airmelon = new elemelons_1.Airmelon(5, "Smallsize");
+console.log(watermelon.toString());
+console.log(firemelon.toString());
+console.log(earthmelon.toString());
+console.log(airmelon.toString());
