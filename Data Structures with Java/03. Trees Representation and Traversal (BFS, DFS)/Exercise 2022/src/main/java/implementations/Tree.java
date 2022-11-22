@@ -48,8 +48,6 @@ public class Tree<E> implements AbstractTree<E> {
     }
 
     public List<Tree<E>> traverseWithBFS() {
-        StringBuilder builder = new StringBuilder();
-
         Deque<Tree<E>> deque = new ArrayDeque<>();
 
         deque.offer(this);
@@ -81,6 +79,13 @@ public class Tree<E> implements AbstractTree<E> {
         }
     }
 
+    private void traverseTreeWithRecurrence(List<Tree<E>> collection, Tree<E> tree) {
+        collection.add(tree);
+        for (Tree<E> child : tree.children) {
+            traverseTreeWithRecurrence(collection, child);
+        }
+    }
+
 
     private String getPadding(int size) {
         StringBuilder builder = new StringBuilder();
@@ -103,12 +108,49 @@ public class Tree<E> implements AbstractTree<E> {
 
     @Override
     public List<E> getMiddleKeys() {
-        return null;
+        List<Tree<E>> allNodes = new ArrayList<>();
+        this.traverseTreeWithRecurrence(allNodes, this);
+        return allNodes
+                .stream()
+                .filter(tree -> tree.parent != null && tree.children.size() > 0)
+                .map(Tree::getKey)
+                .collect(Collectors.toCollection(ArrayList::new));
     }
 
     @Override
     public Tree<E> getDeepestLeftmostNode() {
-        return null;
+        List<Tree<E>> trees = this.traverseWithBFS();
+
+        int maxPath = 0;
+
+        Tree<E> deepestLeftMostNote = null;
+
+        for (Tree<E> tree : trees) {
+            if (tree.isLeaf()) {
+                int currentPath = getStepsFromLeafToRoot(tree);
+                if (currentPath > maxPath) {
+                    maxPath = currentPath;
+                    deepestLeftMostNote = tree;
+                }
+            }
+        }
+
+        return deepestLeftMostNote;
+    }
+
+    private int getStepsFromLeafToRoot(Tree<E> tree) {
+        int counter = 0;
+        Tree<E> current = tree;
+
+        while (current.parent != null) {
+            counter++;
+            current = current.parent;
+        }
+        return counter;
+    }
+
+    private boolean isLeaf() {
+        return this.parent != null && this.children.size() == 0;
     }
 
     @Override
