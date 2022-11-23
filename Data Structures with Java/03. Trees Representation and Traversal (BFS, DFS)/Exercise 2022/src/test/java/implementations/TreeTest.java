@@ -47,7 +47,7 @@ public class TreeTest {
         TreeFactory treeFactory = new TreeFactory();
         Tree<Integer> tree = treeFactory.createTreeFromStrings(input);
 
-        System.out.println(tree.getAsString());
+//        System.out.println(tree.getAsString());
 
 //        System.out.println(tree.traverseWithBFS());
 

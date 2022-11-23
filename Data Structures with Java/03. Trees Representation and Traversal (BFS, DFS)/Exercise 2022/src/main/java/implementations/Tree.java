@@ -18,6 +18,11 @@ public class Tree<E> implements AbstractTree<E> {
         this.children = new ArrayList<>();
     }
 
+    public Tree() {
+        this.children = new ArrayList<>();
+    }
+
+
     @Override
     public void setParent(Tree<E> parent) {
         this.parent = parent;
@@ -117,26 +122,56 @@ public class Tree<E> implements AbstractTree<E> {
                 .collect(Collectors.toCollection(ArrayList::new));
     }
 
+//    --- Get The Deepest Left Most Node with DFS ---
+
     @Override
     public Tree<E> getDeepestLeftmostNode() {
-        List<Tree<E>> trees = this.traverseWithBFS();
+        List<Tree<E>> deepestLeftMostNote = new ArrayList<>();
+        int[] maxPath =new int[1];
+        int max = 0;
 
-        int maxPath = 0;
+        deepestLeftMostNote.add(new Tree<E>());
 
-        Tree<E> deepestLeftMostNote = null;
+        findDeepestNodeDFS(deepestLeftMostNote, maxPath, max, this);
 
-        for (Tree<E> tree : trees) {
-            if (tree.isLeaf()) {
-                int currentPath = getStepsFromLeafToRoot(tree);
-                if (currentPath > maxPath) {
-                    maxPath = currentPath;
-                    deepestLeftMostNote = tree;
-                }
-            }
+        return deepestLeftMostNote.get(0);
+    }
+
+    private void findDeepestNodeDFS(List<Tree<E>> deepestLeftMostNote, int[] maxPath, int max, Tree<E> tree) {
+
+        if (max > maxPath[0]) {
+            maxPath[0] = max;
+            deepestLeftMostNote.set(0, tree);
         }
 
-        return deepestLeftMostNote;
+        for (Tree<E> child : tree.children) {
+            findDeepestNodeDFS(deepestLeftMostNote, maxPath, max + 1, child);
+        }
     }
+
+
+//    --- Get The Deepest Left Most Node with BFS ---
+
+//    @Override
+//    public Tree<E> getDeepestLeftmostNode() {
+//        List<Tree<E>> trees = this.traverseWithBFS();
+//
+//        int maxPath = 0;
+//
+//        Tree<E> deepestLeftMostNote = null;
+//
+//        for (Tree<E> tree : trees) {
+//            if (tree.isLeaf()) {
+//                int currentPath = getStepsFromLeafToRoot(tree);
+//                if (currentPath > maxPath) {
+//                    maxPath = currentPath;
+//                    deepestLeftMostNote = tree;
+//                }
+//            }
+//        }
+//
+//        return deepestLeftMostNote;
+//    }
 
     private int getStepsFromLeafToRoot(Tree<E> tree) {
         int counter = 0;
