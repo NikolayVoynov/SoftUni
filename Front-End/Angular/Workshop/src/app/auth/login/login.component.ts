@@ -18,15 +18,19 @@ export class LoginComponent {
     { static: true }
   ) form!: ElementRef<HTMLInputElement>;
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router, private authService: AuthService) {
-
-  }
+  constructor(private activatedRoute: ActivatedRoute, private router: Router, private authService: AuthService) { }
 
   loginHandler(form: NgForm): void {
     if (form.invalid) { return; }
-    this.authService.user = {
-      username: 'John'
-    } as any;
+    const { email, password } = form.value;
+
+    this.authService
+      .login(email!, password!)
+      .subscribe(user => {
+        console.log(user);
+        // this.authService.user = user;
+        this.router.navigate(['/theme/recent']);
+      });
 
     const returnUrl = this.activatedRoute.snapshot.queryParams['returnUrl'] || '/';
 
