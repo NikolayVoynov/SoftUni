@@ -1,21 +1,28 @@
 import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HTTP_INTERCEPTORS } from "@angular/common/http";
-import { Injectable, Provider } from "@angular/core";
-import { Observable } from "rxjs";
+import { Inject, Injectable, Provider } from "@angular/core";
+import { Router } from "@angular/router";
+import { BehaviorSubject, catchError, Observable } from "rxjs";
 import { environment } from '../environments/environment';
+import { API_ERROR as API_ERROR } from "./shared/constants";
 const apiURL = environment.apiURL;
 
 @Injectable()
 export class AppInterceptor implements HttpInterceptor {
-    constructor() { };
+    constructor(@Inject(API_ERROR) private apiError: BehaviorSubject<Error | null>,
+        private router: Router) { };
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         if (req.url.startsWith('/api')) {
-            req = req.clone({ url: req.url.replace('/api', apiURL) });
+            req = req.clone({ url: req.url.replace('/api', apiURL), withCredentials: true });
         }
 
-        return next.handle(req)
+        return next.handle(req).pipe(
+            catchError(err => {
+                this.apiError.next(err);
+                this.router.navigate(['/error']);
+                return [err];
+            }));
     }
-
 }
 
 export const appInterceptorProvider: Provider = {

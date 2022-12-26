@@ -27,8 +27,6 @@ export class LoginComponent {
     this.authService
       .login(email!, password!)
       .subscribe(user => {
-        console.log(user);
-        // this.authService.user = user;
         this.router.navigate(['/theme/recent']);
       });
 

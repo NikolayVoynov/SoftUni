@@ -21,9 +21,9 @@ export class ThemeListComponent implements OnInit {
       },
       error: (err) => {
         this.errorFetchingData = true;
-        console.log(err);
+        console.error(err);
       }
-    })
+    });
   }
 
 }

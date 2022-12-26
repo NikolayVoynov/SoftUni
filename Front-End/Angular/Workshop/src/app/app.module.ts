@@ -9,10 +9,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AuthModule } from './auth/auth.module';
 import { ThemeModule } from './theme/theme.module';
 import { appInterceptorProvider } from './app.interceptor';
+import { AuthenticateComponent } from './authenticate/authenticate.component';
+import { API_ERROR } from './shared/constants';
+import { BehaviorSubject } from 'rxjs';
 
 @NgModule({
   declarations: [
-    AppComponent   
+    AppComponent,
+    AuthenticateComponent,
   ],
   imports: [
     AuthModule,
@@ -23,7 +27,12 @@ import { appInterceptorProvider } from './app.interceptor';
     HttpClientModule,
     SharedModule,
   ],
-  providers: [appInterceptorProvider],
+  providers: [
+    appInterceptorProvider,
+    {
+      provide: API_ERROR,
+      useValue: new BehaviorSubject(null)
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
