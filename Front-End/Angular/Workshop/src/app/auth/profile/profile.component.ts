@@ -18,7 +18,7 @@ export class ProfileComponent {
   counter = 1;
 
   get user() {
-    const { username, email, tel: telephone } = this.authServie.user!;
+    const { username, email, tel: telephone } = this.authService.user!;
     const [ext, ...tel] = telephone.split(' ');
     return {
       username,
@@ -34,7 +34,7 @@ export class ProfileComponent {
 
   form!: FormGroup;
 
-  constructor(private fb: FormBuilder, private authServie: AuthService) {
+  constructor(private fb: FormBuilder, private authService: AuthService) {
     this.createForm({ ...this.user, addresses: [{ postCode: 'Hello', street: 'World' }] });
   }
 
@@ -72,9 +72,8 @@ export class ProfileComponent {
     this.formSubmitted = true;
     if (this.form.invalid) { return; }
     const { username, email, ext, tel } = this.form.value;
-    this.authServie.user = {
-      username, email, tel: ext + ' ' + tel
-    } as any;
-    this.toggleEditMode();
+    this.authService.setProfile(username, email, ext + ' ' + tel).subscribe(() => {
+      this.toggleEditMode();
+    });
   }
 }

@@ -1,19 +1,19 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, OnDestroy } from '@angular/core';
-import { BehaviorSubject, catchError, filter, of, Subscription, tap } from 'rxjs';
-import { IUser } from '../shared/interfaces/user';
+import { BehaviorSubject, catchError, filter, of, Subscription, tap, throwError } from 'rxjs';
+import { IUser } from '../shared/interfaces';
 
 @Injectable({
   providedIn: 'root'
 })
-
 export class AuthService implements OnDestroy {
 
   private user$$ = new BehaviorSubject<undefined | null | IUser>(undefined);
-  user$ = this.user$$.asObservable().pipe(filter((val): val is IUser | null => val !== undefined));
+  user$ = this.user$$.asObservable().pipe(
+    filter((val): val is IUser | null => val !== undefined)
+  );
 
   user: IUser | null = null;
-
 
   get isLoggedIn() {
     return this.user !== null;
@@ -34,21 +34,28 @@ export class AuthService implements OnDestroy {
 
   login(email: string, password: string) {
     return this.http.post<any>('/api/login', { email, password })
-      .pipe(tap(user => this.user$$.next(user)));
+      .pipe(tap(user => this.user$$.next(user)));;
   }
 
   logout() {
     return this.http.post<void>('/api/logout', {})
-      .pipe(tap(() => this.user$$.next(null)));
+      .pipe(tap(() => this.user$$.next(null)));;
   }
 
   getProfile() {
     return this.http.get<IUser>('/api/users/profile')
-      .pipe(tap(user => this.user$$.next(user)),
+      .pipe(
+        tap(user => this.user$$.next(user)),
         catchError((err) => {
           this.user$$.next(null);
-          return of(err);
-        }));
+          return throwError(() => err);
+        })
+      );
+  }
+
+  setProfile(username: string, email: string, tel?: string) {
+    return this.http.put<IUser>('/api/users/profile', { username, email, tel })
+      .pipe(tap(user => this.user$$.next(user)));
   }
 
   ngOnDestroy(): void {
