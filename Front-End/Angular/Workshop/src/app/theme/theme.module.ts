@@ -8,25 +8,26 @@ import { ThemeDetailComponent } from './theme-detail/theme-detail.component';
 import { MainComponent } from './main/main.component';
 import { RecentPostsComponent } from './recent-posts/recent-posts.component';
 import { FormsModule } from '@angular/forms';
+import { LoaderComponent } from "../shared/loader/loader.component";
 
 
 
 @NgModule({
-  declarations: [
-    ThemeListComponent,
-    NewThemeComponent,
-    ThemeDetailComponent,
-    MainComponent,
-    RecentPostsComponent
-  ],
-  imports: [
-    CommonModule,
-    SharedModule,
-    FormsModule,
-    ThemeRoutingModule
-  ],
-  exports: [
-    ThemeListComponent
-  ]
+    declarations: [
+        ThemeListComponent,
+        NewThemeComponent,
+        ThemeDetailComponent,
+        MainComponent,
+        RecentPostsComponent
+    ],
+    exports: [
+        ThemeListComponent
+    ],
+    imports: [
+        CommonModule,
+        SharedModule,
+        FormsModule,
+        ThemeRoutingModule
+    ]
 })
 export class ThemeModule { }

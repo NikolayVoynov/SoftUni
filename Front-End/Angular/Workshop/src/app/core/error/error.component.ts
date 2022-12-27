@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject, debounceTime, filter, take } from 'rxjs';
 import { API_ERROR } from 'src/app/shared/constants';
@@ -8,7 +8,7 @@ import { API_ERROR } from 'src/app/shared/constants';
   templateUrl: './error.component.html',
   styleUrls: ['./error.component.scss']
 })
-export class ErrorComponent implements OnInit {
+export class ErrorComponent implements OnDestroy {
   apiError$ = this.apiError.asObservable();
 
   constructor(@Inject(API_ERROR) private apiError: BehaviorSubject<Error | null>,
@@ -18,7 +18,8 @@ export class ErrorComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
-  }
 
+  ngOnDestroy(): void {
+    this.apiError.next(null);
+  }
 }

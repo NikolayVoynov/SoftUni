@@ -1,14 +1,14 @@
 <div *ngIf="errorFetchingData">Error loading themes</div>
 <app-loader *ngIf="!themeList"></app-loader>
-<div *ngFor="let theme of themeList" class="theme-container">
+<div *ngFor="let theme of themeList; let i = index" class="theme-container">
     <div class="theme-name-wrapper">
         <div class="theme-name">
             <a href="#" class="normal">
-                <h2>{{theme.themeName}}</h2>
+                <h2>{{theme.themeName | shorten : 25}}</h2>
             </a>
             <div class="columns">
                 <div>
-                    <p>Date: <time>{{theme.created_at}}</time></p>
+                    <p>Date: <time>{{theme.created_at | elapsedTime}}</time></p>
                     <div class="nick-name">
                         <p>Username: <span>{{theme.userId.username}}</span></p>
                     </div>
