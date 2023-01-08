@@ -163,11 +163,33 @@ public class RedBlackTree<Key extends Comparable<Key>, Value> {
     }
 
     public void deleteMax() {
+        if (this.isEmpty()) {
+            throw new IllegalArgumentException("Tree is empty");
+        }
+
+        if (this.root.right == null) {
+            this.root = null;
+            return;
+        }
+        this.root = deleteMax(this.root);
     }
 
     // delete the key-value pair with the maximum key rooted at h
     private Node deleteMax(Node h) {
-        return null;
+        if (isRed(h.left)) {
+            h = rotateRight(h);
+        }
+
+        if (h.right == null) {
+            return null;
+        }
+
+        if (!isRed(h.right) && !isRed(h.right.right)) {
+            h = moveRedRight(h);
+        }
+
+        h.right = deleteMax(h.right);
+        return balance(h);
     }
 
     public void delete(Key key) {
@@ -225,7 +247,13 @@ public class RedBlackTree<Key extends Comparable<Key>, Value> {
     // Assuming that h is red and both h.right and h.right.left
     // are black, make h.right or one of its children red.
     private Node moveRedRight(Node h) {
-        return null;
+        flipColors(h);
+        if (isRed(h.left.left)) {
+            h = rotateRight(h);
+            flipColors(h);
+        }
+
+        return h;
     }
 
     // restore red-black tree invariant
