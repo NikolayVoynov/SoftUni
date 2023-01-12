@@ -1,3 +1,5 @@
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.Iterator;
 import java.util.LinkedList;
 
@@ -21,43 +23,114 @@ public class HashTable<K, V> implements Iterable<KeyValue<K, V>> {
     }
 
     public void add(K key, V value) {
-        throw new UnsupportedOperationException();
+        this.growIfNeeded();
+
+        int index = findSlotNumber(key);
+
+        LinkedList<KeyValue<K, V>> list = this.slots[index];
+
+        if (list == null) {
+            list = new LinkedList<>();
+        }
+
+        for (KeyValue<K, V> current : list) {
+            if (current.getKey().equals(key)) {
+                throw new IllegalArgumentException("Key already exists " + key);
+            }
+        }
+
+        KeyValue<K, V> toInsert = new KeyValue<>(key, value);
+        list.addLast(toInsert);
+
+        this.slots[index] = list;
+
+        this.count++;
     }
 
     private int findSlotNumber(K key) {
-        throw new UnsupportedOperationException();
+        return Math.abs(key.hashCode()) % this.capacity;
     }
 
     private void growIfNeeded() {
-        throw new UnsupportedOperationException();
+        if ((double) this.count / this.capacity > LOAD_FACTOR) {
+            this.grow();
+        }
     }
 
     private void grow() {
-        throw new UnsupportedOperationException();
+        this.capacity *= 2;
+        HashTable<K, V> newTable = new HashTable<>(this.capacity);
+
+        for (KeyValue<K, V> oldPair : this) {
+            newTable.add(oldPair.getKey(), oldPair.getValue());
+        }
+
+        this.slots = newTable.slots;
     }
 
     public int size() {
-        throw new UnsupportedOperationException();
+        return this.count;
     }
 
     public int capacity() {
-        throw new UnsupportedOperationException();
+        return this.capacity;
     }
 
     public boolean addOrReplace(K key, V value) {
-        throw new UnsupportedOperationException();
+        this.growIfNeeded();
+
+        int index = findSlotNumber(key);
+
+        LinkedList<KeyValue<K, V>> list = this.slots[index];
+
+        if (list == null) {
+            list = new LinkedList<>();
+        }
+
+        for (KeyValue<K, V> current : list) {
+            if (current.getKey().equals(key)) {
+                throw new IllegalArgumentException("Key already exists " + key);
+            }
+        }
+
+        KeyValue<K, V> toInsert = new KeyValue<>(key, value);
+        list.addLast(toInsert);
+
+        this.slots[index] = list;
+
+        this.count++;
     }
 
     public V get(K key) {
-        throw new UnsupportedOperationException();
+        KeyValue<K, V> pair = this.find(key);
+
+        if (pair == null) {
+            throw new IllegalArgumentException();
+        }
+
+        return pair.getValue();
     }
 
     public KeyValue<K, V> find(K key) {
-        throw new UnsupportedOperationException();
+        int index = findSlotNumber(key);
+
+        LinkedList<KeyValue<K, V>> slot = this.slots[index];
+
+        if (slot == null) {
+            return null;
+        }
+
+        for (KeyValue<K, V> pair : slot) {
+            if (key.equals(pair.getKey())) {
+                return pair;
+            }
+        }
+
+        return null;
     }
 
     public boolean containsKey(K key) {
-        throw new UnsupportedOperationException();
+        return this.find(key) != null;
     }
 
     public boolean remove(K key) {
@@ -78,6 +151,33 @@ public class HashTable<K, V> implements Iterable<KeyValue<K, V>> {
 
     @Override
     public Iterator<KeyValue<K, V>> iterator() {
-        throw new UnsupportedOperationException();
+        return new Iterator<>() {
+            int passedThroughCount = 0;
+            int currentIndex = 0;
+            Deque<KeyValue<K, V>> elements = new ArrayDeque<>();
+
+            @Override
+            public boolean hasNext() {
+                return passedThroughCount < count && elements.isEmpty();
+            }
+
+            @Override
+            public KeyValue<K, V> next() {
+                if (!elements.isEmpty()) {
+                    return elements.poll();
+                }
+
+                while (slots[currentIndex] == null && currentIndex < capacity) {
+                    currentIndex++;
+                }
+
+                elements.addAll(slots[currentIndex]);
+
+                passedThroughCount += slots[currentIndex].size();
+                currentIndex++;
+
+                return elements.poll();
+            }
+        };
     }
 }
