@@ -59,7 +59,7 @@ public class HashTable<K, V> implements Iterable<KeyValue<K, V>> {
 
         for (LinkedList<KeyValue<K, V>> slot : this.slots) {
             if (slot != null) {
-                slot.forEach(s-> newTable.add(s.getKey(),s.getValue()));
+                slot.forEach(s -> newTable.add(s.getKey(), s.getValue()));
             }
         }
 
@@ -188,33 +188,34 @@ public class HashTable<K, V> implements Iterable<KeyValue<K, V>> {
 
     @Override
     public Iterator<KeyValue<K, V>> iterator() {
-        return new Iterator<>() {
-            int passedThroughCount = 0;
-            int currentIndex = 0;
-            Deque<KeyValue<K, V>> elements = new ArrayDeque<>();
+        return new HashIterator();
+    }
 
-            @Override
-            public boolean hasNext() {
-                return passedThroughCount < count && elements.isEmpty();
+    private class HashIterator implements Iterator<KeyValue<K, V>> {
+        Deque<KeyValue<K, V>> elements;
+
+        HashIterator() {
+            this.elements = new ArrayDeque<>();
+
+            for (LinkedList<KeyValue<K, V>> slot : slots) {
+                if (slot != null) {
+                    elements.addAll(slot);
+                }
+            }
+        }
+
+        @Override
+        public boolean hasNext() {
+            return !elements.isEmpty();
+        }
+
+        @Override
+        public KeyValue<K, V> next() {
+            if (!hasNext()) {
+                throw new IllegalStateException("Empty hash table");
             }
 
-            @Override
-            public KeyValue<K, V> next() {
-                if (!elements.isEmpty()) {
-                    return elements.poll();
-                }
-
-                while (slots[currentIndex] == null && currentIndex < capacity) {
-                    currentIndex++;
-                }
-
-                elements.addAll(slots[currentIndex]);
-
-                passedThroughCount += slots[currentIndex].size();
-                currentIndex++;
-
-                return elements.poll();
-            }
-        };
+            return elements.poll();
+        }
     }
 }
