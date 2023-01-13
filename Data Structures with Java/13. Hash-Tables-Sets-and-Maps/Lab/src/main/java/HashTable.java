@@ -1,7 +1,4 @@
-import java.util.ArrayDeque;
-import java.util.Deque;
-import java.util.Iterator;
-import java.util.LinkedList;
+import java.util.*;
 
 public class HashTable<K, V> implements Iterable<KeyValue<K, V>> {
     private final static int INITIAL_CAPACITY = 16;
@@ -52,20 +49,22 @@ public class HashTable<K, V> implements Iterable<KeyValue<K, V>> {
     }
 
     private void growIfNeeded() {
-        if ((double) this.count / this.capacity > LOAD_FACTOR) {
+        if (((double) this.count + 1) / this.capacity > LOAD_FACTOR) {
             this.grow();
         }
     }
 
     private void grow() {
-        this.capacity *= 2;
-        HashTable<K, V> newTable = new HashTable<>(this.capacity);
+        HashTable<K, V> newTable = new HashTable<>(this.capacity * 2);
 
-        for (KeyValue<K, V> oldPair : this) {
-            newTable.add(oldPair.getKey(), oldPair.getValue());
+        for (LinkedList<KeyValue<K, V>> slot : this.slots) {
+            if (slot != null) {
+                slot.forEach(s-> newTable.add(s.getKey(),s.getValue()));
+            }
         }
 
         this.slots = newTable.slots;
+        this.capacity *= 2;
     }
 
     public int size() {
@@ -87,18 +86,22 @@ public class HashTable<K, V> implements Iterable<KeyValue<K, V>> {
             list = new LinkedList<>();
         }
 
+        boolean updated = false;
         for (KeyValue<K, V> current : list) {
             if (current.getKey().equals(key)) {
-                throw new IllegalArgumentException("Key already exists " + key);
+                current.setValue(value);
+                updated = true;
             }
         }
 
-        KeyValue<K, V> toInsert = new KeyValue<>(key, value);
-        list.addLast(toInsert);
+        if (!updated) {
+            KeyValue<K, V> toInsert = new KeyValue<>(key, value);
+            list.addLast(toInsert);
+            this.count++;
+        }
 
         this.slots[index] = list;
-
-        this.count++;
+        return !updated;
     }
 
     public V get(K key) {
@@ -134,19 +137,53 @@ public class HashTable<K, V> implements Iterable<KeyValue<K, V>> {
     }
 
     public boolean remove(K key) {
-        throw new UnsupportedOperationException();
+        int slotNumber = this.findSlotNumber(key);
+        LinkedList<KeyValue<K, V>> slot = this.slots[slotNumber];
+
+        if (slot == null) {
+            return false;
+        }
+
+        KeyValue<K, V> toRemove = null;
+        for (KeyValue<K, V> pair : slot) {
+            if (pair.getKey().equals(key)) {
+                toRemove = pair;
+                break;
+            }
+        }
+
+        boolean result = toRemove != null && slot.remove(toRemove);
+
+        if (result) {
+            this.count--;
+        }
+
+        return result;
     }
 
     public void clear() {
-        throw new UnsupportedOperationException();
+        this.capacity = INITIAL_CAPACITY;
+        this.slots = new LinkedList[this.capacity];
+
+        this.count = 0;
     }
 
     public Iterable<K> keys() {
-        throw new UnsupportedOperationException();
+        List<K> keys = new ArrayList<>();
+        for (KeyValue<K, V> pair : this) {
+            keys.add(pair.getKey());
+        }
+
+        return keys;
     }
 
     public Iterable<V> values() {
-        throw new UnsupportedOperationException();
+        List<V> values = new ArrayList<>();
+        for (KeyValue<K, V> pair : this) {
+            values.add(pair.getValue());
+        }
+
+        return values;
     }
 
     @Override
