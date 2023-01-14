@@ -8,8 +8,8 @@ public class RoyaleArena implements IArena {
     private Map<CardType, Set<Battlecard>> cardsByTypes;
 
     public RoyaleArena() {
-        this.cardsByIds = new HashMap<>();
-        this.cardsByTypes = new HashMap<>();
+        this.cardsByIds = new LinkedHashMap<>();
+        this.cardsByTypes = new LinkedHashMap<>();
     }
 
     @Override
@@ -71,10 +71,17 @@ public class RoyaleArena implements IArena {
     public Iterable<Battlecard> getByTypeAndDamageRangeOrderedByDamageThenById(CardType type, int lo, int hi) {
         Set<Battlecard> battlecards = getBattlecardsByType(type);
 
-        return battlecards
+        List<Battlecard> result = battlecards
                 .stream()
-                .filter(c -> c.getDamage() >= lo && c.getDamage() < hi)
+                .filter(c -> c.getDamage() > lo && c.getDamage() < hi)
+                .sorted(Battlecard::compareTo)
                 .collect(Collectors.toList());
+
+        if (result.isEmpty()) {
+            throw new UnsupportedOperationException();
+        }
+
+        return result;
     }
 
     @Override
@@ -84,6 +91,7 @@ public class RoyaleArena implements IArena {
         List<Battlecard> result = battlecards
                 .stream()
                 .filter(c -> c.getDamage() <= damage)
+                .sorted(Battlecard::compareTo)
                 .collect(Collectors.toList());
 
         if (result.isEmpty()) {
@@ -101,7 +109,7 @@ public class RoyaleArena implements IArena {
             throw new UnsupportedOperationException();
         }
 
-        battlecards.sort(Comparator.comparingDouble(Battlecard::getSwag).reversed());
+        battlecards.sort(Comparator.comparingDouble(Battlecard::getSwag).reversed().thenComparing(Battlecard::getId));
 
         return battlecards;
     }
@@ -122,28 +130,60 @@ public class RoyaleArena implements IArena {
 
     @Override
     public Iterable<Battlecard> getAllByNameAndSwag() {
-        return null;
+        Map<String, Battlecard> battlecards = new LinkedHashMap<>();
+        for (Battlecard battlecard : cardsByIds.values()) {
+            if (!battlecards.containsKey(battlecard.getName())) {
+                battlecards.put(battlecard.getName(), battlecard);
+            } else {
+                double oldSwag = battlecards.get(battlecard.getName()).getSwag();
+                double newSwag = battlecard.getSwag();
+
+                if (newSwag > oldSwag) {
+                    battlecards.put(battlecard.getName(), battlecard);
+                }
+            }
+        }
+
+        return battlecards.values();
     }
 
     @Override
     public Iterable<Battlecard> findFirstLeastSwag(int n) {
-        return null;
+        if (n > this.count()) {
+            throw new UnsupportedOperationException();
+        }
+
+        List<Battlecard> battlecards = this.cardsByIds
+                .values()
+                .stream()
+                .sorted(Comparator.comparingDouble(Battlecard::getSwag))
+                .collect(Collectors.toList());
+
+
+        return battlecards
+                .stream()
+                .limit(n)
+                .sorted(Comparator.comparingDouble(Battlecard::getSwag).thenComparing(Battlecard::getId))
+                .collect(Collectors.toList());
     }
 
     @Override
     public Iterable<Battlecard> getAllInSwagRange(double lo, double hi) {
-        return null;
+        return getBattlecardsByPredicate(c -> c.getSwag() >= lo && c.getSwag() <= hi)
+                .stream()
+                .sorted(Comparator.comparingDouble(Battlecard::getSwag))
+                .collect(Collectors.toList());
     }
 
     @Override
     public Iterator<Battlecard> iterator() {
-        return null;
+        return this.cardsByIds.values().iterator();
     }
 
     private Set<Battlecard> getBattlecardsByType(CardType type) {
         Set<Battlecard> battlecards = this.cardsByTypes.get(type);
 
-        if (battlecards == null) {
+        if (battlecards == null || battlecards.isEmpty()) {
             throw new UnsupportedOperationException();
         }
 
