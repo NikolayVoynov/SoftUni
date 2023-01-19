@@ -12,7 +12,8 @@ public class PersonCollectionUnitTests {
 
     @Before
     public void setUp() {
-        this.people = new PersonCollectionSlowImpl();
+//        this.people = new PersonCollectionSlowImpl();
+        this.people = new PersonCollectionImpl();
     }
 
     @Test
