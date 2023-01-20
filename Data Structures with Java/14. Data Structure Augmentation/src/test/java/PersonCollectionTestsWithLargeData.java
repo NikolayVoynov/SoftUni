@@ -8,7 +8,9 @@ public class PersonCollectionTestsWithLargeData {
 
     @Before
     public void setUp() {
-        this.people = new PersonCollectionSlowImpl();
+//        this.people = new PersonCollectionSlowImpl();
+        this.people = new PersonCollectionImpl();
+
     }
 
     private void addPeople(int count) {

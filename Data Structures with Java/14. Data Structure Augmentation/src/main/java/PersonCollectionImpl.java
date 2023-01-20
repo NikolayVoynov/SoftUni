@@ -5,7 +5,7 @@ public class PersonCollectionImpl implements PersonCollection {
     private Map<String, TreeSet<Person>> peopleByDomain;
     private Map<String, TreeSet<Person>> peopleByNameTown;
     private TreeMap<Integer, TreeSet<Person>> peopleByAgeRange;
-    private Map<String, TreeMap<Integer,TreeSet<Person>>> peopleByAgeAndTown;
+    private Map<String, TreeMap<Integer, TreeSet<Person>>> peopleByAgeAndTown;
 
 
     public PersonCollectionImpl() {
@@ -43,7 +43,12 @@ public class PersonCollectionImpl implements PersonCollection {
             if (!this.peopleByAgeAndTown.containsKey(town)) {
                 this.peopleByAgeAndTown.put(town, new TreeMap<Integer, TreeSet<Person>>());
             }
-            this.peopleByAgeAndTown.get(age).add(newPerson);
+            TreeMap<Integer, TreeSet<Person>> currentAgePeopleTree = this.peopleByAgeAndTown.get(town);
+
+            if (!currentAgePeopleTree.containsKey(age)) {
+                currentAgePeopleTree.put(age, new TreeSet<Person>());
+            }
+            currentAgePeopleTree.get(age).add(newPerson);
 
             return true;
         }
@@ -61,9 +66,16 @@ public class PersonCollectionImpl implements PersonCollection {
         if (find(email) != null) {
             String[] splitEmail = email.split("@");
             String domain = splitEmail[1];
+            Person person = this.peopleByEmail.get(email);
+            String personName = person.getName();
+            String personTown = person.getTown();
+            int personAge = person.getAge();
 
             this.peopleByEmail.remove(email);
             this.peopleByDomain.remove(domain);
+            this.peopleByNameTown.get(personName + personTown).remove(person);
+            this.peopleByAgeRange.get(personAge).remove(person);
+            this.peopleByAgeAndTown.get(personTown).get(personAge).remove(person);
             return true;
         }
 
@@ -94,18 +106,27 @@ public class PersonCollectionImpl implements PersonCollection {
 
     @Override
     public Iterable<Person> findAll(int startAge, int endAge) {
-        List<Person> resultListPerson = new ArrayList<>();
-        this.peopleByAgeRange.entrySet().forEach(e -> {
-            if (e.getKey() >= startAge && e.getKey() <= endAge) {
-                resultListPerson.addAll(e.getValue());
+        List<Person> resultListPeople = new ArrayList<>();
+        this.peopleByAgeRange.forEach((key, value) -> {
+            if (key >= startAge && key <= endAge) {
+                resultListPeople.addAll(value);
             }
         });
 
-        return resultListPerson;
+        return resultListPeople;
     }
 
     @Override
     public Iterable<Person> findAll(int startAge, int endAge, String town) {
-        throw new UnsupportedOperationException();
+        List<Person> resultListPeople = new ArrayList<>();
+        if (this.peopleByAgeAndTown.containsKey(town)) {
+            this.peopleByAgeAndTown.get(town).forEach((key, value) -> {
+                if (key >= startAge && key <= endAge) {
+                    resultListPeople.addAll(value);
+                }
+            });
+        }
+
+        return resultListPeople;
     }
 }
