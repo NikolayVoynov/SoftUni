@@ -19,7 +19,7 @@ public class DiscordImpl implements Discord {
         this.messagesById.put(message.getId(), message);
 
         if (!this.messagesByChannel.containsKey(message.getChannel())) {
-            this.messagesByChannel.put(message.getChannel(), new LinkedHashSet<>());
+            this.messagesByChannel.put(message.getChannel(), new HashSet<>());
         }
 
         this.messagesByChannel.get(message.getChannel()).add(message);
