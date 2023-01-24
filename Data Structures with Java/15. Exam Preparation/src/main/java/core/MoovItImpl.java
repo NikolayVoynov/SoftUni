@@ -3,13 +3,15 @@ package core;
 import models.Route;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class MoovItImpl implements MoovIt {
     private Map<String, Route> routesById;
 
     public MoovItImpl() {
-        this.routesById = new HashMap<>();
+        this.routesById = new LinkedHashMap<>();
     }
 
     @Override
@@ -58,16 +60,48 @@ public class MoovItImpl implements MoovIt {
 
     @Override
     public Iterable<Route> searchRoutes(String startPoint, String endPoint) {
+//        return this.routesById
+//                .values()
+//                .stream()
+//                .filter(route -> route.getLocationPoints().contains(startPoint) & route.getLocationPoints().contains(endPoint))
+//                .sorted();
         return null;
     }
 
     @Override
     public Iterable<Route> getFavoriteRoutes(String destinationPoint) {
-        return null;
+        return this.routesById
+                .values()
+                .stream()
+                .filter(r -> r.getIsFavorite()
+                        && r.getLocationPoints().contains(destinationPoint)
+                        && r.getLocationPoints().indexOf(destinationPoint) != 0)
+                .sorted((f, s) -> {
+                    if (f.getDistance() != s.getDistance()) {
+                        return Double.compare(f.getDistance(), s.getDistance());
+                    }
+
+                    return Integer.compare(s.getPopularity(), f.getPopularity());
+                })
+                .collect(Collectors.toList());
     }
 
     @Override
     public Iterable<Route> getTop5RoutesByPopularityThenByDistanceThenByCountOfLocationPoints() {
-        return null;
+        return this.routesById
+                .values()
+                .stream()
+                .sorted((f, s) -> {
+                    if (f.getPopularity() != s.getPopularity()) {
+                        return Integer.compare(s.getPopularity(), f.getPopularity());
+                    }
+
+                    if (f.getDistance() != s.getDistance()) {
+                        return Double.compare(f.getDistance(), s.getDistance());
+                    }
+
+                    return Integer.compare(f.getLocationPoints().size(), s.getLocationPoints().size());
+                })
+                .collect(Collectors.toList());
     }
 }
