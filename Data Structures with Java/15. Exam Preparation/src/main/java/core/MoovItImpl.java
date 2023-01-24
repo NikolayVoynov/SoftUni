@@ -2,16 +2,16 @@ package core;
 
 import models.Route;
 
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class MoovItImpl implements MoovIt {
     private Map<String, Route> routesById;
+    private Set<Route> routeSet;
 
     public MoovItImpl() {
         this.routesById = new LinkedHashMap<>();
+        this.routeSet = new HashSet<>();
     }
 
     @Override
@@ -20,6 +20,7 @@ public class MoovItImpl implements MoovIt {
             throw new IllegalArgumentException();
         }
         this.routesById.put(route.getId(), route);
+        this.routeSet.add(route);
     }
 
     @Override
@@ -27,12 +28,13 @@ public class MoovItImpl implements MoovIt {
         if (!this.routesById.containsKey(routeId)) {
             throw new IllegalArgumentException();
         }
-        this.routesById.remove(routeId);
+        Route removedRoute = this.routesById.remove(routeId);
+        this.routeSet.remove(removedRoute);
     }
 
     @Override
     public boolean contains(Route route) {
-        return this.routesById.containsKey(route.getId());
+        return this.routeSet.contains(route);
     }
 
     @Override
@@ -42,30 +44,60 @@ public class MoovItImpl implements MoovIt {
 
     @Override
     public Route getRoute(String routeId) {
-        if (!this.routesById.containsKey(routeId)) {
+        Route route = this.routesById.get(routeId);
+
+        if (route == null) {
             throw new IllegalArgumentException();
         }
 
-        return this.routesById.get(routeId);
+        return route;
     }
 
     @Override
     public void chooseRoute(String routeId) {
-        if (!this.routesById.containsKey(routeId)) {
+        Route route = this.routesById.get(routeId);
+
+        if (route == null) {
             throw new IllegalArgumentException();
         }
 
-        this.routesById.get(routeId).setPopularity(this.routesById.get(routeId).getPopularity() + 1);
+        Integer popularity = route.getPopularity();
+        route.setPopularity(popularity + 1);
     }
 
     @Override
     public Iterable<Route> searchRoutes(String startPoint, String endPoint) {
-//        return this.routesById
-//                .values()
-//                .stream()
-//                .filter(route -> route.getLocationPoints().contains(startPoint) & route.getLocationPoints().contains(endPoint))
-//                .sorted();
-        return null;
+        return this.routesById
+                .values()
+                .stream()
+                .filter(route -> {
+                    List<String> locationPoints = route.getLocationPoints();
+
+                    int startIndex = locationPoints.indexOf(startPoint);
+                    int endIndex = locationPoints.indexOf(endPoint);
+
+                    return startIndex > -1 && endIndex > -1 && startIndex < endIndex;
+                })
+                .sorted((f, s) -> {
+                    if (f.getIsFavorite() && !s.getIsFavorite()) {
+                        return -1;
+                    }
+
+                    if (s.getIsFavorite() && !f.getIsFavorite()) {
+                        return 1;
+                    }
+
+                    int fDistance = f.getLocationPoints().indexOf(endPoint) - f.getLocationPoints().indexOf(startPoint);
+                    int sDistance = s.getLocationPoints().indexOf(endPoint) - s.getLocationPoints().indexOf(startPoint);
+
+                    if (fDistance != sDistance) {
+                        return Double.compare(fDistance, sDistance);
+                    }
+
+                    return Integer.compare(s.getPopularity(), f.getPopularity());
+                })
+                .collect(Collectors.toList());
+
     }
 
     @Override
@@ -77,7 +109,7 @@ public class MoovItImpl implements MoovIt {
                         && r.getLocationPoints().contains(destinationPoint)
                         && r.getLocationPoints().indexOf(destinationPoint) != 0)
                 .sorted((f, s) -> {
-                    if (f.getDistance() != s.getDistance()) {
+                    if (!f.getDistance().equals(s.getDistance())) {
                         return Double.compare(f.getDistance(), s.getDistance());
                     }
 
@@ -92,16 +124,17 @@ public class MoovItImpl implements MoovIt {
                 .values()
                 .stream()
                 .sorted((f, s) -> {
-                    if (f.getPopularity() != s.getPopularity()) {
+                    if (!f.getPopularity().equals(s.getPopularity())) {
                         return Integer.compare(s.getPopularity(), f.getPopularity());
                     }
 
-                    if (f.getDistance() != s.getDistance()) {
+                    if (!f.getDistance().equals(s.getDistance())) {
                         return Double.compare(f.getDistance(), s.getDistance());
                     }
 
                     return Integer.compare(f.getLocationPoints().size(), s.getLocationPoints().size());
                 })
+                .limit(5)
                 .collect(Collectors.toList());
     }
 }
