@@ -31,6 +31,8 @@ public class E04_TowerOfHanoi {
             destination.push(source.pop());
             System.out.println("Step #" + (steps++) + ": Moved disk");
             printRods();
+        } else {
+            solve(disk - 1, source, spare, destination);
         }
     }
 
