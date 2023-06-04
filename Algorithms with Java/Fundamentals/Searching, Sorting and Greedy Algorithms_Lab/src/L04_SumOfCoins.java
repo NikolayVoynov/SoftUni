@@ -22,7 +22,27 @@ public class L04_SumOfCoins {
     }
 
     public static Map<Integer, Integer> chooseCoins(int[] coins, int targetSum) {
-        // TODO
-        return null;
+        Arrays.sort(coins);
+        List<Integer> sortedCoins = Arrays.stream(coins).boxed().collect(Collectors.toList());
+        Collections.reverse(sortedCoins);
+
+        Map<Integer, Integer> chosenCoins = new LinkedHashMap<>();
+        int currentSum = 0;
+        int coinIndex = 0;
+
+        while (currentSum < targetSum && coinIndex < sortedCoins.size()) {
+            int currentCoinValue = sortedCoins.get(coinIndex);
+            int remainingSum = targetSum - currentSum;
+            int numberCoinsToTake = remainingSum / currentCoinValue;
+
+            if (numberCoinsToTake > 0) {
+                chosenCoins.put(currentCoinValue, numberCoinsToTake);
+                currentSum = currentSum + numberCoinsToTake * currentCoinValue;
+            }
+
+            coinIndex++;
+        }
+
+        return chosenCoins;
     }
 }
