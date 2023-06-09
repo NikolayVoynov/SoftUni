@@ -1,15 +1,63 @@
-import java.util.Collection;
-import java.util.Deque;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Main {
-    public static void main(String[] args) {
 
+    public static boolean[] visited;
+    public static List<List<Integer>> graph = new ArrayList<>();
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int n = Integer.parseInt(scanner.nextLine());
+
+        for (int i = 0; i < n; i++) {
+            String str = scanner.nextLine();
+
+            if (str.trim().equals("")) {
+                graph.add(new ArrayList<>());
+            } else {
+                List<Integer> inputLine = Arrays.stream(str.split("\\s+"))
+                        .map(Integer::parseInt).collect(Collectors.toList());
+                graph.add(inputLine);
+            }
+        }
+
+        List<Deque<Integer>> connectedComponents = getConnectedComponents(graph);
+
+        for (Deque<Integer> connectedComponent : connectedComponents) {
+            System.out.print("Connected component: ");
+            for (Integer integer : connectedComponent) {
+                System.out.print(integer + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    private static void dfs(int vertex, List<Deque<Integer>> components, List<List<Integer>> graph, boolean[] visited) {
+        if (!visited[vertex]) {
+            visited[vertex] = true;
+
+            for (int child : graph.get(vertex)) {
+                dfs(child, components, graph, visited);
+            }
+
+            components.get(components.size() - 1).offer(vertex);
+        }
     }
 
     public static List<Deque<Integer>> getConnectedComponents(List<List<Integer>> graph) {
-        throw new AssertionError("Not Implemented");
+        visited = new boolean[graph.size()];
+        List<Deque<Integer>> components = new ArrayList<>();
+
+        for (int startNode = 0; startNode < graph.size(); startNode++) {
+            if (!visited[startNode]) {
+                components.add(new ArrayDeque<>());
+                dfs(startNode, components, graph, visited);
+            }
+        }
+
+        return components;
     }
 
     public static Collection<String> topSort(Map<String, List<String>> graph) {
