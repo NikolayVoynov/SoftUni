@@ -1,10 +1,8 @@
-import java.util.ArrayDeque;
-import java.util.Arrays;
-import java.util.Deque;
-import java.util.Scanner;
+import java.util.*;
 
 public class L01_DistanceBetweenVertices {
     public static int[][] graph;
+    public static int[] indexMapper;
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -13,6 +11,7 @@ public class L01_DistanceBetweenVertices {
         int pairs = Integer.parseInt(scanner.nextLine());
 
         graph = new int[nodes + 1][];
+        indexMapper = new int[nodes + 1];
 
         for (int i = 1; i <= nodes; i++) {
             String[] edges = scanner.nextLine().split(":");
@@ -37,16 +36,27 @@ public class L01_DistanceBetweenVertices {
 
             System.out.printf("{%d, %d} -> ", source, destination);
 
-           int[] path = new int[1];
+            int[] prev = new int[graph.length];
+            Arrays.fill(prev, -1);
 
-            bfs(graph, source, destination, path);
+            bfs(graph, source, destination, prev);
 
-            System.out.println(path[0]);
+            List<Integer> path = new ArrayList<>();
+            int parent = prev[destination];
+
+            while(parent != -1) {
+                path.add(parent);
+                parent = prev[parent];
+            }
+
+            int size = path.isEmpty() ? -1 : path.size();
+
+            System.out.println(size);
         }
 
     }
 
-    private static void bfs(int[][] graph, int source, int destination, int[] path) {
+    private static void bfs(int[][] graph, int source, int destination, int[] prev) {
         Deque<Integer> queue = new ArrayDeque<>();
         queue.offer(source);
 
@@ -58,14 +68,16 @@ public class L01_DistanceBetweenVertices {
             if (node == destination) {
                 return;
             }
-            path[0]++;
             for (int i = 0; i < graph[node].length; i++) {
                 int child = graph[node][i];
                 if (!visited[child]) {
+                    prev[child] = node;
                     visited[child] = true;
                     queue.offer(child);
                 }
             }
         }
+
+        prev[source] = -1;
     }
 }
