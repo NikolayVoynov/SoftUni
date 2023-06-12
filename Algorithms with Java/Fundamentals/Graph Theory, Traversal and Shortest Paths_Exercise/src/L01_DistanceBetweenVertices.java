@@ -2,7 +2,7 @@ import java.util.*;
 
 public class L01_DistanceBetweenVertices {
     public static int[][] graph;
-    public static int[] indexMapper;
+    public static Map<Integer,Integer> indexMapper = new HashMap<>();
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -11,10 +11,11 @@ public class L01_DistanceBetweenVertices {
         int pairs = Integer.parseInt(scanner.nextLine());
 
         graph = new int[nodes + 1][];
-        indexMapper = new int[nodes + 1];
+
 
         for (int i = 1; i <= nodes; i++) {
             String[] edges = scanner.nextLine().split(":");
+            indexMapper.put(Integer.parseInt(edges[0]), i);
 
             if (edges.length == 1) {
                 graph[i] = new int[0];
@@ -39,12 +40,12 @@ public class L01_DistanceBetweenVertices {
             int[] prev = new int[graph.length];
             Arrays.fill(prev, -1);
 
-            bfs(graph, source, destination, prev);
+            bfs(graph, indexMapper.get(source), indexMapper.get(destination), prev);
 
             List<Integer> path = new ArrayList<>();
-            int parent = prev[destination];
+            int parent = prev[indexMapper.get(destination)];
 
-            while(parent != -1) {
+            while (parent != -1) {
                 path.add(parent);
                 parent = prev[parent];
             }
@@ -69,7 +70,7 @@ public class L01_DistanceBetweenVertices {
                 return;
             }
             for (int i = 0; i < graph[node].length; i++) {
-                int child = graph[node][i];
+                int child = indexMapper.get(graph[node][i]);
                 if (!visited[child]) {
                     prev[child] = node;
                     visited[child] = true;
