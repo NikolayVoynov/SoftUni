@@ -26,6 +26,6 @@ public class E01_BinomialCoefficientsMemoization {
             return memory[n][k];
         }
 
-        return memory[n][k] = calcBinom(n - 1, k - 1) + calcBinom(n - 1, k);
+        return memory[n][k] =  calcBinom(n - 1, k) + calcBinom(n - 1, k - 1);
     }
 }
