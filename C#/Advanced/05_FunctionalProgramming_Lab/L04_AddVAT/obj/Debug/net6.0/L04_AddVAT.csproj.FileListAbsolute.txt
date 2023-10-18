@@ -1,0 +1,14 @@
+C:\Users\user\source\repos\Advanced\05_FunctionalProgramming_Lab\L04_AddVAT\bin\Debug\net6.0\L04_AddVAT.exe
+C:\Users\user\source\repos\Advanced\05_FunctionalProgramming_Lab\L04_AddVAT\bin\Debug\net6.0\L04_AddVAT.deps.json
+C:\Users\user\source\repos\Advanced\05_FunctionalProgramming_Lab\L04_AddVAT\bin\Debug\net6.0\L04_AddVAT.runtimeconfig.json
+C:\Users\user\source\repos\Advanced\05_FunctionalProgramming_Lab\L04_AddVAT\bin\Debug\net6.0\L04_AddVAT.dll
+C:\Users\user\source\repos\Advanced\05_FunctionalProgramming_Lab\L04_AddVAT\bin\Debug\net6.0\L04_AddVAT.pdb
+C:\Users\user\source\repos\Advanced\05_FunctionalProgramming_Lab\L04_AddVAT\obj\Debug\net6.0\L04_AddVAT.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\Advanced\05_FunctionalProgramming_Lab\L04_AddVAT\obj\Debug\net6.0\L04_AddVAT.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\Advanced\05_FunctionalProgramming_Lab\L04_AddVAT\obj\Debug\net6.0\L04_AddVAT.AssemblyInfo.cs
+C:\Users\user\source\repos\Advanced\05_FunctionalProgramming_Lab\L04_AddVAT\obj\Debug\net6.0\L04_AddVAT.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\Advanced\05_FunctionalProgramming_Lab\L04_AddVAT\obj\Debug\net6.0\L04_AddVAT.dll
+C:\Users\user\source\repos\Advanced\05_FunctionalProgramming_Lab\L04_AddVAT\obj\Debug\net6.0\refint\L04_AddVAT.dll
+C:\Users\user\source\repos\Advanced\05_FunctionalProgramming_Lab\L04_AddVAT\obj\Debug\net6.0\L04_AddVAT.pdb
+C:\Users\user\source\repos\Advanced\05_FunctionalProgramming_Lab\L04_AddVAT\obj\Debug\net6.0\L04_AddVAT.genruntimeconfig.cache
+C:\Users\user\source\repos\Advanced\05_FunctionalProgramming_Lab\L04_AddVAT\obj\Debug\net6.0\ref\L04_AddVAT.dll
