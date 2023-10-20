@@ -1,0 +1,14 @@
+C:\Users\user\source\repos\Advanced\05_FunctionalProgramming_Exercise\E03_CustomMinFunction\bin\Debug\net6.0\E03_CustomMinFunction.exe
+C:\Users\user\source\repos\Advanced\05_FunctionalProgramming_Exercise\E03_CustomMinFunction\bin\Debug\net6.0\E03_CustomMinFunction.deps.json
+C:\Users\user\source\repos\Advanced\05_FunctionalProgramming_Exercise\E03_CustomMinFunction\bin\Debug\net6.0\E03_CustomMinFunction.runtimeconfig.json
+C:\Users\user\source\repos\Advanced\05_FunctionalProgramming_Exercise\E03_CustomMinFunction\bin\Debug\net6.0\E03_CustomMinFunction.dll
+C:\Users\user\source\repos\Advanced\05_FunctionalProgramming_Exercise\E03_CustomMinFunction\bin\Debug\net6.0\E03_CustomMinFunction.pdb
+C:\Users\user\source\repos\Advanced\05_FunctionalProgramming_Exercise\E03_CustomMinFunction\obj\Debug\net6.0\E03_CustomMinFunction.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\Advanced\05_FunctionalProgramming_Exercise\E03_CustomMinFunction\obj\Debug\net6.0\E03_CustomMinFunction.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\Advanced\05_FunctionalProgramming_Exercise\E03_CustomMinFunction\obj\Debug\net6.0\E03_CustomMinFunction.AssemblyInfo.cs
+C:\Users\user\source\repos\Advanced\05_FunctionalProgramming_Exercise\E03_CustomMinFunction\obj\Debug\net6.0\E03_CustomMinFunction.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\Advanced\05_FunctionalProgramming_Exercise\E03_CustomMinFunction\obj\Debug\net6.0\E03_CustomMinFunction.dll
+C:\Users\user\source\repos\Advanced\05_FunctionalProgramming_Exercise\E03_CustomMinFunction\obj\Debug\net6.0\refint\E03_CustomMinFunction.dll
+C:\Users\user\source\repos\Advanced\05_FunctionalProgramming_Exercise\E03_CustomMinFunction\obj\Debug\net6.0\E03_CustomMinFunction.pdb
+C:\Users\user\source\repos\Advanced\05_FunctionalProgramming_Exercise\E03_CustomMinFunction\obj\Debug\net6.0\E03_CustomMinFunction.genruntimeconfig.cache
+C:\Users\user\source\repos\Advanced\05_FunctionalProgramming_Exercise\E03_CustomMinFunction\obj\Debug\net6.0\ref\E03_CustomMinFunction.dll
