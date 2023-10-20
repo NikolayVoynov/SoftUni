@@ -1,0 +1,14 @@
+C:\Users\user\source\repos\Advanced\05_FunctionalProgramming_Exercise\E04_EvenOdd\bin\Debug\net6.0\E04_FindEvensOrOdds.exe
+C:\Users\user\source\repos\Advanced\05_FunctionalProgramming_Exercise\E04_EvenOdd\bin\Debug\net6.0\E04_FindEvensOrOdds.deps.json
+C:\Users\user\source\repos\Advanced\05_FunctionalProgramming_Exercise\E04_EvenOdd\bin\Debug\net6.0\E04_FindEvensOrOdds.runtimeconfig.json
+C:\Users\user\source\repos\Advanced\05_FunctionalProgramming_Exercise\E04_EvenOdd\bin\Debug\net6.0\E04_FindEvensOrOdds.dll
+C:\Users\user\source\repos\Advanced\05_FunctionalProgramming_Exercise\E04_EvenOdd\bin\Debug\net6.0\E04_FindEvensOrOdds.pdb
+C:\Users\user\source\repos\Advanced\05_FunctionalProgramming_Exercise\E04_EvenOdd\obj\Debug\net6.0\E04_FindEvensOrOdds.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\Advanced\05_FunctionalProgramming_Exercise\E04_EvenOdd\obj\Debug\net6.0\E04_FindEvensOrOdds.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\Advanced\05_FunctionalProgramming_Exercise\E04_EvenOdd\obj\Debug\net6.0\E04_FindEvensOrOdds.AssemblyInfo.cs
+C:\Users\user\source\repos\Advanced\05_FunctionalProgramming_Exercise\E04_EvenOdd\obj\Debug\net6.0\E04_FindEvensOrOdds.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\Advanced\05_FunctionalProgramming_Exercise\E04_EvenOdd\obj\Debug\net6.0\E04_FindEvensOrOdds.dll
+C:\Users\user\source\repos\Advanced\05_FunctionalProgramming_Exercise\E04_EvenOdd\obj\Debug\net6.0\refint\E04_FindEvensOrOdds.dll
+C:\Users\user\source\repos\Advanced\05_FunctionalProgramming_Exercise\E04_EvenOdd\obj\Debug\net6.0\E04_FindEvensOrOdds.pdb
+C:\Users\user\source\repos\Advanced\05_FunctionalProgramming_Exercise\E04_EvenOdd\obj\Debug\net6.0\E04_FindEvensOrOdds.genruntimeconfig.cache
+C:\Users\user\source\repos\Advanced\05_FunctionalProgramming_Exercise\E04_EvenOdd\obj\Debug\net6.0\ref\E04_FindEvensOrOdds.dll
