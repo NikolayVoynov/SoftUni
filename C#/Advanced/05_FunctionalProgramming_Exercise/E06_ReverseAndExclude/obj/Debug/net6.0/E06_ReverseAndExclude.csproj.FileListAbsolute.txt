@@ -1,0 +1,14 @@
+C:\Users\user\source\repos\Advanced\05_FunctionalProgramming_Exercise\E06_ReverseAndExclude\bin\Debug\net6.0\E06_ReverseAndExclude.exe
+C:\Users\user\source\repos\Advanced\05_FunctionalProgramming_Exercise\E06_ReverseAndExclude\bin\Debug\net6.0\E06_ReverseAndExclude.deps.json
+C:\Users\user\source\repos\Advanced\05_FunctionalProgramming_Exercise\E06_ReverseAndExclude\bin\Debug\net6.0\E06_ReverseAndExclude.runtimeconfig.json
+C:\Users\user\source\repos\Advanced\05_FunctionalProgramming_Exercise\E06_ReverseAndExclude\bin\Debug\net6.0\E06_ReverseAndExclude.dll
+C:\Users\user\source\repos\Advanced\05_FunctionalProgramming_Exercise\E06_ReverseAndExclude\bin\Debug\net6.0\E06_ReverseAndExclude.pdb
+C:\Users\user\source\repos\Advanced\05_FunctionalProgramming_Exercise\E06_ReverseAndExclude\obj\Debug\net6.0\E06_ReverseAndExclude.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\Advanced\05_FunctionalProgramming_Exercise\E06_ReverseAndExclude\obj\Debug\net6.0\E06_ReverseAndExclude.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\Advanced\05_FunctionalProgramming_Exercise\E06_ReverseAndExclude\obj\Debug\net6.0\E06_ReverseAndExclude.AssemblyInfo.cs
+C:\Users\user\source\repos\Advanced\05_FunctionalProgramming_Exercise\E06_ReverseAndExclude\obj\Debug\net6.0\E06_ReverseAndExclude.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\Advanced\05_FunctionalProgramming_Exercise\E06_ReverseAndExclude\obj\Debug\net6.0\E06_ReverseAndExclude.dll
+C:\Users\user\source\repos\Advanced\05_FunctionalProgramming_Exercise\E06_ReverseAndExclude\obj\Debug\net6.0\refint\E06_ReverseAndExclude.dll
+C:\Users\user\source\repos\Advanced\05_FunctionalProgramming_Exercise\E06_ReverseAndExclude\obj\Debug\net6.0\E06_ReverseAndExclude.pdb
+C:\Users\user\source\repos\Advanced\05_FunctionalProgramming_Exercise\E06_ReverseAndExclude\obj\Debug\net6.0\E06_ReverseAndExclude.genruntimeconfig.cache
+C:\Users\user\source\repos\Advanced\05_FunctionalProgramming_Exercise\E06_ReverseAndExclude\obj\Debug\net6.0\ref\E06_ReverseAndExclude.dll
