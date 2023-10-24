@@ -1,0 +1,14 @@
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E05_DateModifier\bin\Debug\net6.0\E05_DateModifier.exe
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E05_DateModifier\bin\Debug\net6.0\E05_DateModifier.deps.json
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E05_DateModifier\bin\Debug\net6.0\E05_DateModifier.runtimeconfig.json
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E05_DateModifier\bin\Debug\net6.0\E05_DateModifier.dll
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E05_DateModifier\bin\Debug\net6.0\E05_DateModifier.pdb
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E05_DateModifier\obj\Debug\net6.0\E05_DateModifier.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E05_DateModifier\obj\Debug\net6.0\E05_DateModifier.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E05_DateModifier\obj\Debug\net6.0\E05_DateModifier.AssemblyInfo.cs
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E05_DateModifier\obj\Debug\net6.0\E05_DateModifier.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E05_DateModifier\obj\Debug\net6.0\E05_DateModifier.dll
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E05_DateModifier\obj\Debug\net6.0\refint\E05_DateModifier.dll
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E05_DateModifier\obj\Debug\net6.0\E05_DateModifier.pdb
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E05_DateModifier\obj\Debug\net6.0\E05_DateModifier.genruntimeconfig.cache
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E05_DateModifier\obj\Debug\net6.0\ref\E05_DateModifier.dll
