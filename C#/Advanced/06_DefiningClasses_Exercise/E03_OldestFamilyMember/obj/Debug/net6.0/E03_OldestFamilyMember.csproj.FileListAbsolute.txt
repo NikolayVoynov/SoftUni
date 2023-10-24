@@ -1,0 +1,14 @@
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E03_OldestFamilyMember\bin\Debug\net6.0\E03_OldestFamilyMember.exe
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E03_OldestFamilyMember\bin\Debug\net6.0\E03_OldestFamilyMember.deps.json
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E03_OldestFamilyMember\bin\Debug\net6.0\E03_OldestFamilyMember.runtimeconfig.json
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E03_OldestFamilyMember\bin\Debug\net6.0\E03_OldestFamilyMember.dll
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E03_OldestFamilyMember\bin\Debug\net6.0\E03_OldestFamilyMember.pdb
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E03_OldestFamilyMember\obj\Debug\net6.0\E03_OldestFamilyMember.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E03_OldestFamilyMember\obj\Debug\net6.0\E03_OldestFamilyMember.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E03_OldestFamilyMember\obj\Debug\net6.0\E03_OldestFamilyMember.AssemblyInfo.cs
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E03_OldestFamilyMember\obj\Debug\net6.0\E03_OldestFamilyMember.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E03_OldestFamilyMember\obj\Debug\net6.0\E03_OldestFamilyMember.dll
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E03_OldestFamilyMember\obj\Debug\net6.0\refint\E03_OldestFamilyMember.dll
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E03_OldestFamilyMember\obj\Debug\net6.0\E03_OldestFamilyMember.pdb
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E03_OldestFamilyMember\obj\Debug\net6.0\E03_OldestFamilyMember.genruntimeconfig.cache
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E03_OldestFamilyMember\obj\Debug\net6.0\ref\E03_OldestFamilyMember.dll
