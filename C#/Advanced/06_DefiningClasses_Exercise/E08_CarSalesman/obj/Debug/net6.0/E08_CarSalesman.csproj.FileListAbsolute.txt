@@ -1,0 +1,14 @@
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E08_CarSalesman\obj\Debug\net6.0\E08_CarSalesman.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E08_CarSalesman\obj\Debug\net6.0\E08_CarSalesman.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E08_CarSalesman\obj\Debug\net6.0\E08_CarSalesman.AssemblyInfo.cs
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E08_CarSalesman\obj\Debug\net6.0\E08_CarSalesman.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E08_CarSalesman\bin\Debug\net6.0\E08_CarSalesman.exe
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E08_CarSalesman\bin\Debug\net6.0\E08_CarSalesman.deps.json
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E08_CarSalesman\bin\Debug\net6.0\E08_CarSalesman.runtimeconfig.json
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E08_CarSalesman\bin\Debug\net6.0\E08_CarSalesman.dll
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E08_CarSalesman\bin\Debug\net6.0\E08_CarSalesman.pdb
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E08_CarSalesman\obj\Debug\net6.0\E08_CarSalesman.dll
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E08_CarSalesman\obj\Debug\net6.0\refint\E08_CarSalesman.dll
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E08_CarSalesman\obj\Debug\net6.0\E08_CarSalesman.pdb
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E08_CarSalesman\obj\Debug\net6.0\E08_CarSalesman.genruntimeconfig.cache
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E08_CarSalesman\obj\Debug\net6.0\ref\E08_CarSalesman.dll
