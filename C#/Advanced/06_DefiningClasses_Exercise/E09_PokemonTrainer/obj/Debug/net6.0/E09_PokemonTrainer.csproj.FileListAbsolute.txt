@@ -1,0 +1,14 @@
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E09_PokemonTrainer\bin\Debug\net6.0\E09_PokemonTrainer.exe
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E09_PokemonTrainer\bin\Debug\net6.0\E09_PokemonTrainer.deps.json
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E09_PokemonTrainer\bin\Debug\net6.0\E09_PokemonTrainer.runtimeconfig.json
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E09_PokemonTrainer\bin\Debug\net6.0\E09_PokemonTrainer.dll
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E09_PokemonTrainer\bin\Debug\net6.0\E09_PokemonTrainer.pdb
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E09_PokemonTrainer\obj\Debug\net6.0\E09_PokemonTrainer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E09_PokemonTrainer\obj\Debug\net6.0\E09_PokemonTrainer.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E09_PokemonTrainer\obj\Debug\net6.0\E09_PokemonTrainer.AssemblyInfo.cs
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E09_PokemonTrainer\obj\Debug\net6.0\E09_PokemonTrainer.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E09_PokemonTrainer\obj\Debug\net6.0\E09_PokemonTrainer.dll
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E09_PokemonTrainer\obj\Debug\net6.0\refint\E09_PokemonTrainer.dll
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E09_PokemonTrainer\obj\Debug\net6.0\E09_PokemonTrainer.pdb
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E09_PokemonTrainer\obj\Debug\net6.0\E09_PokemonTrainer.genruntimeconfig.cache
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E09_PokemonTrainer\obj\Debug\net6.0\ref\E09_PokemonTrainer.dll
