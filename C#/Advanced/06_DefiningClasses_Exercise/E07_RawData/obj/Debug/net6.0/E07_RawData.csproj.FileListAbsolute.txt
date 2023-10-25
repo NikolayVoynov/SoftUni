@@ -1,0 +1,14 @@
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E07_RawData\bin\Debug\net6.0\E07_RawData.exe
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E07_RawData\bin\Debug\net6.0\E07_RawData.deps.json
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E07_RawData\bin\Debug\net6.0\E07_RawData.runtimeconfig.json
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E07_RawData\bin\Debug\net6.0\E07_RawData.dll
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E07_RawData\bin\Debug\net6.0\E07_RawData.pdb
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E07_RawData\obj\Debug\net6.0\E07_RawData.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E07_RawData\obj\Debug\net6.0\E07_RawData.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E07_RawData\obj\Debug\net6.0\E07_RawData.AssemblyInfo.cs
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E07_RawData\obj\Debug\net6.0\E07_RawData.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E07_RawData\obj\Debug\net6.0\E07_RawData.dll
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E07_RawData\obj\Debug\net6.0\refint\E07_RawData.dll
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E07_RawData\obj\Debug\net6.0\E07_RawData.pdb
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E07_RawData\obj\Debug\net6.0\E07_RawData.genruntimeconfig.cache
+C:\Users\user\source\repos\Advanced\06_DefiningClasses_Exercise\E07_RawData\obj\Debug\net6.0\ref\E07_RawData.dll
