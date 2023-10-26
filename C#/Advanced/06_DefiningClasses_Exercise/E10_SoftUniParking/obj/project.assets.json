@@ -14,9 +14,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\source\\repos\\Advanced\\06_DefiningClasses_Exercise\\E10_SoftUniParking\\SoftUniParking.csproj",
-      "projectName": "SoftUniParking",
-      "projectPath": "C:\\Users\\user\\source\\repos\\Advanced\\06_DefiningClasses_Exercise\\E10_SoftUniParking\\SoftUniParking.csproj",
+      "projectUniqueName": "C:\\Users\\user\\source\\repos\\Advanced\\06_DefiningClasses_Exercise\\E10_SoftUniParking\\E10_SoftUniParking.csproj",
+      "projectName": "E10_SoftUniParking",
+      "projectPath": "C:\\Users\\user\\source\\repos\\Advanced\\06_DefiningClasses_Exercise\\E10_SoftUniParking\\E10_SoftUniParking.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\user\\source\\repos\\Advanced\\06_DefiningClasses_Exercise\\E10_SoftUniParking\\obj\\",
       "projectStyle": "PackageReference",
