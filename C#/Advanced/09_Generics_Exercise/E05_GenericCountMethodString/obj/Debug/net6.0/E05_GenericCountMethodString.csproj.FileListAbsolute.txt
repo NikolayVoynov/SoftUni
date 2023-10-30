@@ -1,0 +1,14 @@
+C:\Users\user\source\repos\Advanced\09_Generics_Exercise\E05_GenericCountMethodString\bin\Debug\net6.0\E05_GenericCountMethodString.exe
+C:\Users\user\source\repos\Advanced\09_Generics_Exercise\E05_GenericCountMethodString\bin\Debug\net6.0\E05_GenericCountMethodString.deps.json
+C:\Users\user\source\repos\Advanced\09_Generics_Exercise\E05_GenericCountMethodString\bin\Debug\net6.0\E05_GenericCountMethodString.runtimeconfig.json
+C:\Users\user\source\repos\Advanced\09_Generics_Exercise\E05_GenericCountMethodString\bin\Debug\net6.0\E05_GenericCountMethodString.dll
+C:\Users\user\source\repos\Advanced\09_Generics_Exercise\E05_GenericCountMethodString\bin\Debug\net6.0\E05_GenericCountMethodString.pdb
+C:\Users\user\source\repos\Advanced\09_Generics_Exercise\E05_GenericCountMethodString\obj\Debug\net6.0\E05_GenericCountMethodString.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\Advanced\09_Generics_Exercise\E05_GenericCountMethodString\obj\Debug\net6.0\E05_GenericCountMethodString.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\Advanced\09_Generics_Exercise\E05_GenericCountMethodString\obj\Debug\net6.0\E05_GenericCountMethodString.AssemblyInfo.cs
+C:\Users\user\source\repos\Advanced\09_Generics_Exercise\E05_GenericCountMethodString\obj\Debug\net6.0\E05_GenericCountMethodString.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\Advanced\09_Generics_Exercise\E05_GenericCountMethodString\obj\Debug\net6.0\E05_GenericCountMethodString.dll
+C:\Users\user\source\repos\Advanced\09_Generics_Exercise\E05_GenericCountMethodString\obj\Debug\net6.0\refint\E05_GenericCountMethodString.dll
+C:\Users\user\source\repos\Advanced\09_Generics_Exercise\E05_GenericCountMethodString\obj\Debug\net6.0\E05_GenericCountMethodString.pdb
+C:\Users\user\source\repos\Advanced\09_Generics_Exercise\E05_GenericCountMethodString\obj\Debug\net6.0\E05_GenericCountMethodString.genruntimeconfig.cache
+C:\Users\user\source\repos\Advanced\09_Generics_Exercise\E05_GenericCountMethodString\obj\Debug\net6.0\ref\E05_GenericCountMethodString.dll
