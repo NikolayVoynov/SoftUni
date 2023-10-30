@@ -1,0 +1,14 @@
+C:\Users\user\source\repos\Advanced\09_Generics_Exercise\E03_GenericSwapMethodString\bin\Debug\net6.0\E03_GenericSwapMethodString.exe
+C:\Users\user\source\repos\Advanced\09_Generics_Exercise\E03_GenericSwapMethodString\bin\Debug\net6.0\E03_GenericSwapMethodString.deps.json
+C:\Users\user\source\repos\Advanced\09_Generics_Exercise\E03_GenericSwapMethodString\bin\Debug\net6.0\E03_GenericSwapMethodString.runtimeconfig.json
+C:\Users\user\source\repos\Advanced\09_Generics_Exercise\E03_GenericSwapMethodString\bin\Debug\net6.0\E03_GenericSwapMethodString.dll
+C:\Users\user\source\repos\Advanced\09_Generics_Exercise\E03_GenericSwapMethodString\bin\Debug\net6.0\E03_GenericSwapMethodString.pdb
+C:\Users\user\source\repos\Advanced\09_Generics_Exercise\E03_GenericSwapMethodString\obj\Debug\net6.0\E03_GenericSwapMethodString.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\Advanced\09_Generics_Exercise\E03_GenericSwapMethodString\obj\Debug\net6.0\E03_GenericSwapMethodString.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\Advanced\09_Generics_Exercise\E03_GenericSwapMethodString\obj\Debug\net6.0\E03_GenericSwapMethodString.AssemblyInfo.cs
+C:\Users\user\source\repos\Advanced\09_Generics_Exercise\E03_GenericSwapMethodString\obj\Debug\net6.0\E03_GenericSwapMethodString.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\Advanced\09_Generics_Exercise\E03_GenericSwapMethodString\obj\Debug\net6.0\E03_GenericSwapMethodString.dll
+C:\Users\user\source\repos\Advanced\09_Generics_Exercise\E03_GenericSwapMethodString\obj\Debug\net6.0\refint\E03_GenericSwapMethodString.dll
+C:\Users\user\source\repos\Advanced\09_Generics_Exercise\E03_GenericSwapMethodString\obj\Debug\net6.0\E03_GenericSwapMethodString.pdb
+C:\Users\user\source\repos\Advanced\09_Generics_Exercise\E03_GenericSwapMethodString\obj\Debug\net6.0\E03_GenericSwapMethodString.genruntimeconfig.cache
+C:\Users\user\source\repos\Advanced\09_Generics_Exercise\E03_GenericSwapMethodString\obj\Debug\net6.0\ref\E03_GenericSwapMethodString.dll
