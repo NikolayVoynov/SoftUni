@@ -1,0 +1,14 @@
+C:\Users\user\source\repos\Advanced\10_Iterators and Comparators_Exercise\E02_Collection\bin\Debug\net6.0\E02_Collection.exe
+C:\Users\user\source\repos\Advanced\10_Iterators and Comparators_Exercise\E02_Collection\bin\Debug\net6.0\E02_Collection.deps.json
+C:\Users\user\source\repos\Advanced\10_Iterators and Comparators_Exercise\E02_Collection\bin\Debug\net6.0\E02_Collection.runtimeconfig.json
+C:\Users\user\source\repos\Advanced\10_Iterators and Comparators_Exercise\E02_Collection\bin\Debug\net6.0\E02_Collection.dll
+C:\Users\user\source\repos\Advanced\10_Iterators and Comparators_Exercise\E02_Collection\bin\Debug\net6.0\E02_Collection.pdb
+C:\Users\user\source\repos\Advanced\10_Iterators and Comparators_Exercise\E02_Collection\obj\Debug\net6.0\E02_Collection.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\Advanced\10_Iterators and Comparators_Exercise\E02_Collection\obj\Debug\net6.0\E02_Collection.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\Advanced\10_Iterators and Comparators_Exercise\E02_Collection\obj\Debug\net6.0\E02_Collection.AssemblyInfo.cs
+C:\Users\user\source\repos\Advanced\10_Iterators and Comparators_Exercise\E02_Collection\obj\Debug\net6.0\E02_Collection.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\Advanced\10_Iterators and Comparators_Exercise\E02_Collection\obj\Debug\net6.0\E02_Collection.dll
+C:\Users\user\source\repos\Advanced\10_Iterators and Comparators_Exercise\E02_Collection\obj\Debug\net6.0\refint\E02_Collection.dll
+C:\Users\user\source\repos\Advanced\10_Iterators and Comparators_Exercise\E02_Collection\obj\Debug\net6.0\E02_Collection.pdb
+C:\Users\user\source\repos\Advanced\10_Iterators and Comparators_Exercise\E02_Collection\obj\Debug\net6.0\E02_Collection.genruntimeconfig.cache
+C:\Users\user\source\repos\Advanced\10_Iterators and Comparators_Exercise\E02_Collection\obj\Debug\net6.0\ref\E02_Collection.dll
