@@ -1,0 +1,14 @@
+C:\Users\user\source\repos\Advanced\10_Iterators and Comparators_Exercise\E05_ComparingObjects\bin\Debug\net6.0\E05_ComparingObjects.exe
+C:\Users\user\source\repos\Advanced\10_Iterators and Comparators_Exercise\E05_ComparingObjects\bin\Debug\net6.0\E05_ComparingObjects.deps.json
+C:\Users\user\source\repos\Advanced\10_Iterators and Comparators_Exercise\E05_ComparingObjects\bin\Debug\net6.0\E05_ComparingObjects.runtimeconfig.json
+C:\Users\user\source\repos\Advanced\10_Iterators and Comparators_Exercise\E05_ComparingObjects\bin\Debug\net6.0\E05_ComparingObjects.dll
+C:\Users\user\source\repos\Advanced\10_Iterators and Comparators_Exercise\E05_ComparingObjects\bin\Debug\net6.0\E05_ComparingObjects.pdb
+C:\Users\user\source\repos\Advanced\10_Iterators and Comparators_Exercise\E05_ComparingObjects\obj\Debug\net6.0\E05_ComparingObjects.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\Advanced\10_Iterators and Comparators_Exercise\E05_ComparingObjects\obj\Debug\net6.0\E05_ComparingObjects.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\Advanced\10_Iterators and Comparators_Exercise\E05_ComparingObjects\obj\Debug\net6.0\E05_ComparingObjects.AssemblyInfo.cs
+C:\Users\user\source\repos\Advanced\10_Iterators and Comparators_Exercise\E05_ComparingObjects\obj\Debug\net6.0\E05_ComparingObjects.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\Advanced\10_Iterators and Comparators_Exercise\E05_ComparingObjects\obj\Debug\net6.0\E05_ComparingObjects.dll
+C:\Users\user\source\repos\Advanced\10_Iterators and Comparators_Exercise\E05_ComparingObjects\obj\Debug\net6.0\refint\E05_ComparingObjects.dll
+C:\Users\user\source\repos\Advanced\10_Iterators and Comparators_Exercise\E05_ComparingObjects\obj\Debug\net6.0\E05_ComparingObjects.pdb
+C:\Users\user\source\repos\Advanced\10_Iterators and Comparators_Exercise\E05_ComparingObjects\obj\Debug\net6.0\E05_ComparingObjects.genruntimeconfig.cache
+C:\Users\user\source\repos\Advanced\10_Iterators and Comparators_Exercise\E05_ComparingObjects\obj\Debug\net6.0\ref\E05_ComparingObjects.dll
