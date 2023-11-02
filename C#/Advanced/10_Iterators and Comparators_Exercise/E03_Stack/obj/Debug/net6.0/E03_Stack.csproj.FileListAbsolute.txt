@@ -1,0 +1,14 @@
+C:\Users\user\source\repos\Advanced\10_Iterators and Comparators_Exercise\E03_Stack\bin\Debug\net6.0\E03_Stack.exe
+C:\Users\user\source\repos\Advanced\10_Iterators and Comparators_Exercise\E03_Stack\bin\Debug\net6.0\E03_Stack.deps.json
+C:\Users\user\source\repos\Advanced\10_Iterators and Comparators_Exercise\E03_Stack\bin\Debug\net6.0\E03_Stack.runtimeconfig.json
+C:\Users\user\source\repos\Advanced\10_Iterators and Comparators_Exercise\E03_Stack\bin\Debug\net6.0\E03_Stack.dll
+C:\Users\user\source\repos\Advanced\10_Iterators and Comparators_Exercise\E03_Stack\bin\Debug\net6.0\E03_Stack.pdb
+C:\Users\user\source\repos\Advanced\10_Iterators and Comparators_Exercise\E03_Stack\obj\Debug\net6.0\E03_Stack.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\Advanced\10_Iterators and Comparators_Exercise\E03_Stack\obj\Debug\net6.0\E03_Stack.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\Advanced\10_Iterators and Comparators_Exercise\E03_Stack\obj\Debug\net6.0\E03_Stack.AssemblyInfo.cs
+C:\Users\user\source\repos\Advanced\10_Iterators and Comparators_Exercise\E03_Stack\obj\Debug\net6.0\E03_Stack.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\Advanced\10_Iterators and Comparators_Exercise\E03_Stack\obj\Debug\net6.0\E03_Stack.dll
+C:\Users\user\source\repos\Advanced\10_Iterators and Comparators_Exercise\E03_Stack\obj\Debug\net6.0\refint\E03_Stack.dll
+C:\Users\user\source\repos\Advanced\10_Iterators and Comparators_Exercise\E03_Stack\obj\Debug\net6.0\E03_Stack.pdb
+C:\Users\user\source\repos\Advanced\10_Iterators and Comparators_Exercise\E03_Stack\obj\Debug\net6.0\E03_Stack.genruntimeconfig.cache
+C:\Users\user\source\repos\Advanced\10_Iterators and Comparators_Exercise\E03_Stack\obj\Debug\net6.0\ref\E03_Stack.dll
