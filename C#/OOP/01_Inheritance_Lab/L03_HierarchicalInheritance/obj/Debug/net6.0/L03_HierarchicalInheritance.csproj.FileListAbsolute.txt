@@ -1,0 +1,14 @@
+C:\Users\user\source\repos\OOP\01_Inheritance_Lab\L03_HierarchicalInheritance\bin\Debug\net6.0\L03_HierarchicalInheritance.exe
+C:\Users\user\source\repos\OOP\01_Inheritance_Lab\L03_HierarchicalInheritance\bin\Debug\net6.0\L03_HierarchicalInheritance.deps.json
+C:\Users\user\source\repos\OOP\01_Inheritance_Lab\L03_HierarchicalInheritance\bin\Debug\net6.0\L03_HierarchicalInheritance.runtimeconfig.json
+C:\Users\user\source\repos\OOP\01_Inheritance_Lab\L03_HierarchicalInheritance\bin\Debug\net6.0\L03_HierarchicalInheritance.dll
+C:\Users\user\source\repos\OOP\01_Inheritance_Lab\L03_HierarchicalInheritance\bin\Debug\net6.0\L03_HierarchicalInheritance.pdb
+C:\Users\user\source\repos\OOP\01_Inheritance_Lab\L03_HierarchicalInheritance\obj\Debug\net6.0\L03_HierarchicalInheritance.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\OOP\01_Inheritance_Lab\L03_HierarchicalInheritance\obj\Debug\net6.0\L03_HierarchicalInheritance.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\OOP\01_Inheritance_Lab\L03_HierarchicalInheritance\obj\Debug\net6.0\L03_HierarchicalInheritance.AssemblyInfo.cs
+C:\Users\user\source\repos\OOP\01_Inheritance_Lab\L03_HierarchicalInheritance\obj\Debug\net6.0\L03_HierarchicalInheritance.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\OOP\01_Inheritance_Lab\L03_HierarchicalInheritance\obj\Debug\net6.0\L03_HierarchicalInheritance.dll
+C:\Users\user\source\repos\OOP\01_Inheritance_Lab\L03_HierarchicalInheritance\obj\Debug\net6.0\refint\L03_HierarchicalInheritance.dll
+C:\Users\user\source\repos\OOP\01_Inheritance_Lab\L03_HierarchicalInheritance\obj\Debug\net6.0\L03_HierarchicalInheritance.pdb
+C:\Users\user\source\repos\OOP\01_Inheritance_Lab\L03_HierarchicalInheritance\obj\Debug\net6.0\L03_HierarchicalInheritance.genruntimeconfig.cache
+C:\Users\user\source\repos\OOP\01_Inheritance_Lab\L03_HierarchicalInheritance\obj\Debug\net6.0\ref\L03_HierarchicalInheritance.dll

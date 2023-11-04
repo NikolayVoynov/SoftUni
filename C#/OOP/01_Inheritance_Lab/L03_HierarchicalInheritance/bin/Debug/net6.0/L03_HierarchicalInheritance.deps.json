@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "L03_HierarchicalInheritance/1.0.0": {
+        "runtime": {
+          "L03_HierarchicalInheritance.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "L03_HierarchicalInheritance/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
