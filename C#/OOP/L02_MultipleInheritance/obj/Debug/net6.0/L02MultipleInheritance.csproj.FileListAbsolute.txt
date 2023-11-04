@@ -1,0 +1,14 @@
+C:\Users\user\source\repos\OOP\01_Inheritance_Lab\L02MultipleInheritance\bin\Debug\net6.0\L02MultipleInheritance.exe
+C:\Users\user\source\repos\OOP\01_Inheritance_Lab\L02MultipleInheritance\bin\Debug\net6.0\L02MultipleInheritance.deps.json
+C:\Users\user\source\repos\OOP\01_Inheritance_Lab\L02MultipleInheritance\bin\Debug\net6.0\L02MultipleInheritance.runtimeconfig.json
+C:\Users\user\source\repos\OOP\01_Inheritance_Lab\L02MultipleInheritance\bin\Debug\net6.0\L02MultipleInheritance.dll
+C:\Users\user\source\repos\OOP\01_Inheritance_Lab\L02MultipleInheritance\bin\Debug\net6.0\L02MultipleInheritance.pdb
+C:\Users\user\source\repos\OOP\01_Inheritance_Lab\L02MultipleInheritance\obj\Debug\net6.0\L02MultipleInheritance.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\OOP\01_Inheritance_Lab\L02MultipleInheritance\obj\Debug\net6.0\L02MultipleInheritance.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\OOP\01_Inheritance_Lab\L02MultipleInheritance\obj\Debug\net6.0\L02MultipleInheritance.AssemblyInfo.cs
+C:\Users\user\source\repos\OOP\01_Inheritance_Lab\L02MultipleInheritance\obj\Debug\net6.0\L02MultipleInheritance.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\OOP\01_Inheritance_Lab\L02MultipleInheritance\obj\Debug\net6.0\L02MultipleInheritance.dll
+C:\Users\user\source\repos\OOP\01_Inheritance_Lab\L02MultipleInheritance\obj\Debug\net6.0\refint\L02MultipleInheritance.dll
+C:\Users\user\source\repos\OOP\01_Inheritance_Lab\L02MultipleInheritance\obj\Debug\net6.0\L02MultipleInheritance.pdb
+C:\Users\user\source\repos\OOP\01_Inheritance_Lab\L02MultipleInheritance\obj\Debug\net6.0\L02MultipleInheritance.genruntimeconfig.cache
+C:\Users\user\source\repos\OOP\01_Inheritance_Lab\L02MultipleInheritance\obj\Debug\net6.0\ref\L02MultipleInheritance.dll
