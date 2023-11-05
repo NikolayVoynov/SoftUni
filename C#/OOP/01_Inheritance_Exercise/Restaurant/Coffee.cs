@@ -10,7 +10,8 @@ namespace Restaurant
     {
         private const decimal CoffeePrice = 3.50M;
         private const double CoffeeMilliliters = 50;
-        public Coffee(string name, decimal price, double milliters, double caffeine) : base(name, price, milliters)
+        public Coffee(string name, double caffeine)
+        : base(name, CoffeePrice, CoffeeMilliliters)
         {
             Caffeine = caffeine;
         }
