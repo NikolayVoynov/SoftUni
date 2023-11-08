@@ -1,0 +1,14 @@
+C:\Users\user\source\repos\OOP\02_Encapsulation_Lab\SortPeopleByNameAndAge\obj\Debug\net6.0\SortPeopleByNameAndAge.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\OOP\02_Encapsulation_Lab\SortPeopleByNameAndAge\obj\Debug\net6.0\SortPeopleByNameAndAge.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\OOP\02_Encapsulation_Lab\SortPeopleByNameAndAge\obj\Debug\net6.0\SortPeopleByNameAndAge.AssemblyInfo.cs
+C:\Users\user\source\repos\OOP\02_Encapsulation_Lab\SortPeopleByNameAndAge\obj\Debug\net6.0\SortPeopleByNameAndAge.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\OOP\02_Encapsulation_Lab\SortPeopleByNameAndAge\bin\Debug\net6.0\SortPeopleByNameAndAge.exe
+C:\Users\user\source\repos\OOP\02_Encapsulation_Lab\SortPeopleByNameAndAge\bin\Debug\net6.0\SortPeopleByNameAndAge.deps.json
+C:\Users\user\source\repos\OOP\02_Encapsulation_Lab\SortPeopleByNameAndAge\bin\Debug\net6.0\SortPeopleByNameAndAge.runtimeconfig.json
+C:\Users\user\source\repos\OOP\02_Encapsulation_Lab\SortPeopleByNameAndAge\bin\Debug\net6.0\SortPeopleByNameAndAge.dll
+C:\Users\user\source\repos\OOP\02_Encapsulation_Lab\SortPeopleByNameAndAge\bin\Debug\net6.0\SortPeopleByNameAndAge.pdb
+C:\Users\user\source\repos\OOP\02_Encapsulation_Lab\SortPeopleByNameAndAge\obj\Debug\net6.0\SortPeopleByNameAndAge.dll
+C:\Users\user\source\repos\OOP\02_Encapsulation_Lab\SortPeopleByNameAndAge\obj\Debug\net6.0\refint\SortPeopleByNameAndAge.dll
+C:\Users\user\source\repos\OOP\02_Encapsulation_Lab\SortPeopleByNameAndAge\obj\Debug\net6.0\SortPeopleByNameAndAge.pdb
+C:\Users\user\source\repos\OOP\02_Encapsulation_Lab\SortPeopleByNameAndAge\obj\Debug\net6.0\SortPeopleByNameAndAge.genruntimeconfig.cache
+C:\Users\user\source\repos\OOP\02_Encapsulation_Lab\SortPeopleByNameAndAge\obj\Debug\net6.0\ref\SortPeopleByNameAndAge.dll
