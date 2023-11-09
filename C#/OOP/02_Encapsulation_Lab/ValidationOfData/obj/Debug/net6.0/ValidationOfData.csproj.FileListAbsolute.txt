@@ -1,0 +1,14 @@
+C:\Users\user\source\repos\OOP\02_Encapsulation_Lab\ValidationOfData\bin\Debug\net6.0\ValidationOfData.exe
+C:\Users\user\source\repos\OOP\02_Encapsulation_Lab\ValidationOfData\bin\Debug\net6.0\ValidationOfData.deps.json
+C:\Users\user\source\repos\OOP\02_Encapsulation_Lab\ValidationOfData\bin\Debug\net6.0\ValidationOfData.runtimeconfig.json
+C:\Users\user\source\repos\OOP\02_Encapsulation_Lab\ValidationOfData\bin\Debug\net6.0\ValidationOfData.dll
+C:\Users\user\source\repos\OOP\02_Encapsulation_Lab\ValidationOfData\bin\Debug\net6.0\ValidationOfData.pdb
+C:\Users\user\source\repos\OOP\02_Encapsulation_Lab\ValidationOfData\obj\Debug\net6.0\ValidationOfData.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\OOP\02_Encapsulation_Lab\ValidationOfData\obj\Debug\net6.0\ValidationOfData.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\OOP\02_Encapsulation_Lab\ValidationOfData\obj\Debug\net6.0\ValidationOfData.AssemblyInfo.cs
+C:\Users\user\source\repos\OOP\02_Encapsulation_Lab\ValidationOfData\obj\Debug\net6.0\ValidationOfData.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\OOP\02_Encapsulation_Lab\ValidationOfData\obj\Debug\net6.0\ValidationOfData.dll
+C:\Users\user\source\repos\OOP\02_Encapsulation_Lab\ValidationOfData\obj\Debug\net6.0\refint\ValidationOfData.dll
+C:\Users\user\source\repos\OOP\02_Encapsulation_Lab\ValidationOfData\obj\Debug\net6.0\ValidationOfData.pdb
+C:\Users\user\source\repos\OOP\02_Encapsulation_Lab\ValidationOfData\obj\Debug\net6.0\ValidationOfData.genruntimeconfig.cache
+C:\Users\user\source\repos\OOP\02_Encapsulation_Lab\ValidationOfData\obj\Debug\net6.0\ref\ValidationOfData.dll
