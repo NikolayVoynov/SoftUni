@@ -1,0 +1,14 @@
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction\L01_Shapes\bin\Debug\net6.0\L01_Shapes.exe
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction\L01_Shapes\bin\Debug\net6.0\L01_Shapes.deps.json
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction\L01_Shapes\bin\Debug\net6.0\L01_Shapes.runtimeconfig.json
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction\L01_Shapes\bin\Debug\net6.0\L01_Shapes.dll
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction\L01_Shapes\bin\Debug\net6.0\L01_Shapes.pdb
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction\L01_Shapes\obj\Debug\net6.0\L01_Shapes.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction\L01_Shapes\obj\Debug\net6.0\L01_Shapes.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction\L01_Shapes\obj\Debug\net6.0\L01_Shapes.AssemblyInfo.cs
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction\L01_Shapes\obj\Debug\net6.0\L01_Shapes.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction\L01_Shapes\obj\Debug\net6.0\L01_Shapes.dll
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction\L01_Shapes\obj\Debug\net6.0\refint\L01_Shapes.dll
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction\L01_Shapes\obj\Debug\net6.0\L01_Shapes.pdb
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction\L01_Shapes\obj\Debug\net6.0\L01_Shapes.genruntimeconfig.cache
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction\L01_Shapes\obj\Debug\net6.0\ref\L01_Shapes.dll
