@@ -1,0 +1,14 @@
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction_Exercise\E03_Telephony\bin\Debug\net6.0\E03_Telephony.exe
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction_Exercise\E03_Telephony\bin\Debug\net6.0\E03_Telephony.deps.json
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction_Exercise\E03_Telephony\bin\Debug\net6.0\E03_Telephony.runtimeconfig.json
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction_Exercise\E03_Telephony\bin\Debug\net6.0\E03_Telephony.dll
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction_Exercise\E03_Telephony\bin\Debug\net6.0\E03_Telephony.pdb
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction_Exercise\E03_Telephony\obj\Debug\net6.0\E03_Telephony.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction_Exercise\E03_Telephony\obj\Debug\net6.0\E03_Telephony.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction_Exercise\E03_Telephony\obj\Debug\net6.0\E03_Telephony.AssemblyInfo.cs
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction_Exercise\E03_Telephony\obj\Debug\net6.0\E03_Telephony.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction_Exercise\E03_Telephony\obj\Debug\net6.0\E03_Telephony.dll
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction_Exercise\E03_Telephony\obj\Debug\net6.0\refint\E03_Telephony.dll
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction_Exercise\E03_Telephony\obj\Debug\net6.0\E03_Telephony.pdb
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction_Exercise\E03_Telephony\obj\Debug\net6.0\E03_Telephony.genruntimeconfig.cache
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction_Exercise\E03_Telephony\obj\Debug\net6.0\ref\E03_Telephony.dll
