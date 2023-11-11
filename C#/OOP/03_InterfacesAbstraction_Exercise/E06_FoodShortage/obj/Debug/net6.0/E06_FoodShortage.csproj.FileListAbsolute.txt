@@ -1,0 +1,14 @@
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction_Exercise\E06_FoodShortage\bin\Debug\net6.0\E06_FoodShortage.exe
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction_Exercise\E06_FoodShortage\bin\Debug\net6.0\E06_FoodShortage.deps.json
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction_Exercise\E06_FoodShortage\bin\Debug\net6.0\E06_FoodShortage.runtimeconfig.json
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction_Exercise\E06_FoodShortage\bin\Debug\net6.0\E06_FoodShortage.dll
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction_Exercise\E06_FoodShortage\bin\Debug\net6.0\E06_FoodShortage.pdb
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction_Exercise\E06_FoodShortage\obj\Debug\net6.0\E06_FoodShortage.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction_Exercise\E06_FoodShortage\obj\Debug\net6.0\E06_FoodShortage.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction_Exercise\E06_FoodShortage\obj\Debug\net6.0\E06_FoodShortage.AssemblyInfo.cs
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction_Exercise\E06_FoodShortage\obj\Debug\net6.0\E06_FoodShortage.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction_Exercise\E06_FoodShortage\obj\Debug\net6.0\E06_FoodShortage.dll
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction_Exercise\E06_FoodShortage\obj\Debug\net6.0\refint\E06_FoodShortage.dll
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction_Exercise\E06_FoodShortage\obj\Debug\net6.0\E06_FoodShortage.pdb
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction_Exercise\E06_FoodShortage\obj\Debug\net6.0\E06_FoodShortage.genruntimeconfig.cache
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction_Exercise\E06_FoodShortage\obj\Debug\net6.0\ref\E06_FoodShortage.dll
