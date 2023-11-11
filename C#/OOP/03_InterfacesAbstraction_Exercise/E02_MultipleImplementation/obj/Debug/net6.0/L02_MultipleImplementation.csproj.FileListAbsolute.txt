@@ -1,0 +1,14 @@
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction_Exercise\L02_MultipleImplementation\bin\Debug\net6.0\L02_MultipleImplementation.exe
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction_Exercise\L02_MultipleImplementation\bin\Debug\net6.0\L02_MultipleImplementation.deps.json
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction_Exercise\L02_MultipleImplementation\bin\Debug\net6.0\L02_MultipleImplementation.runtimeconfig.json
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction_Exercise\L02_MultipleImplementation\bin\Debug\net6.0\L02_MultipleImplementation.dll
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction_Exercise\L02_MultipleImplementation\bin\Debug\net6.0\L02_MultipleImplementation.pdb
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction_Exercise\L02_MultipleImplementation\obj\Debug\net6.0\L02_MultipleImplementation.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction_Exercise\L02_MultipleImplementation\obj\Debug\net6.0\L02_MultipleImplementation.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction_Exercise\L02_MultipleImplementation\obj\Debug\net6.0\L02_MultipleImplementation.AssemblyInfo.cs
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction_Exercise\L02_MultipleImplementation\obj\Debug\net6.0\L02_MultipleImplementation.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction_Exercise\L02_MultipleImplementation\obj\Debug\net6.0\L02_MultipleImplementation.dll
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction_Exercise\L02_MultipleImplementation\obj\Debug\net6.0\refint\L02_MultipleImplementation.dll
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction_Exercise\L02_MultipleImplementation\obj\Debug\net6.0\L02_MultipleImplementation.pdb
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction_Exercise\L02_MultipleImplementation\obj\Debug\net6.0\L02_MultipleImplementation.genruntimeconfig.cache
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction_Exercise\L02_MultipleImplementation\obj\Debug\net6.0\ref\L02_MultipleImplementation.dll
