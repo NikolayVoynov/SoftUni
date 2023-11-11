@@ -1,0 +1,14 @@
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction_Exercise\E01_DefineInterfaceIPerson\bin\Debug\net6.0\E01_DefineInterfaceIPerson.exe
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction_Exercise\E01_DefineInterfaceIPerson\bin\Debug\net6.0\E01_DefineInterfaceIPerson.deps.json
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction_Exercise\E01_DefineInterfaceIPerson\bin\Debug\net6.0\E01_DefineInterfaceIPerson.runtimeconfig.json
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction_Exercise\E01_DefineInterfaceIPerson\bin\Debug\net6.0\E01_DefineInterfaceIPerson.dll
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction_Exercise\E01_DefineInterfaceIPerson\bin\Debug\net6.0\E01_DefineInterfaceIPerson.pdb
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction_Exercise\E01_DefineInterfaceIPerson\obj\Debug\net6.0\E01_DefineInterfaceIPerson.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction_Exercise\E01_DefineInterfaceIPerson\obj\Debug\net6.0\E01_DefineInterfaceIPerson.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction_Exercise\E01_DefineInterfaceIPerson\obj\Debug\net6.0\E01_DefineInterfaceIPerson.AssemblyInfo.cs
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction_Exercise\E01_DefineInterfaceIPerson\obj\Debug\net6.0\E01_DefineInterfaceIPerson.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction_Exercise\E01_DefineInterfaceIPerson\obj\Debug\net6.0\E01_DefineInterfaceIPerson.dll
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction_Exercise\E01_DefineInterfaceIPerson\obj\Debug\net6.0\refint\E01_DefineInterfaceIPerson.dll
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction_Exercise\E01_DefineInterfaceIPerson\obj\Debug\net6.0\E01_DefineInterfaceIPerson.pdb
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction_Exercise\E01_DefineInterfaceIPerson\obj\Debug\net6.0\E01_DefineInterfaceIPerson.genruntimeconfig.cache
+C:\Users\user\source\repos\OOP\03_InterfacesAbstraction_Exercise\E01_DefineInterfaceIPerson\obj\Debug\net6.0\ref\E01_DefineInterfaceIPerson.dll
