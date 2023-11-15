@@ -1,0 +1,14 @@
+C:\Users\user\source\repos\OOP\04_Polymorphisum_Exercise\E02_VehiclesExtension\bin\Debug\net6.0\E02_VehiclesExtension.exe
+C:\Users\user\source\repos\OOP\04_Polymorphisum_Exercise\E02_VehiclesExtension\bin\Debug\net6.0\E02_VehiclesExtension.deps.json
+C:\Users\user\source\repos\OOP\04_Polymorphisum_Exercise\E02_VehiclesExtension\bin\Debug\net6.0\E02_VehiclesExtension.runtimeconfig.json
+C:\Users\user\source\repos\OOP\04_Polymorphisum_Exercise\E02_VehiclesExtension\bin\Debug\net6.0\E02_VehiclesExtension.dll
+C:\Users\user\source\repos\OOP\04_Polymorphisum_Exercise\E02_VehiclesExtension\bin\Debug\net6.0\E02_VehiclesExtension.pdb
+C:\Users\user\source\repos\OOP\04_Polymorphisum_Exercise\E02_VehiclesExtension\obj\Debug\net6.0\E02_VehiclesExtension.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\OOP\04_Polymorphisum_Exercise\E02_VehiclesExtension\obj\Debug\net6.0\E02_VehiclesExtension.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\OOP\04_Polymorphisum_Exercise\E02_VehiclesExtension\obj\Debug\net6.0\E02_VehiclesExtension.AssemblyInfo.cs
+C:\Users\user\source\repos\OOP\04_Polymorphisum_Exercise\E02_VehiclesExtension\obj\Debug\net6.0\E02_VehiclesExtension.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\OOP\04_Polymorphisum_Exercise\E02_VehiclesExtension\obj\Debug\net6.0\E02_VehiclesExtension.dll
+C:\Users\user\source\repos\OOP\04_Polymorphisum_Exercise\E02_VehiclesExtension\obj\Debug\net6.0\refint\E02_VehiclesExtension.dll
+C:\Users\user\source\repos\OOP\04_Polymorphisum_Exercise\E02_VehiclesExtension\obj\Debug\net6.0\E02_VehiclesExtension.pdb
+C:\Users\user\source\repos\OOP\04_Polymorphisum_Exercise\E02_VehiclesExtension\obj\Debug\net6.0\E02_VehiclesExtension.genruntimeconfig.cache
+C:\Users\user\source\repos\OOP\04_Polymorphisum_Exercise\E02_VehiclesExtension\obj\Debug\net6.0\ref\E02_VehiclesExtension.dll
