@@ -1,0 +1,14 @@
+C:\Users\user\source\repos\OOP\04_Polymorphisum_Exercise\E04_WildFarm\obj\Debug\net6.0\E04_WildFarm.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\OOP\04_Polymorphisum_Exercise\E04_WildFarm\obj\Debug\net6.0\E04_WildFarm.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\OOP\04_Polymorphisum_Exercise\E04_WildFarm\obj\Debug\net6.0\E04_WildFarm.AssemblyInfo.cs
+C:\Users\user\source\repos\OOP\04_Polymorphisum_Exercise\E04_WildFarm\obj\Debug\net6.0\E04_WildFarm.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\OOP\04_Polymorphisum_Exercise\E04_WildFarm\bin\Debug\net6.0\E04_WildFarm.exe
+C:\Users\user\source\repos\OOP\04_Polymorphisum_Exercise\E04_WildFarm\bin\Debug\net6.0\E04_WildFarm.deps.json
+C:\Users\user\source\repos\OOP\04_Polymorphisum_Exercise\E04_WildFarm\bin\Debug\net6.0\E04_WildFarm.runtimeconfig.json
+C:\Users\user\source\repos\OOP\04_Polymorphisum_Exercise\E04_WildFarm\bin\Debug\net6.0\E04_WildFarm.dll
+C:\Users\user\source\repos\OOP\04_Polymorphisum_Exercise\E04_WildFarm\bin\Debug\net6.0\E04_WildFarm.pdb
+C:\Users\user\source\repos\OOP\04_Polymorphisum_Exercise\E04_WildFarm\obj\Debug\net6.0\E04_WildFarm.dll
+C:\Users\user\source\repos\OOP\04_Polymorphisum_Exercise\E04_WildFarm\obj\Debug\net6.0\refint\E04_WildFarm.dll
+C:\Users\user\source\repos\OOP\04_Polymorphisum_Exercise\E04_WildFarm\obj\Debug\net6.0\E04_WildFarm.pdb
+C:\Users\user\source\repos\OOP\04_Polymorphisum_Exercise\E04_WildFarm\obj\Debug\net6.0\E04_WildFarm.genruntimeconfig.cache
+C:\Users\user\source\repos\OOP\04_Polymorphisum_Exercise\E04_WildFarm\obj\Debug\net6.0\ref\E04_WildFarm.dll
