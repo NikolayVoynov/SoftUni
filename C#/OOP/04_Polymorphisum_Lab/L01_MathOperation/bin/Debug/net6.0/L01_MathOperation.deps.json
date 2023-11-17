@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "L01_MathOperation/1.0.0": {
+        "runtime": {
+          "L01_MathOperation.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "L01_MathOperation/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
