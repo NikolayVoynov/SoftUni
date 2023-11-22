@@ -1,0 +1,14 @@
+C:\Users\user\source\repos\OOP\06_ReflectionAttributes_Exercise\CommandPattern\bin\Debug\net6.0\CommandPattern.exe
+C:\Users\user\source\repos\OOP\06_ReflectionAttributes_Exercise\CommandPattern\bin\Debug\net6.0\CommandPattern.deps.json
+C:\Users\user\source\repos\OOP\06_ReflectionAttributes_Exercise\CommandPattern\bin\Debug\net6.0\CommandPattern.runtimeconfig.json
+C:\Users\user\source\repos\OOP\06_ReflectionAttributes_Exercise\CommandPattern\bin\Debug\net6.0\CommandPattern.dll
+C:\Users\user\source\repos\OOP\06_ReflectionAttributes_Exercise\CommandPattern\bin\Debug\net6.0\CommandPattern.pdb
+C:\Users\user\source\repos\OOP\06_ReflectionAttributes_Exercise\CommandPattern\obj\Debug\net6.0\CommandPattern.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\OOP\06_ReflectionAttributes_Exercise\CommandPattern\obj\Debug\net6.0\CommandPattern.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\OOP\06_ReflectionAttributes_Exercise\CommandPattern\obj\Debug\net6.0\CommandPattern.AssemblyInfo.cs
+C:\Users\user\source\repos\OOP\06_ReflectionAttributes_Exercise\CommandPattern\obj\Debug\net6.0\CommandPattern.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\OOP\06_ReflectionAttributes_Exercise\CommandPattern\obj\Debug\net6.0\CommandPattern.dll
+C:\Users\user\source\repos\OOP\06_ReflectionAttributes_Exercise\CommandPattern\obj\Debug\net6.0\refint\CommandPattern.dll
+C:\Users\user\source\repos\OOP\06_ReflectionAttributes_Exercise\CommandPattern\obj\Debug\net6.0\CommandPattern.pdb
+C:\Users\user\source\repos\OOP\06_ReflectionAttributes_Exercise\CommandPattern\obj\Debug\net6.0\CommandPattern.genruntimeconfig.cache
+C:\Users\user\source\repos\OOP\06_ReflectionAttributes_Exercise\CommandPattern\obj\Debug\net6.0\ref\CommandPattern.dll
