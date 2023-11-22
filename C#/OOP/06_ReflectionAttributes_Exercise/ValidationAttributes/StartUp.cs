@@ -1,6 +1,8 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using ValidationAttributes.Models;
+using ValidationAttributes.Utils;
+using Validator = ValidationAttributes.Utils.Validator;
 
 namespace ValidationAttributes
 {
