@@ -1,0 +1,14 @@
+C:\Users\user\source\repos\OOP\06_Reflection and Attributes_Lab\L06_CodeTracker\bin\Debug\net6.0\L06_CodeTracker.exe
+C:\Users\user\source\repos\OOP\06_Reflection and Attributes_Lab\L06_CodeTracker\bin\Debug\net6.0\L06_CodeTracker.deps.json
+C:\Users\user\source\repos\OOP\06_Reflection and Attributes_Lab\L06_CodeTracker\bin\Debug\net6.0\L06_CodeTracker.runtimeconfig.json
+C:\Users\user\source\repos\OOP\06_Reflection and Attributes_Lab\L06_CodeTracker\bin\Debug\net6.0\L06_CodeTracker.dll
+C:\Users\user\source\repos\OOP\06_Reflection and Attributes_Lab\L06_CodeTracker\bin\Debug\net6.0\L06_CodeTracker.pdb
+C:\Users\user\source\repos\OOP\06_Reflection and Attributes_Lab\L06_CodeTracker\obj\Debug\net6.0\L06_CodeTracker.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\OOP\06_Reflection and Attributes_Lab\L06_CodeTracker\obj\Debug\net6.0\L06_CodeTracker.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\OOP\06_Reflection and Attributes_Lab\L06_CodeTracker\obj\Debug\net6.0\L06_CodeTracker.AssemblyInfo.cs
+C:\Users\user\source\repos\OOP\06_Reflection and Attributes_Lab\L06_CodeTracker\obj\Debug\net6.0\L06_CodeTracker.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\OOP\06_Reflection and Attributes_Lab\L06_CodeTracker\obj\Debug\net6.0\L06_CodeTracker.dll
+C:\Users\user\source\repos\OOP\06_Reflection and Attributes_Lab\L06_CodeTracker\obj\Debug\net6.0\refint\L06_CodeTracker.dll
+C:\Users\user\source\repos\OOP\06_Reflection and Attributes_Lab\L06_CodeTracker\obj\Debug\net6.0\L06_CodeTracker.pdb
+C:\Users\user\source\repos\OOP\06_Reflection and Attributes_Lab\L06_CodeTracker\obj\Debug\net6.0\L06_CodeTracker.genruntimeconfig.cache
+C:\Users\user\source\repos\OOP\06_Reflection and Attributes_Lab\L06_CodeTracker\obj\Debug\net6.0\ref\L06_CodeTracker.dll
