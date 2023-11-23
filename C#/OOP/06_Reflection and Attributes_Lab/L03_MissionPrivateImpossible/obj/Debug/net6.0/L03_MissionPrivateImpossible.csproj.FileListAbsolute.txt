@@ -1,0 +1,14 @@
+C:\Users\user\source\repos\OOP\06_Reflection and Attributes_Lab\L03_MissionPrivateImpossible\obj\Debug\net6.0\L03_MissionPrivateImpossible.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\OOP\06_Reflection and Attributes_Lab\L03_MissionPrivateImpossible\obj\Debug\net6.0\L03_MissionPrivateImpossible.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\OOP\06_Reflection and Attributes_Lab\L03_MissionPrivateImpossible\obj\Debug\net6.0\L03_MissionPrivateImpossible.AssemblyInfo.cs
+C:\Users\user\source\repos\OOP\06_Reflection and Attributes_Lab\L03_MissionPrivateImpossible\obj\Debug\net6.0\L03_MissionPrivateImpossible.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\OOP\06_Reflection and Attributes_Lab\L03_MissionPrivateImpossible\bin\Debug\net6.0\L03_MissionPrivateImpossible.exe
+C:\Users\user\source\repos\OOP\06_Reflection and Attributes_Lab\L03_MissionPrivateImpossible\bin\Debug\net6.0\L03_MissionPrivateImpossible.deps.json
+C:\Users\user\source\repos\OOP\06_Reflection and Attributes_Lab\L03_MissionPrivateImpossible\bin\Debug\net6.0\L03_MissionPrivateImpossible.runtimeconfig.json
+C:\Users\user\source\repos\OOP\06_Reflection and Attributes_Lab\L03_MissionPrivateImpossible\bin\Debug\net6.0\L03_MissionPrivateImpossible.dll
+C:\Users\user\source\repos\OOP\06_Reflection and Attributes_Lab\L03_MissionPrivateImpossible\bin\Debug\net6.0\L03_MissionPrivateImpossible.pdb
+C:\Users\user\source\repos\OOP\06_Reflection and Attributes_Lab\L03_MissionPrivateImpossible\obj\Debug\net6.0\L03_MissionPrivateImpossible.dll
+C:\Users\user\source\repos\OOP\06_Reflection and Attributes_Lab\L03_MissionPrivateImpossible\obj\Debug\net6.0\refint\L03_MissionPrivateImpossible.dll
+C:\Users\user\source\repos\OOP\06_Reflection and Attributes_Lab\L03_MissionPrivateImpossible\obj\Debug\net6.0\L03_MissionPrivateImpossible.pdb
+C:\Users\user\source\repos\OOP\06_Reflection and Attributes_Lab\L03_MissionPrivateImpossible\obj\Debug\net6.0\L03_MissionPrivateImpossible.genruntimeconfig.cache
+C:\Users\user\source\repos\OOP\06_Reflection and Attributes_Lab\L03_MissionPrivateImpossible\obj\Debug\net6.0\ref\L03_MissionPrivateImpossible.dll
