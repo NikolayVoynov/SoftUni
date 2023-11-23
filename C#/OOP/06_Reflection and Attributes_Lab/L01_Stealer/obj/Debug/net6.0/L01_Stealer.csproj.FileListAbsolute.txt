@@ -1,0 +1,14 @@
+C:\Users\user\source\repos\OOP\04_Polymorphisum_Lab\ReflectionAndAttributesLab\bin\Debug\net6.0\L01_Stealer.exe
+C:\Users\user\source\repos\OOP\04_Polymorphisum_Lab\ReflectionAndAttributesLab\bin\Debug\net6.0\L01_Stealer.deps.json
+C:\Users\user\source\repos\OOP\04_Polymorphisum_Lab\ReflectionAndAttributesLab\bin\Debug\net6.0\L01_Stealer.runtimeconfig.json
+C:\Users\user\source\repos\OOP\04_Polymorphisum_Lab\ReflectionAndAttributesLab\bin\Debug\net6.0\L01_Stealer.dll
+C:\Users\user\source\repos\OOP\04_Polymorphisum_Lab\ReflectionAndAttributesLab\bin\Debug\net6.0\L01_Stealer.pdb
+C:\Users\user\source\repos\OOP\04_Polymorphisum_Lab\ReflectionAndAttributesLab\obj\Debug\net6.0\L01_Stealer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\OOP\04_Polymorphisum_Lab\ReflectionAndAttributesLab\obj\Debug\net6.0\L01_Stealer.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\OOP\04_Polymorphisum_Lab\ReflectionAndAttributesLab\obj\Debug\net6.0\L01_Stealer.AssemblyInfo.cs
+C:\Users\user\source\repos\OOP\04_Polymorphisum_Lab\ReflectionAndAttributesLab\obj\Debug\net6.0\L01_Stealer.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\OOP\04_Polymorphisum_Lab\ReflectionAndAttributesLab\obj\Debug\net6.0\L01_Stealer.dll
+C:\Users\user\source\repos\OOP\04_Polymorphisum_Lab\ReflectionAndAttributesLab\obj\Debug\net6.0\refint\L01_Stealer.dll
+C:\Users\user\source\repos\OOP\04_Polymorphisum_Lab\ReflectionAndAttributesLab\obj\Debug\net6.0\L01_Stealer.pdb
+C:\Users\user\source\repos\OOP\04_Polymorphisum_Lab\ReflectionAndAttributesLab\obj\Debug\net6.0\L01_Stealer.genruntimeconfig.cache
+C:\Users\user\source\repos\OOP\04_Polymorphisum_Lab\ReflectionAndAttributesLab\obj\Debug\net6.0\ref\L01_Stealer.dll
