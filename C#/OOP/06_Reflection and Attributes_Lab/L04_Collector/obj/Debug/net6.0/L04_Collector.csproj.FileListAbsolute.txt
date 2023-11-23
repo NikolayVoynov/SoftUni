@@ -1,0 +1,14 @@
+C:\Users\user\source\repos\OOP\06_Reflection and Attributes_Lab\L04_Collector\bin\Debug\net6.0\L04_Collector.exe
+C:\Users\user\source\repos\OOP\06_Reflection and Attributes_Lab\L04_Collector\bin\Debug\net6.0\L04_Collector.deps.json
+C:\Users\user\source\repos\OOP\06_Reflection and Attributes_Lab\L04_Collector\bin\Debug\net6.0\L04_Collector.runtimeconfig.json
+C:\Users\user\source\repos\OOP\06_Reflection and Attributes_Lab\L04_Collector\bin\Debug\net6.0\L04_Collector.dll
+C:\Users\user\source\repos\OOP\06_Reflection and Attributes_Lab\L04_Collector\bin\Debug\net6.0\L04_Collector.pdb
+C:\Users\user\source\repos\OOP\06_Reflection and Attributes_Lab\L04_Collector\obj\Debug\net6.0\L04_Collector.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\OOP\06_Reflection and Attributes_Lab\L04_Collector\obj\Debug\net6.0\L04_Collector.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\OOP\06_Reflection and Attributes_Lab\L04_Collector\obj\Debug\net6.0\L04_Collector.AssemblyInfo.cs
+C:\Users\user\source\repos\OOP\06_Reflection and Attributes_Lab\L04_Collector\obj\Debug\net6.0\L04_Collector.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\OOP\06_Reflection and Attributes_Lab\L04_Collector\obj\Debug\net6.0\L04_Collector.dll
+C:\Users\user\source\repos\OOP\06_Reflection and Attributes_Lab\L04_Collector\obj\Debug\net6.0\refint\L04_Collector.dll
+C:\Users\user\source\repos\OOP\06_Reflection and Attributes_Lab\L04_Collector\obj\Debug\net6.0\L04_Collector.pdb
+C:\Users\user\source\repos\OOP\06_Reflection and Attributes_Lab\L04_Collector\obj\Debug\net6.0\L04_Collector.genruntimeconfig.cache
+C:\Users\user\source\repos\OOP\06_Reflection and Attributes_Lab\L04_Collector\obj\Debug\net6.0\ref\L04_Collector.dll
