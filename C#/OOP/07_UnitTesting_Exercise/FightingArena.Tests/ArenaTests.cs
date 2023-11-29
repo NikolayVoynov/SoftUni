@@ -60,6 +60,51 @@
             Assert.AreEqual("Warrior is already enrolled for the fights!", exception.Message);
         }
 
+        [Test]
+        public void ArenaFightMethodMustWorkCorrectly()
+        {
+            Warrior attacker = new Warrior("Nikolay", 10, 100);
+            Warrior defender = new Warrior("George", 15, 50);
+
+            arena.Enroll(attacker);
+            arena.Enroll(defender);
+
+            int expectedAttackerHp = 85;
+            int expectedDefenderHp = 40;
+
+            arena.Fight(attacker.Name, defender.Name);
+
+            Assert.AreEqual(expectedAttackerHp, attacker.HP);
+            Assert.AreEqual(expectedDefenderHp, defender.HP);
+        }
+
+        [Test]
+        public void ArenaFightMethodMustThrowExceptionIfAttackerNotFound()
+        {
+            Warrior attacker = new("Nikolay", 15, 100);
+            Warrior defender = new("George", 5, 50);
+
+            arena.Enroll(defender);
+
+            InvalidOperationException exception = Assert.Throws<InvalidOperationException>(()
+               => arena.Fight(attacker.Name, defender.Name));
+
+            Assert.AreEqual($"There is no fighter with name {attacker.Name} enrolled for the fights!", exception.Message);
+        }
+
+        [Test]
+        public void ArenaFightShouldThrowExceptionIfDefenderNotFound()
+        {
+            Warrior attacker = new("Nikolay", 15, 100);
+            Warrior defender = new("George", 5, 50);
+
+            arena.Enroll(attacker);
+
+            InvalidOperationException exception = Assert.Throws<InvalidOperationException>(()
+               => arena.Fight(attacker.Name, defender.Name));
+
+            Assert.AreEqual($"There is no fighter with name {defender.Name} enrolled for the fights!", exception.Message);
+        }
 
     }
 }
