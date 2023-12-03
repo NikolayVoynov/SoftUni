@@ -1,0 +1,14 @@
+C:\Users\user\source\repos\Advanced\ExamPrep_09Aug2023\MonsterExtermination\bin\Debug\net6.0\MonsterExtermination.exe
+C:\Users\user\source\repos\Advanced\ExamPrep_09Aug2023\MonsterExtermination\bin\Debug\net6.0\MonsterExtermination.deps.json
+C:\Users\user\source\repos\Advanced\ExamPrep_09Aug2023\MonsterExtermination\bin\Debug\net6.0\MonsterExtermination.runtimeconfig.json
+C:\Users\user\source\repos\Advanced\ExamPrep_09Aug2023\MonsterExtermination\bin\Debug\net6.0\MonsterExtermination.dll
+C:\Users\user\source\repos\Advanced\ExamPrep_09Aug2023\MonsterExtermination\bin\Debug\net6.0\MonsterExtermination.pdb
+C:\Users\user\source\repos\Advanced\ExamPrep_09Aug2023\MonsterExtermination\obj\Debug\net6.0\MonsterExtermination.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\Advanced\ExamPrep_09Aug2023\MonsterExtermination\obj\Debug\net6.0\MonsterExtermination.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\Advanced\ExamPrep_09Aug2023\MonsterExtermination\obj\Debug\net6.0\MonsterExtermination.AssemblyInfo.cs
+C:\Users\user\source\repos\Advanced\ExamPrep_09Aug2023\MonsterExtermination\obj\Debug\net6.0\MonsterExtermination.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\Advanced\ExamPrep_09Aug2023\MonsterExtermination\obj\Debug\net6.0\MonsterExtermination.dll
+C:\Users\user\source\repos\Advanced\ExamPrep_09Aug2023\MonsterExtermination\obj\Debug\net6.0\refint\MonsterExtermination.dll
+C:\Users\user\source\repos\Advanced\ExamPrep_09Aug2023\MonsterExtermination\obj\Debug\net6.0\MonsterExtermination.pdb
+C:\Users\user\source\repos\Advanced\ExamPrep_09Aug2023\MonsterExtermination\obj\Debug\net6.0\MonsterExtermination.genruntimeconfig.cache
+C:\Users\user\source\repos\Advanced\ExamPrep_09Aug2023\MonsterExtermination\obj\Debug\net6.0\ref\MonsterExtermination.dll
