@@ -14,9 +14,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\source\\repos\\Advanced\\ExamPrep_17June2023\\ExamPrepJune2023\\ExamPrepJune2023.csproj",
-      "projectName": "ExamPrepJune2023",
-      "projectPath": "C:\\Users\\user\\source\\repos\\Advanced\\ExamPrep_17June2023\\ExamPrepJune2023\\ExamPrepJune2023.csproj",
+      "projectUniqueName": "C:\\Users\\user\\source\\repos\\Advanced\\ExamPrep_17June2023\\ExamPrepJune2023\\TempleOfDoom.csproj",
+      "projectName": "TempleOfDoom",
+      "projectPath": "C:\\Users\\user\\source\\repos\\Advanced\\ExamPrep_17June2023\\ExamPrepJune2023\\TempleOfDoom.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\user\\source\\repos\\Advanced\\ExamPrep_17June2023\\ExamPrepJune2023\\obj\\",
       "projectStyle": "PackageReference",
