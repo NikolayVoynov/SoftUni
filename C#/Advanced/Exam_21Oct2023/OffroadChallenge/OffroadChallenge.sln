@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34202.233
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OffroadChallenge", "OffroadChallenge.csproj", "{68B31A77-6399-41FB-B1BA-ED37EE4953EF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{68B31A77-6399-41FB-B1BA-ED37EE4953EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68B31A77-6399-41FB-B1BA-ED37EE4953EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68B31A77-6399-41FB-B1BA-ED37EE4953EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68B31A77-6399-41FB-B1BA-ED37EE4953EF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {199F67A2-465A-4107-9A36-C2C4E241B545}
+	EndGlobalSection
+EndGlobal
