@@ -1,0 +1,14 @@
+C:\Users\user\source\repos\Advanced\RetakeExam_12April2023\RubberDuckDebugers\bin\Debug\net6.0\RubberDuckDebugers.exe
+C:\Users\user\source\repos\Advanced\RetakeExam_12April2023\RubberDuckDebugers\bin\Debug\net6.0\RubberDuckDebugers.deps.json
+C:\Users\user\source\repos\Advanced\RetakeExam_12April2023\RubberDuckDebugers\bin\Debug\net6.0\RubberDuckDebugers.runtimeconfig.json
+C:\Users\user\source\repos\Advanced\RetakeExam_12April2023\RubberDuckDebugers\bin\Debug\net6.0\RubberDuckDebugers.dll
+C:\Users\user\source\repos\Advanced\RetakeExam_12April2023\RubberDuckDebugers\bin\Debug\net6.0\RubberDuckDebugers.pdb
+C:\Users\user\source\repos\Advanced\RetakeExam_12April2023\RubberDuckDebugers\obj\Debug\net6.0\RubberDuckDebugers.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\Advanced\RetakeExam_12April2023\RubberDuckDebugers\obj\Debug\net6.0\RubberDuckDebugers.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\Advanced\RetakeExam_12April2023\RubberDuckDebugers\obj\Debug\net6.0\RubberDuckDebugers.AssemblyInfo.cs
+C:\Users\user\source\repos\Advanced\RetakeExam_12April2023\RubberDuckDebugers\obj\Debug\net6.0\RubberDuckDebugers.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\Advanced\RetakeExam_12April2023\RubberDuckDebugers\obj\Debug\net6.0\RubberDuckDebugers.dll
+C:\Users\user\source\repos\Advanced\RetakeExam_12April2023\RubberDuckDebugers\obj\Debug\net6.0\refint\RubberDuckDebugers.dll
+C:\Users\user\source\repos\Advanced\RetakeExam_12April2023\RubberDuckDebugers\obj\Debug\net6.0\RubberDuckDebugers.pdb
+C:\Users\user\source\repos\Advanced\RetakeExam_12April2023\RubberDuckDebugers\obj\Debug\net6.0\RubberDuckDebugers.genruntimeconfig.cache
+C:\Users\user\source\repos\Advanced\RetakeExam_12April2023\RubberDuckDebugers\obj\Debug\net6.0\ref\RubberDuckDebugers.dll
