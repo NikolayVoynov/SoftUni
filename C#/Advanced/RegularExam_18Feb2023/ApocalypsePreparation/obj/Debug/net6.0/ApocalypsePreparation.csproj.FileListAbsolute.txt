@@ -1,0 +1,14 @@
+C:\Users\user\source\repos\Advanced\RegularExam_18Feb2023\ApocalypsePreparation\bin\Debug\net6.0\ApocalypsePreparation.exe
+C:\Users\user\source\repos\Advanced\RegularExam_18Feb2023\ApocalypsePreparation\bin\Debug\net6.0\ApocalypsePreparation.deps.json
+C:\Users\user\source\repos\Advanced\RegularExam_18Feb2023\ApocalypsePreparation\bin\Debug\net6.0\ApocalypsePreparation.runtimeconfig.json
+C:\Users\user\source\repos\Advanced\RegularExam_18Feb2023\ApocalypsePreparation\bin\Debug\net6.0\ApocalypsePreparation.dll
+C:\Users\user\source\repos\Advanced\RegularExam_18Feb2023\ApocalypsePreparation\bin\Debug\net6.0\ApocalypsePreparation.pdb
+C:\Users\user\source\repos\Advanced\RegularExam_18Feb2023\ApocalypsePreparation\obj\Debug\net6.0\ApocalypsePreparation.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\Advanced\RegularExam_18Feb2023\ApocalypsePreparation\obj\Debug\net6.0\ApocalypsePreparation.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\Advanced\RegularExam_18Feb2023\ApocalypsePreparation\obj\Debug\net6.0\ApocalypsePreparation.AssemblyInfo.cs
+C:\Users\user\source\repos\Advanced\RegularExam_18Feb2023\ApocalypsePreparation\obj\Debug\net6.0\ApocalypsePreparation.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\Advanced\RegularExam_18Feb2023\ApocalypsePreparation\obj\Debug\net6.0\ApocalypsePreparation.dll
+C:\Users\user\source\repos\Advanced\RegularExam_18Feb2023\ApocalypsePreparation\obj\Debug\net6.0\refint\ApocalypsePreparation.dll
+C:\Users\user\source\repos\Advanced\RegularExam_18Feb2023\ApocalypsePreparation\obj\Debug\net6.0\ApocalypsePreparation.pdb
+C:\Users\user\source\repos\Advanced\RegularExam_18Feb2023\ApocalypsePreparation\obj\Debug\net6.0\ApocalypsePreparation.genruntimeconfig.cache
+C:\Users\user\source\repos\Advanced\RegularExam_18Feb2023\ApocalypsePreparation\obj\Debug\net6.0\ref\ApocalypsePreparation.dll

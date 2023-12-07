@@ -1,0 +1,14 @@
+C:\Users\user\source\repos\Advanced\RegularExam_18Feb2023\BlindManBuff\bin\Debug\net6.0\BlindManBuff.exe
+C:\Users\user\source\repos\Advanced\RegularExam_18Feb2023\BlindManBuff\bin\Debug\net6.0\BlindManBuff.deps.json
+C:\Users\user\source\repos\Advanced\RegularExam_18Feb2023\BlindManBuff\bin\Debug\net6.0\BlindManBuff.runtimeconfig.json
+C:\Users\user\source\repos\Advanced\RegularExam_18Feb2023\BlindManBuff\bin\Debug\net6.0\BlindManBuff.dll
+C:\Users\user\source\repos\Advanced\RegularExam_18Feb2023\BlindManBuff\bin\Debug\net6.0\BlindManBuff.pdb
+C:\Users\user\source\repos\Advanced\RegularExam_18Feb2023\BlindManBuff\obj\Debug\net6.0\BlindManBuff.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\Advanced\RegularExam_18Feb2023\BlindManBuff\obj\Debug\net6.0\BlindManBuff.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\Advanced\RegularExam_18Feb2023\BlindManBuff\obj\Debug\net6.0\BlindManBuff.AssemblyInfo.cs
+C:\Users\user\source\repos\Advanced\RegularExam_18Feb2023\BlindManBuff\obj\Debug\net6.0\BlindManBuff.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\Advanced\RegularExam_18Feb2023\BlindManBuff\obj\Debug\net6.0\BlindManBuff.dll
+C:\Users\user\source\repos\Advanced\RegularExam_18Feb2023\BlindManBuff\obj\Debug\net6.0\refint\BlindManBuff.dll
+C:\Users\user\source\repos\Advanced\RegularExam_18Feb2023\BlindManBuff\obj\Debug\net6.0\BlindManBuff.pdb
+C:\Users\user\source\repos\Advanced\RegularExam_18Feb2023\BlindManBuff\obj\Debug\net6.0\BlindManBuff.genruntimeconfig.cache
+C:\Users\user\source\repos\Advanced\RegularExam_18Feb2023\BlindManBuff\obj\Debug\net6.0\ref\BlindManBuff.dll
