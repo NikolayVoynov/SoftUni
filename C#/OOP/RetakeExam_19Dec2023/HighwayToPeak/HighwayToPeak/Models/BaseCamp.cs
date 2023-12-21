@@ -21,6 +21,7 @@ namespace HighwayToPeak.Models
         public void ArriveAtCamp(string climberName)
         {
            residents.Add(climberName);
+           residents = residents.OrderBy(x => x).ToList();
         }
 
         public void LeaveCamp(string climberName)

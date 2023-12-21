@@ -16,7 +16,7 @@ namespace HighwayToPeak.Models
 
         public override void Rest(int daysCount)
         {
-            base.Stamina += daysCount * recoverUnit;
+            this.Stamina += daysCount * recoverUnit;
         }
     }
 }

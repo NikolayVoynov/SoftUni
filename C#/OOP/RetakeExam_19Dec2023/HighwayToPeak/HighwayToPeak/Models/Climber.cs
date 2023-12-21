@@ -43,11 +43,11 @@ namespace HighwayToPeak.Models
             {
                 if (value < 0)
                 {
-                    value = 0;
+                    stamina = 0;
                 }
                 else if (value > 10)
                 {
-                    value = 10;
+                    stamina = 10;
                 }
                 else
                 {

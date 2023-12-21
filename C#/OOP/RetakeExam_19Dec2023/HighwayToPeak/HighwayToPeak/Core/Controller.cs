@@ -111,6 +111,7 @@ namespace HighwayToPeak.Core
 
         public string CampRecovery(string climberName, int daysToRecover)
         {
+
             if (!baseCamp.Residents.Contains(climberName))
             {
                 return string.Format(OutputMessages.ClimberIsNotAtBaseCamp,climberName);
@@ -118,14 +119,14 @@ namespace HighwayToPeak.Core
 
             IClimber climber = climbers.Get(climberName);
 
-            if(climber.Stamina < 10)
-            {
-                climber.Rest(daysToRecover);
-                return string.Format(OutputMessages.ClimberRecovered, climberName,daysToRecover);
-            }
-            else
+            if(climber.Stamina == 10)
             {
                 return string.Format(OutputMessages.NoNeedOfRecovery, climberName);
+            }
+            else 
+            {
+                climber.Rest(daysToRecover);
+                return string.Format(OutputMessages.ClimberRecovered, climberName, daysToRecover);
             }
         }
 
@@ -135,7 +136,7 @@ namespace HighwayToPeak.Core
            
             if (baseCamp.Residents.Count() == 0)
             {
-                sb.AppendLine("BaseCamp is currently empty.");
+                return "BaseCamp is currently empty.";
             }
             else
             {
@@ -144,7 +145,7 @@ namespace HighwayToPeak.Core
                 foreach (var name in baseCamp.Residents)
                 {
                     IClimber climber = climbers.Get(name);
-                    sb.AppendLine($"Name: {climber.Name}, Stamina: {climber.Stamina}, Count of Conquered Peaks: {climber.ConqueredPeaks}");
+                    sb.AppendLine($"Name: {climber.Name}, Stamina: {climber.Stamina}, Count of Conquered Peaks: {climber.ConqueredPeaks.Count}");
                 }
             }
 
@@ -158,7 +159,7 @@ namespace HighwayToPeak.Core
 
             foreach(var climber in climbers.All.OrderByDescending(cl => cl.ConqueredPeaks.Count).ThenBy(cl => cl.Name))
             {
-                sb.AppendLine(climber.ToString());
+                sb.AppendLine(climber.ToString().TrimEnd());
 
                 List<IPeak> climberPeaks = new List<IPeak>();
                 IReadOnlyCollection<string> conqueredPeaksByString = climber.ConqueredPeaks;
